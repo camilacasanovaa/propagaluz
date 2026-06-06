@@ -86,3 +86,24 @@ The site will feature a **handwritten letter from Camila**, photographed and dis
 
 ## 2026-06-06 · Strategic note — Max Strong Project is a peer
 Maxstrong.org (the Max Strong Project) is a Venezuelan-American foundation based in Caracas + Miami, founded 2025, with a similar diaspora-bridge model. **They are a peer of propagaluz**, not just a visual reference. Worth a closer study of their operational moves once we have visual direction settled. Filed under `research/peers/` for follow-up.
+
+## 2026-06-06 · Site architecture written (ARCHITECTURE.md)
+v1 routes locked: `/`, `/origen`, `/manifiesto`, `/donar`, `/contacto`, `/privacidad`, `/aviso-legal` — Spanish at root, English at `/en/...`. Seven routes per language, fourteen total.
+
+Homepage structure: hero (photo + manifesto headline + donation widget + EST.2026 pills) → handwritten letter slot → manifesto preview → origin teaser → "Recogemos / Acompañamos / Sostenemos" three cards → transparency promise → footer.
+
+`/donar` has two modes: pre-registration (waitlist email capture) and post-registration (Stripe Checkout). Mode A is the default until Spanish foundation registration completes.
+
+Tech: Next.js 15 + Tailwind + shadcn/ui + Motion.dev + Plausible analytics + Stripe Checkout for donations (when live).
+
+Three user journeys named: cold donor (~90s to donate), press/partner (read Origen, contact), warm donor (~30s to donate).
+
+## 2026-06-06 · Family photo catalog (INBOX-NOTES.md)
+Five archival photos landed in `assets/photography/inbox/`. Catalog in `INBOX-NOTES.md`.
+- ✅ **Eduardo at the desk** — closing image of /origen.
+- ✅ **Eduardo at the rotary press** — homepage hero candidate.
+- ✅ **Three generations at the press** — /origen hero or home origin teaser.
+- ⚠️ **1997 inauguration** — likely features President Rafael Caldera. Recommendation: crop tightly to family, or hold.
+- ⚠️ **2016 protest** — Eduardo speaking at a "ataque contra El Carabobeño" rally. Recommendation: hold for v1; revisit if/when a longer-history page exists.
+
+Decisions on the two sensitive photos pending Camila's call.
