@@ -43,15 +43,14 @@ Resolved questions live in `DECISIONS.md`.
 26. **Lovelo license check — still open.** Wordmark uses Lovelo Black. Free for personal use; commercial/foundation use needs confirmation from Renick Bell before public launch.
 27. **Peer study — Max Strong Project.** They are a peer foundation (Venezuelan-American, diaspora-bridge model, similar founder profile). Worth a short research note in `research/peers/maxstrong.md` once visual direction is locked. Operational moves to study: recurring donation flow, story-driven program pages, the "I'm Eleven" personal callouts.
 
-## Site (architecture + build pending)
-28. **Real email addresses.** Camila has set up business email. Need the actual addresses to wire into the contact page + footer + outreach drafts. Working placeholders in copy: `hola@propagaluz.com` (general), `andres@propagaluz.com` (partnerships), `prensa@propagaluz.com` (press, v2).
-29. **Sensitive photo decisions.** From `assets/photography/inbox/INBOX-NOTES.md`:
-   - The 1997 inauguration photo (likely shows President Rafael Caldera) — crop to family-only, or hold entirely?
-   - The 2016 protest photo (Eduardo speaking, "ataque contra El Carabobeño" banner) — hold for v1, or use with framing?
-30. **Camila's portrait.** Site can launch without one, but the "Hoy" section is richer with the founder's face. Camila to add to `assets/photography/camila/` when ready.
-31. **Build phase — when to start.** Architecture is written; visual system is written; copy is written; assets are partially in. Next operational step is scaffolding the Next.js project in `web/` and shipping a v1 deploy to Vercel. Awaiting Camila's go.
-32. **Donation infrastructure provider (Mode A).** Pick one before the build: Resend, Loops, or ConvertKit for the waitlist email capture. All three work for the volume we'll see at launch.
+## Site (architecture done · build pending)
+28. **Real email address — `camila@propagaluz.com`.** Locked in. Closed.
+29. **Sensitive photo decisions.** Locked: both held from v1 (1997 inauguration and 2016 protest). Closed.
+30. **Camila's portrait.** Site can launch without one, but the *Hoy* section is richer with the founder's face. Camila to add to `assets/photography/camila/` when ready. Not blocking launch.
+31. **Build phase — when to start.** Architecture, visual system, copy, partner outreach, and asset structure all done. Next operational step is scaffolding the Next.js project in `web/` and shipping a v1 deploy to Vercel. **Awaiting Camila's go.**
+32. **Donation infrastructure provider (Mode A) — Resend.** Locked in. Closed.
 33. **Foundation registration timeline.** Mode A → Mode B switch depends on Spain non-profit registration. Specialist consultation still pending (item #1). The longer this takes, the longer the site lives in Mode A.
+34. **Andrés's own propagaluz email address.** When set up, the contact page splits and the outreach drafts gain a real CC address.
 15. **About page draft.** After manifesto, write the origin story. Three sober paragraphs: Eladio, Eduardo, Camila. Photographs from family archive if available.
 16. **Site architecture.** Pages: Home, Manifesto, About (the legacy), Where the money goes (partners), Donate, Contact, Press. Eventually a journal/blog for foundation updates. Decide after manifesto lands.
 

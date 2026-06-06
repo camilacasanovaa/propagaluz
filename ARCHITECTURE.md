@@ -45,7 +45,7 @@ Seven routes per language. Fourteen total. Tight.
 One scroll. Whole story.
 
 **1. Hero**
-- Single large photograph. **v1 candidate: `Eduardo-Aleman-en-la-rotativa.jpg`** — Eduardo at the rotary press. The family vocation as a single image. (Other candidates in `assets/photography/inbox/INBOX-NOTES.md`.)
+- Single large photograph. **v1 candidate: `assets/photography/family/Eduardo-Aleman-Perez-rotativa.jpg`** — Eduardo at the rotary press. The family vocation as a single image. (Full catalog in `assets/photography/CATALOG.md`.)
 - Headline drawn from the manifesto: *"Una palabra puesta en su sitio enciende algo."*
 - One-line subhead: *"Acompañamos la educación de los niños venezolanos. Desde Madrid. Hacia Venezuela."*
 - **Donation widget** beneath the headline (charity:water pattern): monthly / once toggle, three amount pills (25 € / 50 € / 100 €), custom amount input, yellow **Donar** CTA. In **Mode A (pre-registration)**: replaced with a waitlist signup — *"Recibe noticia cuando podamos recibir donaciones."*
@@ -64,7 +64,7 @@ One scroll. Whole story.
 **4. Origin teaser**
 - Title: *"Una herencia"*
 - One short paragraph teasing the family thread (one beat on Eladio, one on Opa, one on today).
-- One photo inline: **`Eduardo-Aleman-Eladio-Aleman-y-el-cronista-de-Valencia-Alfonso-Marin.jpg`** — both grandfathers in one frame.
+- One photo inline: **`assets/photography/family/Eladio-Eduardo-AlfonsoMarin-tres-generaciones.jpg`** — both grandfathers in one frame.
 - Link: *"Conoce el origen →"* → `/origen`.
 
 **5. How it works** (three cards, ink-on-paper or paper-on-kraft)
@@ -99,7 +99,7 @@ The deep page where the family lives.
 - Below the letter, the typeset text of `content/about.es.md` — the four-paragraph first-person origin story.
 - Photographs slotted inline:
   - Near the Eladio paragraph: the three-generation group shot.
-  - Near the Eduardo paragraph: **Eduardo at his desk** (the intimate desk shot).
+  - Near the Eduardo paragraph: **`Eduardo-Aleman-Perez-desk.jpg`** (the intimate desk shot).
   - Near the "Hoy" paragraph: paper texture or yellow-beam graphic (or, when ready, a portrait of Camila).
 
 **3. The closing**
@@ -145,9 +145,7 @@ The frictionless action page. Two modes, depending on legal status.
 
 One column. Restrained.
 
-- **General:** `hola@propagaluz.com` *(or whatever email address is set up — pending confirmation from Camila)*.
-- **Partnerships:** `andres@propagaluz.com`.
-- **Press:** `prensa@propagaluz.com` (v2).
+- **Single working address:** `camila@propagaluz.com` for v1. All inquiries — general, partnerships, press — land here. As the foundation grows, separate addresses (`andres@`, `prensa@`, `hola@`) get added and the contact page reorganizes accordingly.
 - Social handles when applicable.
 - A short, warm note thanking the visitor for writing.
 
@@ -193,7 +191,7 @@ For the build phase.
 - **Hosting**: Vercel. `propagaluz.com` already registered.
 - **i18n**: Next.js routing-based — `/...` for Spanish (root), `/en/...` for English. Content lives in markdown at `content/` with `.es.md` / `.en.md` suffixes; routes load the right locale. No translation libraries needed for static content (per the *neither is a translation* rule).
 - **Donation infrastructure**:
-  - **Pre-registration (Mode A):** email capture via Resend / Loops / ConvertKit. Pick one in the build phase.
+  - **Pre-registration (Mode A):** email capture via **Resend** (confirmed). Resend Audiences for the waitlist list; Resend Emails for transactional confirmations. Reasons: clean React/Next.js integration, generous free tier, owned by people who care about deliverability and design.
   - **Post-registration (Mode B):** Stripe Checkout (hosted) — fastest path to live donations. Custom Stripe Elements later if we need more design control.
 - **Forms**: react-hook-form + zod for validation.
 - **Motion**: Motion.dev as the default. GSAP-react reserved for a possible scroll-pinned hero in v2.
@@ -224,7 +222,7 @@ The minimum for a real foundation website:
 - Working analytics (Plausible).
 - Working cookie banner (GDPR-compliant).
 
-**Out of scope for v1:** the handwritten letter (waiting on Camila), the live donation flow (waiting on registration), partner names anywhere (waiting on signed agreements), beneficiary photography (waiting on partners + consent), the protest photo, the 1997 inauguration photo (cropping decision pending).
+**Out of scope for v1:** the handwritten letter (waiting on Camila), the live donation flow (waiting on registration), partner names anywhere (waiting on signed agreements), beneficiary photography (waiting on partners + consent). **The 2016 protest and 1997 inauguration photographs are held entirely from v1** (decision recorded in `assets/photography/CATALOG.md` and `DECISIONS.md`); both live in `assets/photography/archive/` as internal record.
 
 ## v2 scope · the second wave (post-launch)
 
@@ -241,10 +239,17 @@ Added in order as material lands:
 
 ---
 
-## What I need from Camila to start the build
+## What's locked, what's pending
 
-1. **The email address** that you set up. I have `hola@propagaluz.com` and `andres@propagaluz.com` as placeholders in the contact page and footer; tell me what the real addresses are so they go in correctly the first time.
-2. **A portrait of yourself** in `assets/photography/camila/` when you're ready. Not blocking — the site can launch without it, but it makes the "Hoy" / today section richer.
-3. **Decisions on the two sensitive photographs** (1997 inauguration and 2016 protest — see `INBOX-NOTES.md`). Crop, hold, or use? I lean toward *crop the inauguration, hold the protest for v1*.
+**Locked (2026-06-06):**
+- Contact address for v1: `camila@propagaluz.com` (single working mailbox).
+- Mode A waitlist provider: **Resend**.
+- Photo decisions: 1997 inauguration → archived. 2016 protest → archived. Both held from v1.
+- Family photos cleared for public site: three (desk, rotativa, three-generations group).
 
-Everything else — the manifesto, the typeset origin, the family photos, the visual system, the partner outreach — is already on disk. The next operational step is the **build phase**: scaffolding the Next.js project in `web/`, wiring the home and origen pages, then deploying to Vercel.
+**Pending (not blocking launch):**
+- A portrait of Camila — goes to `assets/photography/camila/` when ready. Site can launch without it.
+- The handwritten founder's letter — goes to `assets/photography/letter/letter-final.jpg` when ready. Homepage and `/origen` have a slot waiting; site launches with the slot hidden or holding a placeholder until then.
+- Andrés's own propagaluz email — when added, the contact page splits into general + partnerships addresses.
+
+The next operational step is the **build phase**: scaffolding the Next.js project in `web/`, wiring the home and origen pages, then deploying to Vercel.

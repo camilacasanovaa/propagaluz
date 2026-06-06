@@ -1,7 +1,7 @@
 # Outreach · CECODAP
 
 **Para:** [encontrar contacto en cecodap.org · ver README]
-**CC:** [correo de Andrés Casanova Vegas]
+**CC:** [pendiente — añadir cuando Andrés tenga correo de propagaluz]
 **Asunto:** Propagaluz · una nueva fundación quiere apoyar a CECODAP
 
 ---
@@ -32,8 +32,8 @@ Un saludo,
 
 **Camila Casanova**
 Fundadora, Propagaluz
-[correo de contacto] · [teléfono]
+camila@propagaluz.com · [teléfono]
 
 **Andrés Casanova Vegas**
 Responsable legal, Propagaluz
-[correo de contacto]
+(contacto a través de camila@propagaluz.com mientras se habilita su cuenta)

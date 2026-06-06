@@ -98,12 +98,20 @@ Tech: Next.js 15 + Tailwind + shadcn/ui + Motion.dev + Plausible analytics + Str
 
 Three user journeys named: cold donor (~90s to donate), press/partner (read Origen, contact), warm donor (~30s to donate).
 
-## 2026-06-06 · Family photo catalog (INBOX-NOTES.md)
-Five archival photos landed in `assets/photography/inbox/`. Catalog in `INBOX-NOTES.md`.
-- ✅ **Eduardo at the desk** — closing image of /origen.
-- ✅ **Eduardo at the rotary press** — homepage hero candidate.
-- ✅ **Three generations at the press** — /origen hero or home origin teaser.
-- ⚠️ **1997 inauguration** — likely features President Rafael Caldera. Recommendation: crop tightly to family, or hold.
-- ⚠️ **2016 protest** — Eduardo speaking at a "ataque contra El Carabobeño" rally. Recommendation: hold for v1; revisit if/when a longer-history page exists.
+## 2026-06-06 · Family photo catalog and decisions
+Five archival photos landed in `assets/photography/inbox/`. Curated and reorganized 2026-06-06. Catalog in `assets/photography/CATALOG.md`.
 
-Decisions on the two sensitive photos pending Camila's call.
+**Cleared for v1 public site, in `assets/photography/family/`:**
+- ✅ `Eduardo-Aleman-Perez-desk.jpg` — closing image of `/origen`.
+- ✅ `Eduardo-Aleman-Perez-rotativa.jpg` — homepage hero.
+- ✅ `Eladio-Eduardo-AlfonsoMarin-tres-generaciones.jpg` — `/origen` hero or homepage origin teaser.
+
+**Held from v1, in `assets/photography/archive/` (internal record only):**
+- ⛔ `Inauguracion-El-Carabobeno-1997.jpg` — likely features President Rafael Caldera. Camila confirmed: hold.
+- ⛔ `Eduardo-protesta-El-Carabobeno-2016.jpg` — Eduardo at a *"ataque contra El Carabobeño"* rally. Camila confirmed: hold for v1; revisit only if a longer-history page is later built.
+
+## 2026-06-06 · Contact email — `camila@propagaluz.com`
+Single working mailbox for v1. All inquiries — general, partnerships, press — land here. Wired into the contact page, footer, and outreach drafts. When Andrés gets his own propagaluz address, contact splits.
+
+## 2026-06-06 · Mode A waitlist provider — Resend
+**Resend** locked in for the pre-registration waitlist email capture. Reasons: clean React/Next.js integration, generous free tier, good design defaults. Resend Audiences for the list; Resend Emails for transactional confirmations.
