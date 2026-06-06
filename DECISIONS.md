@@ -70,3 +70,19 @@ v1 lives at `content/about.es.md` / `content/about.en.md`. **First person, Camil
 
 ## 2026-06-06 · Outreach emails drafted (Entreculturas + CECODAP)
 Two Spanish outreach emails on disk at `content/outreach/`. Both from Camila with Andrés Casanova Vegas in copy. Each proposes a first conversation, names a specific potential program, acknowledges Camila's minor status upfront, and explains the family legacy in one paragraph as context (not as flex). Operational README in the same folder covers: domain registration prerequisite, mailbox setup, CECODAP contact discovery, follow-up cadence, and the recommended sequence (Entreculturas first, wait one week, then CECODAP).
+
+## 2026-06-06 · Domain — propagaluz.com (already registered)
+Camila already holds **propagaluz.com**. Hosting will be **Vercel**. Both confirmed. Next operational steps: connect the domain to a Vercel project once we have a v1 site to deploy; set up email at `camila@propagaluz.com` / `andres@propagaluz.com` (via Google Workspace or registrar mailbox) **before** sending the outreach emails.
+
+## 2026-06-06 · Visual direction — one direction, deepened
+Camila named charity:water and Max Strong (maxstrong.org) as references. Both captured to `assets/refs/`. Direction decided: **charity:water's cinematic warmth + Max Strong's hand-touched intimacy**, anchored on the buttery yellow already in the logo. The three-direction spread was skipped — references made the direction obvious.
+
+Full system written to `DESIGN.md`: palette (paper · ink · luz · carabobo · kraft), typography (Lovelo Black + GT Sectra aspirational / Source Serif 4 free fallback), photography direction (real never stock; Camila + family for v1; beneficiary photography v2 with consent), motion vocabulary (restrained, beam animation on logo, ken-burns hero), layout (one-hero-one-image card-block layout below).
+
+**Camila's recurring rejection — corporate / cold / BS / uninspiring / not moving — encoded as anti-patterns in §What this is NOT.**
+
+## 2026-06-06 · Handwritten founder's letter — committed
+The site will feature a **handwritten letter from Camila**, photographed and displayed as an image. ~150–300 words in her own hand, in Spanish, signed. Lives at `assets/photography/letter/letter-final.jpg` once produced. Shape and instructions in `DESIGN.md §The handwritten letter`. Camila writes it; the typeset version (`content/about.es.md`) sits below it as accessibility fallback and English mirror.
+
+## 2026-06-06 · Strategic note — Max Strong Project is a peer
+Maxstrong.org (the Max Strong Project) is a Venezuelan-American foundation based in Caracas + Miami, founded 2025, with a similar diaspora-bridge model. **They are a peer of propagaluz**, not just a visual reference. Worth a closer study of their operational moves once we have visual direction settled. Filed under `research/peers/` for follow-up.

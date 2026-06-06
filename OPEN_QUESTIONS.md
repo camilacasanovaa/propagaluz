@@ -30,11 +30,18 @@ Resolved questions live in `DECISIONS.md`.
 17. **Camila's brother.** She mentioned he has helped from the start. Decide whether to acknowledge him on the About page or elsewhere (or not at all in public copy).
 
 ## Operational — sending the outreach emails
-18. **Domain registration.** Buy `propagaluz.org` (or `.es` / `.com` if `.org` is taken). ~12€/year. Triggers everything downstream: email addresses, website hosting, business identity. The single highest-leverage operational move pending. Both outreach emails depend on this for institutional credibility.
-19. **Email infrastructure.** Once the domain exists: create `camila@propagaluz.org` and `andres@propagaluz.org`. Use Google Workspace (~6€/user/month) or the free mailbox most registrars include. **Do not send the outreach emails from a personal address if avoidable.**
+18. **Domain — propagaluz.com — registered.** Closed.
+19. **Email infrastructure.** Set up `camila@propagaluz.com` and `andres@propagaluz.com` before sending outreach. Google Workspace (~6€/user/month) is the cleanest path. Many registrars include a free mailbox.
 20. **CECODAP contact email.** Not obvious from their site. Try the *Contacto* form, their LinkedIn, or DM their Instagram for the right partnership-inquiry address. See `content/outreach/README.md` for the path.
 21. **Andrés reviews the drafts.** Both outreach emails name Andrés as legal officer in copy. He should read both before they go out and approve the framing + his contact details.
 22. **Send Entreculturas first; wait one week; then send CECODAP.** Sequence reasoning in `content/outreach/README.md`.
+
+## Visual + assets
+23. **Image inbox is live.** Camila drops anything she has into `assets/photography/inbox/`. Curated subfolders also exist: `family/`, `camila/`, `letter/`. The inbox is the no-think dump location; subfolders are for when she wants to organize.
+24. **Handwritten founder's letter (Camila to write).** Shape and instructions in `DESIGN.md §The handwritten letter`. Output to `assets/photography/letter/letter-final.jpg` when ready.
+25. **GT Sectra licensing.** Aspirational typeface for body/editorial. Commercial Type license cost needs to be checked before commit. Free fallback in v1 is Source Serif 4 (Google Fonts).
+26. **Lovelo license check — still open.** Wordmark uses Lovelo Black. Free for personal use; commercial/foundation use needs confirmation from Renick Bell before public launch.
+27. **Peer study — Max Strong Project.** They are a peer foundation (Venezuelan-American, diaspora-bridge model, similar founder profile). Worth a short research note in `research/peers/maxstrong.md` once visual direction is locked. Operational moves to study: recurring donation flow, story-driven program pages, the "I'm Eleven" personal callouts.
 15. **About page draft.** After manifesto, write the origin story. Three sober paragraphs: Eladio, Eduardo, Camila. Photographs from family archive if available.
 16. **Site architecture.** Pages: Home, Manifesto, About (the legacy), Where the money goes (partners), Donate, Contact, Press. Eventually a journal/blog for foundation updates. Decide after manifesto lands.
 
