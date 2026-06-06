@@ -1,23 +1,21 @@
 # Propagaluz · Manifesto
 
-In 1933, in a printing shop in Valencia, a young journalist named Eladio Alemán Sucre founded a four-page newspaper. He called it El Carabobeño. Before that one he had founded another, a weekly, brief, written against the grain of its time. He had called it Propagaluz. The idea was that a word in its proper place sets something alight, and that the something can travel hand to hand until it changes what seemed unmovable.
-
-Almost a hundred years later, his grandson Eduardo Alemán Pérez died in Miami still holding the same conviction. He ran El Carabobeño for thirty-seven years. He defended the printed word with the same stubbornness with which his father had founded it. When the press had to be turned off, he moved the trade to another medium. The family called him Opa.
-
-This foundation carries his name inside it. It repeats, almost a century later, the name of the weekly of the thirties, and keeps Opa, three letters wide, in the middle of the word.
+A word in its proper place sets something alight. The something can travel hand to hand until it changes what seemed unmovable. Propagaluz is the bet on that word, on that something, on those hands.
 
 It is a foundation of intention.
 
-We exist so that the children of Venezuela, from age three to age twenty, may reach an education that is at this moment out of their grasp. We do this in company, by choice and because it makes sense. Organizations have been working in the classrooms of the neighborhoods where it matters most for decades, and our role is to feed them with the resources their work deserves. We will work first with Fe y Alegría, who have been doing this since 1955 in two hundred Venezuelan schools, and with CECODAP, who have defended the rights of children since 1984 with a method in which children are protagonists of their own voice.
+We exist for the children of Venezuela whose childhood is waiting for a school, a class, a notebook, a teacher who stays the whole year. We exist for the girl who already knows she wants to read and still has nowhere to go. We exist for the boy whose pages ran out too soon. We exist for the classroom waiting for children to sit in it again. We exist for the hand learning to hold a pencil for the first time. We exist for the question a child keeps and does not yet know where to ask. We exist for the generation growing up in pause, with the intelligence intact and the opportunity half-given.
 
-Every euro, every dollar, and every bolívar that passes through our hands will have a known destination and a verifiable result. We will publish each year a detailed account of where the money traveled, to whom, with what outcome. The donor and the recipient will see the same number. Transparency is the only honest place to begin.
+We believe a child's dignity fits in concrete things: a chair in a classroom, a whole book ahead, and an adult who listens when they speak. The rest the child builds.
 
-We will tell true stories, with consent, with the care owed to anyone whose face will travel the internet. The child you see on these pages is the protagonist of their own story. They have a life that continues after the photograph. A life that is entirely their own.
+We believe education is a form of light, and that this light, once lit, sustains itself. A class begins. A book opens. A question asked out loud finds an answer. Each gesture multiplies the next.
 
-We will speak in Spanish first, because it is the language in which our grandparents wrote, the language in which a Venezuelan child learns to read, the language in which we dream at home. English will have its place too, written with the same dedication, in its own voice. The two languages are native, each in its own right.
+We believe that a child who learns to read is a child who is going to ask questions. And that a child who asks questions is a child who is building, without yet knowing it, the place they will one day arrive.
 
-We attend to what is ours: the education of Venezuelan children, and the right of a child to say what they think. The rest stays with those who have the voice and the knowledge for it. Our light belongs to the classroom, to the book, to the question.
+We do this in company, by choice and because it makes sense. Others have spent decades doing this work in the classrooms of Venezuela, and our place is beside them, with the resources their work deserves. Every euro, every dollar, and every bolívar that passes through our hands will have a destination: a class that continues, a child who returns to school, a girl who asks out loud for the first time.
 
-We will keep the word we give. We will work slowly when slowness is called for, faster when possible, and always at the pace that honesty sustains. If we grow, it will be because the trust of those who give to us permits it. If a moment comes to stop, we will say so out loud.
+What we promise, we keep. We will work slowly when slowness is called for, faster when possible, and always at the pace honesty sustains.
 
-This foundation belongs to the children it serves. It is a promise kept in the name of those who taught us, for nearly a century, that the word matters, in any format, in any era. The rest is earned, day by day.
+This foundation belongs to the children it serves. It is a promise we repeat every day, in their name, with their light ahead.
+
+The rest is earned, day by day.
