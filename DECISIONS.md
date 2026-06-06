@@ -62,3 +62,6 @@ After three rejected drafts (v0 atmospheric, v1 biographical+operational, v2 too
 The approved manifesto lives at `content/manifesto.es.md` and `content/manifesto.en.md`. ~270 words each. Six convictions, one litany, no school furniture, no boy/girl split, no pace talk, no partner positioning. Holds the family vocation in the conviction *"una palabra puesta en su sitio enciende algo"* without naming the family. The names belong to the About page.
 
 This is the manifesto. No re-litigating without explicit reason.
+
+## 2026-06-06 · About page v0 drafted
+The origin story page lives at `content/about.es.md` and `content/about.en.md`. ~620 words each. Editorial register, four sections — **El nombre / Eladio (1906–1984) / Eduardo · Opa (1945–2021) / Hoy**. Names all the family figures explicitly: Eladio, Eduardo, Opa, Diana Van der Meer, Marisol Alemán de López, the four children of Eduardo (Diana Andrea, Eduardo Enrique, Daniel Alberto, Fabiana), Camila, Andrés Casanova Vegas. No politics named (Gómez period referenced as "a censor"; Chávez/Maduro period as "years in which sustaining a newspaper cost more and more"). Pending Camila's review.

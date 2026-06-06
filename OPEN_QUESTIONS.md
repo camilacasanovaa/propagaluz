@@ -23,8 +23,11 @@ Resolved questions live in `DECISIONS.md`.
 12. **Spanish vs English on the site.** Recommendation: **Spanish primary on propagaluz.org**, English mirror with a language toggle. Both written natively, never machine-translated. Camila to confirm.
 13. **Visual direction round (broader than logo).** Once the manifesto draft is approved, run three parallel directions exploring different aesthetic stances on the same brief. Camila chooses; the chosen direction is written into `DESIGN.md`. Tools: Lazyweb refs once token is available; otherwise `~/.claude/skills/open-design/design-systems/` and `ui-ux-pro-max`.
 
-## Content (manifesto approved · what's next)
-14. **Manifesto v3 approved.** See `DECISIONS.md`. Closed.
+## Content
+14. **Manifesto v3 approved.** Closed.
+15. **About page v0 — pending Camila's review.** Drafted in both languages at `content/about.es.md` / `content/about.en.md`. Holds full family DNA in editorial register.
+16. **Family photographs.** Camila to source from family archive: photographs of Eladio, Eduardo (alone and with Diana), Marisol if available, El Carabobeño mastheads or pages, any surviving images of *El Bolígrafo* or *Propagaluz* the newspapers. File at `assets/photography/family/`. Will be slotted into the About page during the build phase.
+17. **Camila's brother.** She mentioned he has helped from the start. Decide whether to acknowledge him on the About page or elsewhere (or not at all in public copy).
 15. **About page draft.** After manifesto, write the origin story. Three sober paragraphs: Eladio, Eduardo, Camila. Photographs from family archive if available.
 16. **Site architecture.** Pages: Home, Manifesto, About (the legacy), Where the money goes (partners), Donate, Contact, Press. Eventually a journal/blog for foundation updates. Decide after manifesto lands.
 
