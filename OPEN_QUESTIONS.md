@@ -1,24 +1,34 @@
 # Open questions
 
-Things we have not yet decided. Each carries enough context to be picked up cold in any future session.
+Things still unresolved. Each carries enough context to be picked up cold in any future session.
+
+Resolved questions live in `DECISIONS.md`.
 
 ## Legal and structural
-1. **Where to register the foundation.** Spain (EU non-profit framework, faster, donor base of Spanish-speakers in Madrid) versus the United States (501c3 unlocks tax-deductible donations from US donors, harder to register, harder for minors). It is also possible to register one and operate cross-border. A specialist consultation is the next step.
-2. **Camila is a minor.** A registered foundation typically requires an adult founding officer or trustee. Most plausible path: Camila is founder and creative director; an adult family member (father, family lawyer) holds the legal officer role until Camila reaches majority. Settle before any registration paperwork.
-3. **The two named co-founders.** Two people are nominally co-founders but have not contributed. This is a governance, tax, and liability risk. Decide before registration: keep, demote to advisors, or remove. A formal agreement on roles is the minimum hygiene.
-4. **Funds movement Spain → Venezuela.** Sanctions, banking, FX. The cleanest path is likely to channel through a partner organization's Spanish chapter (Fe y Alegría has one). Direct transfer is harder and more exposed.
-5. **GDPR and donor privacy.** A Spain-registered foundation collecting donor data must comply with GDPR. A privacy policy and data processing addendum will be needed before donation forms go live.
+1. **Where to register the foundation.** Spain (EU non-profit framework, faster, donor base of Spanish-speakers in Madrid) versus the United States (501c3 unlocks tax-deductible donations from US donors, harder to register). Possible to register one and operate cross-border. Working hypothesis: **register in Spain first** — Madrid is operational base, donor base is local, Andrés Casanova Vegas (the adult-of-record) is Spanish-resident. Add a US fiscal sponsor later if US donor pipeline justifies it. **Next step:** consult a Spanish foundation-law specialist.
+2. **Funds movement Spain → Venezuela.** Cleanest path: channel through **Entreculturas** (Fe y Alegría's Spanish affiliate) for the Fe y Alegría side — they handle the cross-border legal/tax routing themselves. For CECODAP, direct transfer Spain → Venezuela requires banking research (sanctions compliance, FX, intermediary banks).
+3. **GDPR and donor privacy.** Required before any donation form goes live. Standard Spanish foundation privacy policy template exists; specialist review needed.
+4. **Annual reporting / audit cadence.** Required for both Spanish foundation registration and for donor trust. Even a v1 should publish an annual report.
 
-## Partnerships
-6. **Fe y Alegría — what kind of agreement.** Can we hold a formal agreement permitting use of their name and logo on our site and social? What is the term, the obligation, the reporting cadence? First step: reach out to Entreculturas (Fe y Alegría's Spanish affiliate, based in Madrid) for an introductory conversation.
-7. **One partner or many.** Pros of one: clarity of story, deeper relationship, simpler audits. Pros of many: resilience to a single partner's troubles, broader impact, optionality. Working recommendation: start with one for v1; add a second once propagaluz has its own funding rhythm.
-8. **Working directly with schools in Venezuela.** Tempting but operationally complex (vetting, oversight, accounting, safety). Likely not viable for v1. Revisit after two years of partner-mediated operation.
+## Partnerships (pending outreach)
+5. **Entreculturas conversation.** Reach out to Madrid office (Calle Maldonado 1, planta 1; madrid@entreculturas.org; 915 771 817). The ask: a formal partnership permitting propagaluz to channel funds and reference Fe y Alegría by name/logo. **Andrés should be present** for the initial conversation given Camila is a minor.
+6. **CECODAP conversation.** Reach out via cecodap.org. Same shape: formal partnership, funding a specific deliverable (a publication, a training module, a children's-rights program). Less established a procedure than Entreculturas; expect more bespoke conversation.
+7. **Identify a specific Fe y Alegría program / region to fund.** Generic "money to Fe y Alegría" is operationally fine but narratively flat. **Strong candidate: a Fe y Alegría school in Carabobo state** — closes the loop with the family's home and El Carabobeño's geography. If their school presence in Carabobo is sparse, the next-best is a Caracas school in an underserved parish.
+8. **Identify a specific CECODAP deliverable to fund.** A publication of *Ediciones El Papagayo*? A teacher-training module? A children's-voice program? Pick one with a name and a measurable outcome.
 
-## Brand and product
-9. **The current logo.** Camila has it but has not shared it yet. Pending real critique.
-10. **The Spanish/English question.** Recommendation pending Camila's call: Spanish primary on propagaluz.org; English mirror at the same URL with a language toggle.
-11. **What "defiant" defies.** Working internal answer: defiant against indifference, against the slow attrition of a child's potential, against the conventions of the sector. Never against a regime in public copy. Camila to confirm or refine.
+## Brand and visual system
+9. **The current logo file.** Camila needs to save the source PNG/SVG at `~/Documents/PROJECTS/propagaluz/assets/logo/propagaluz-v1.png` (or SVG). If a Figma/Illustrator file exists, save the source at `assets/logo/source/`. Full critique in `assets/logo/CRITIQUE.md`.
+10. **Typeface identification.** What heavy condensed sans is the wordmark in? Determines whether we license it or commission a custom redraw.
+11. **Logo system extensions** (per `assets/logo/CRITIQUE.md`): horizontal lockup, standalone icon (probably the beam alone), dark-mode behavior, saturated secondary yellow for fragile contexts.
+12. **Spanish vs English on the site.** Recommendation: **Spanish primary on propagaluz.org**, English mirror with a language toggle. Both written natively, never machine-translated. Camila to confirm.
+13. **Visual direction round (broader than logo).** Once the manifesto draft is approved, run three parallel directions exploring different aesthetic stances on the same brief. Camila chooses; the chosen direction is written into `DESIGN.md`. Tools: Lazyweb refs once token is available; otherwise `~/.claude/skills/open-design/design-systems/` and `ui-ux-pro-max`.
 
-## Strategy
-12. **The conduit model — is it the long-term shape, or v1.** Propagaluz as a donations conduit to Fe y Alegría is a low-risk, high-clarity v1. Long term, propagaluz may run its own programs (scholarships, journalism mentorships for Venezuelan youth, partnerships with diaspora artists). Worth naming as a horizon now, even if v1 is conduit-only.
-13. **Family safety.** If propagaluz becomes visible, does its visibility put any Venezuelan-based family member at risk? Settle before launch.
+## Manifesto and content
+14. **Manifesto v0 draft.** Entry criteria: legacy research landed (done), Round 2 closed (done), partner direction settled (done). **Ready to write.** Output goes to `content/manifesto.md`. Hold the no-politics-named + no-negatives rules. Land in Spanish first, then English natively.
+15. **About page draft.** After manifesto, write the origin story. Three sober paragraphs: Eladio, Eduardo, Camila. Photographs from family archive if available.
+16. **Site architecture.** Pages: Home, Manifesto, About (the legacy), Where the money goes (partners), Donate, Contact, Press. Eventually a journal/blog for foundation updates. Decide after manifesto lands.
+
+## Family-archive items pending
+17. **Photographs of Eladio and Eduardo** — Camila can source from family. File at `assets/photography/family/`.
+18. **Founding dates of El Bolígrafo and Propagaluz** — Camila to ask family.
+19. **Surviving issues / mastheads of El Bolígrafo or Propagaluz** — Camila to ask family. Even a single photographed page would be transformative for the About story.

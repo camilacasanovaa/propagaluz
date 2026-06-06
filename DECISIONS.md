@@ -22,3 +22,30 @@ Neither is a translation of the other. Each is written natively. Reason: propaga
 
 ## 2026-06-06 · Real photography, never stock
 If we cannot get real, we use type and color. Reason: stock imagery is the visual signal of every generic non-profit. Children pictured with dignity, never as objects. Settled.
+
+## 2026-06-06 · Cause framing — education leads, voice is the outcome
+Public copy leads with education for underserved Venezuelan children. Freedom of speech / the right to be heard is framed as the outcome of education, not as a parallel cause. Reason: a foundation that channels donations to schools is operationally clear; a foundation that does two unrelated things is operationally diffuse. The two are one cause when education is the *practice* and voice is the *outcome*. Settled.
+
+## 2026-06-06 · Defiance has explicit objects
+Propagaluz is defiant against indifference, against the slow attrition of a child's potential, against the conventions of the sector (charity-graphic slop, pity asks, bake-sale aesthetics). Never against a government, party, or named leader in public copy. Reason: defiance without an object is empty; defiance with the wrong object endangers the work. Settled.
+
+## 2026-06-06 · Sole founder — co-founders removed
+Camila Casanova is the sole founder of propagaluz. The two previously-named co-founders are removed from the structure. Reason: they did not contribute. A foundation's named officers carry legal and tax responsibility; absent contributors are governance risk. Settled.
+
+## 2026-06-06 · Adult-of-record — Andrés Casanova Vegas
+Until Camila reaches majority, her father **Andrés Casanova Vegas** holds the legal officer / trustee role required for foundation registration. Camila is founder and creative director. Reason: minor status requires an adult co-signer for any registered foundation in Spain or the US; explicit assignment beats accidental drift. Settled, pending Andrés's formal consent on paper at registration time.
+
+## 2026-06-06 · Conduit model is the long-term shape (with a horizon)
+Propagaluz operates as a donations-conduit to vetted Venezuelan partner organizations, indefinitely. Direct programs (own scholarships, own initiatives) are a horizon possibility once the conduit has proven its track record. Reason: the conduit model is operationally clear, governance-light, and lets propagaluz focus on storytelling and trust rather than program operations. Settled for v1; revisited at year 3–5.
+
+## 2026-06-06 · Partner structure — two complementary partners
+Propagaluz channels donations to **two partners** in v1, structured as a complementary pair:
+- **Fe y Alegría** (via Entreculturas Madrid) — the education pillar.
+- **CECODAP** — the voice pillar (children's rights, participation, advocacy).
+Reason: makes the two-pillar mission structurally legible on the site; spreads risk; broadens donor reach (one religious-rooted, one secular). Both require formal written agreements before naming on the site. Settled in principle, pending outreach. Full reasoning in `research/ecosystem/partners.md`.
+
+## 2026-06-06 · Logo v1 — keep, extend, do not redo
+The current logo (PROPAGALUZ stacked in three lines, beam of light passing through the wordmark) is the v1 primary mark. The beam-through-word concept is the structural move that earns it. System extensions needed (horizontal lockup, standalone icon, dark-mode behavior, typeface identification, saturated secondary yellow) — not a redo. Full critique in `assets/logo/CRITIQUE.md`. Settled.
+
+## 2026-06-06 · Family safety is not a constraint
+Family in Venezuela does not face elevated risk from propagaluz's visibility. The foundation can be public, named, and visible without compromising relatives. Reason: Camila's read, confirmed June 2026. Revisitable if circumstances change.
