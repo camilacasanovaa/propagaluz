@@ -23,8 +23,8 @@ Resolved questions live in `DECISIONS.md`.
 12. **Spanish vs English on the site.** Recommendation: **Spanish primary on propagaluz.org**, English mirror with a language toggle. Both written natively, never machine-translated. Camila to confirm.
 13. **Visual direction round (broader than logo).** Once the manifesto draft is approved, run three parallel directions exploring different aesthetic stances on the same brief. Camila chooses; the chosen direction is written into `DESIGN.md`. Tools: Lazyweb refs once token is available; otherwise `~/.claude/skills/open-design/design-systems/` and `ui-ux-pro-max`.
 
-## Manifesto and content
-14. **Manifesto v0 — pending Camila's review.** Drafted in both languages at `content/manifesto.es.md` and `content/manifesto.en.md`. Holds the family legacy obliquely, leads with education, lands voice as outcome, no politics named, no negatives asserted. Ready for revision or approval.
+## Content (manifesto approved · what's next)
+14. **Manifesto v3 approved.** See `DECISIONS.md`. Closed.
 15. **About page draft.** After manifesto, write the origin story. Three sober paragraphs: Eladio, Eduardo, Camila. Photographs from family archive if available.
 16. **Site architecture.** Pages: Home, Manifesto, About (the legacy), Where the money goes (partners), Donate, Contact, Press. Eventually a journal/blog for foundation updates. Decide after manifesto lands.
 

@@ -56,8 +56,9 @@ The logo wordmark uses **Lovelo** (heavy/black weight), designed by Renick Bell.
 ## 2026-06-06 · Spanish-primary, English-mirror
 propagaluz.org publishes in **Spanish first**, with English as a fully native mirror (not a machine translation). Site language toggle lives in the header. Reason: the foundation's beneficiaries, family, and primary donor base are Spanish-speaking; the family vocation was Spanish-language. English serves the US diaspora and international donors as a first-class second locale. File convention: `manifesto.es.md` / `manifesto.en.md`, mirrored for each piece of public copy. Settled.
 
-## 2026-06-06 · Manifesto iterations — v0 and v1 rejected, v2 drafted
-v0: too atmospheric, repetitive on "propagar," feminine default, slogan at close. Rejected.
-v1: swung the other way — became biographical (Eladio, Eduardo, El Carabobeño named in the body) and operational (partner names, annual report, language policy). Rejected — manifesto is not the place for background or logistics.
+## 2026-06-06 · Manifesto approved (v3)
+After three rejected drafts (v0 atmospheric, v1 biographical+operational, v2 too school-furniture and partner-positioned), **v3 approved by Camila** verbatim.
 
-v2 (on disk in both languages): pure intention. The manifesto talks about **the foundation and the children**. Family belongs to the About page. Partners and operational mechanics belong to a "How it works" page. Manifesto keeps the gold phrases Camila approved from v1 ("Una palabra puesta en su sitio…", "Es una fundación de intención", "Hacemos esto en compañía, por elección y porque tiene sentido", "Cada euro, cada dólar y cada bolívar…", "Esta fundación pertenece a los niños y a las niñas que sirve", "Lo demás se gana día a día") and builds the rest of the manifesto **around** them. Inclusive throughout. ~430 words each. Pending Camila's review.
+The approved manifesto lives at `content/manifesto.es.md` and `content/manifesto.en.md`. ~270 words each. Six convictions, one litany, no school furniture, no boy/girl split, no pace talk, no partner positioning. Holds the family vocation in the conviction *"una palabra puesta en su sitio enciende algo"* without naming the family. The names belong to the About page.
+
+This is the manifesto. No re-litigating without explicit reason.
