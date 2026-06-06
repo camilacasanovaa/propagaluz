@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Source_Serif_4, Inter, Archivo_Black } from "next/font/google";
+import { Source_Serif_4, Inter, Archivo_Black, Fraunces } from "next/font/google";
 import "./globals.css";
 
 const serif = Source_Serif_4({
@@ -21,10 +21,18 @@ const display = Archivo_Black({
   display: "swap",
 });
 
+const accent = Fraunces({
+  variable: "--font-accent",
+  subsets: ["latin"],
+  style: ["italic"],
+  axes: ["opsz", "SOFT"],
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://propagaluz.com"),
   title: {
-    default: "Propagaluz · Una fundación de intención",
+    default: "Propagaluz · Cada niño, una luz.",
     template: "%s · Propagaluz",
   },
   description:
@@ -35,20 +43,16 @@ export const metadata: Metadata = {
     locale: "es_ES",
     alternateLocale: "en_US",
   },
-  icons: {
-    icon: "/favicon.ico",
-  },
+  icons: { icon: "/favicon.ico" },
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html
       lang="es"
-      className={`${serif.variable} ${sans.variable} ${display.variable} h-full antialiased`}
+      className={`${serif.variable} ${sans.variable} ${display.variable} ${accent.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         <a

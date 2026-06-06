@@ -1,24 +1,22 @@
 import Link from "next/link";
 
-type FooterProps = {
-  locale: "es" | "en";
-};
+type FooterProps = { locale: "es" | "en" };
 
 export function Footer({ locale }: FooterProps) {
   const isEs = locale === "es";
 
-  const links = isEs
+  const anchors = isEs
     ? [
-        { href: "/origen", label: "Origen" },
-        { href: "/manifiesto", label: "Manifiesto" },
-        { href: "/donar", label: "Donar" },
-        { href: "/contacto", label: "Contacto" },
+        { href: "#manifiesto", label: "Manifiesto" },
+        { href: "#origen", label: "Origen" },
+        { href: "#promesa", label: "Promesa" },
+        { href: "#donar", label: "Donar" },
       ]
     : [
-        { href: "/en/origin", label: "Origin" },
-        { href: "/en/manifesto", label: "Manifesto" },
-        { href: "/en/donate", label: "Donate" },
-        { href: "/en/contact", label: "Contact" },
+        { href: "#manifesto", label: "Manifesto" },
+        { href: "#origin", label: "Origin" },
+        { href: "#promise", label: "Promise" },
+        { href: "#donate", label: "Donate" },
       ];
 
   const legal = isEs
@@ -31,43 +29,60 @@ export function Footer({ locale }: FooterProps) {
         { href: "/en/privacy", label: "Privacy policy" },
       ];
 
-  const tagline = isEs ? "Propaga la luz" : "Spread the light";
+  const tagline = isEs ? "Propaga la luz." : "Spread the light.";
   const note = isEs
     ? "Fundación en proceso de registro · Madrid"
     : "Foundation in registration · Madrid";
 
   return (
-    <footer className="mt-24 border-t border-ink/[0.08] bg-paper-deep/50">
-      <div className="mx-auto max-w-(--container-wide) px-5 sm:px-8 py-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
-        <div>
-          <div className="font-display text-2xl tracking-tight">Propagaluz</div>
-          <p className="mt-2 text-sm text-ink-muted">{tagline}.</p>
-          <p className="mt-4 text-xs text-ink-muted">{note}.</p>
+    <footer id="contacto" className="mt-24 bg-ink text-paper">
+      <div className="mx-auto max-w-(--container-wide) px-5 sm:px-8 py-16 grid gap-12 sm:grid-cols-2 lg:grid-cols-12">
+        <div className="lg:col-span-5">
+          <div className="font-display text-4xl sm:text-5xl tracking-tight">
+            PROPAGALUZ
+          </div>
+          <p className="mt-4 font-accent italic text-2xl text-luz">{tagline}</p>
+          <p className="mt-6 font-sans text-sm text-paper/65">{note}.</p>
+
+          <div className="mt-8">
+            <p className="font-sans text-xs uppercase tracking-widest text-paper/50 mb-2">
+              {isEs ? "Escríbenos" : "Write to us"}
+            </p>
+            <a
+              href="mailto:camila@propagaluz.com"
+              className="font-display text-xl sm:text-2xl text-paper hover:text-luz transition-colors break-all"
+            >
+              camila@propagaluz.com
+            </a>
+          </div>
         </div>
 
-        <nav aria-label={isEs ? "Páginas" : "Pages"} className="font-sans text-sm">
-          <h3 className="font-display text-xs tracking-widest uppercase text-ink-muted mb-3">
-            {isEs ? "Páginas" : "Pages"}
+        <nav
+          aria-label={isEs ? "Secciones" : "Sections"}
+          className="lg:col-span-3 font-sans text-sm"
+        >
+          <h3 className="font-display text-xs tracking-widest uppercase text-paper/50 mb-4">
+            {isEs ? "Secciones" : "Sections"}
           </h3>
-          <ul className="space-y-2">
-            {links.map((l) => (
-              <li key={l.href}>
-                <Link href={l.href} className="hover:underline">
-                  {l.label}
-                </Link>
+          <ul className="space-y-2.5">
+            {anchors.map((a) => (
+              <li key={a.href}>
+                <a href={a.href} className="hover:text-luz transition-colors">
+                  {a.label}
+                </a>
               </li>
             ))}
           </ul>
         </nav>
 
-        <nav aria-label="Legal" className="font-sans text-sm">
-          <h3 className="font-display text-xs tracking-widest uppercase text-ink-muted mb-3">
+        <nav aria-label="Legal" className="lg:col-span-2 font-sans text-sm">
+          <h3 className="font-display text-xs tracking-widest uppercase text-paper/50 mb-4">
             Legal
           </h3>
-          <ul className="space-y-2">
+          <ul className="space-y-2.5">
             {legal.map((l) => (
               <li key={l.href}>
-                <Link href={l.href} className="hover:underline">
+                <Link href={l.href} className="hover:text-luz transition-colors">
                   {l.label}
                 </Link>
               </li>
@@ -75,31 +90,23 @@ export function Footer({ locale }: FooterProps) {
           </ul>
         </nav>
 
-        <div className="font-sans text-sm">
-          <h3 className="font-display text-xs tracking-widest uppercase text-ink-muted mb-3">
-            {isEs ? "Escríbenos" : "Write to us"}
+        <div className="lg:col-span-2 font-sans text-sm">
+          <h3 className="font-display text-xs tracking-widest uppercase text-paper/50 mb-4">
+            {isEs ? "Idioma" : "Language"}
           </h3>
-          <a
-            href="mailto:camila@propagaluz.com"
-            className="hover:underline break-all"
+          <Link
+            href={isEs ? "/en" : "/"}
+            className="hover:text-luz transition-colors"
           >
-            camila@propagaluz.com
-          </a>
-          <p className="mt-4 text-xs text-ink-muted">
-            <Link
-              href={isEs ? "/en" : "/"}
-              className="hover:underline"
-            >
-              {isEs ? "English" : "Español"}
-            </Link>
-          </p>
+            {isEs ? "English" : "Español"}
+          </Link>
         </div>
       </div>
 
-      <div className="border-t border-ink/[0.06]">
-        <div className="mx-auto max-w-(--container-wide) px-5 sm:px-8 py-4 flex items-center justify-between text-xs text-ink-muted">
+      <div className="border-t border-paper/10">
+        <div className="mx-auto max-w-(--container-wide) px-5 sm:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-paper/50">
           <span>© {new Date().getFullYear()} Propagaluz</span>
-          <span className="font-display tracking-wider uppercase">
+          <span className="font-display tracking-widest uppercase text-paper/65">
             {isEs ? "Hecho con intención" : "Made with intention"}
           </span>
         </div>

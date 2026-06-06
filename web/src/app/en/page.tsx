@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
-import { Hero } from "@/components/home/Hero";
-import { ManifestoPreview } from "@/components/home/ManifestoPreview";
-import { OriginTeaser } from "@/components/home/OriginTeaser";
-import { HowItWorks } from "@/components/home/HowItWorks";
-import { Transparency } from "@/components/home/Transparency";
+import { Hero } from "@/components/sections/Hero";
+import { Manifesto } from "@/components/sections/Manifesto";
+import { HowWeWork } from "@/components/sections/HowWeWork";
+import { Origen } from "@/components/sections/Origen";
+import { Promise } from "@/components/sections/Promise";
+import { DonateBig } from "@/components/sections/DonateBig";
 
 export const metadata: Metadata = {
-  title: "Propagaluz · A foundation of intention",
+  title: "Propagaluz · Every child, a light.",
   description:
     "We support the education of Venezuelan children. From Madrid, toward Venezuela.",
   alternates: {
@@ -19,10 +20,11 @@ export default function HomePageEn() {
   return (
     <>
       <Hero locale="en" />
-      <ManifestoPreview locale="en" />
-      <OriginTeaser locale="en" />
-      <HowItWorks locale="en" />
-      <Transparency locale="en" />
+      <Manifesto locale="en" />
+      <HowWeWork locale="en" />
+      <Origen locale="en" />
+      <Promise locale="en" />
+      <DonateBig locale="en" />
     </>
   );
 }
