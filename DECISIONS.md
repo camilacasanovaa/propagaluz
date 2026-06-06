@@ -56,5 +56,7 @@ The logo wordmark uses **Lovelo** (heavy/black weight), designed by Renick Bell.
 ## 2026-06-06 · Spanish-primary, English-mirror
 propagaluz.org publishes in **Spanish first**, with English as a fully native mirror (not a machine translation). Site language toggle lives in the header. Reason: the foundation's beneficiaries, family, and primary donor base are Spanish-speaking; the family vocation was Spanish-language. English serves the US diaspora and international donors as a first-class second locale. File convention: `manifesto.es.md` / `manifesto.en.md`, mirrored for each piece of public copy. Settled.
 
-## 2026-06-06 · Manifesto v0 drafted
-A v0 manifesto is on disk in both languages: `content/manifesto.es.md` and `content/manifesto.en.md`. ~290 words each. Built on the verified family legacy, holds the no-politics-named + no-negatives rules, leads with education and lands voice as outcome. Pending Camila's review and approval.
+## 2026-06-06 · Manifesto v0 rejected, v1 drafted
+v0 was too atmospheric, too repetitive on "propagar," defaulted to feminine for the beneficiary, leaned on the brand name as a rhetorical hook, and closed with a slogan that split the name. Camila rejected on those grounds.
+
+v1 is on disk in both languages: `content/manifesto.es.md` and `content/manifesto.en.md`. ~620 words each. Reframed as a **declaration of intention**, not a vibe piece. Names Eladio, Eduardo, Opa, El Carabobeño, Fe y Alegría, CECODAP directly. Carries seven specific public commitments (named partners; transparent annual reporting; consent-led storytelling; Spanish-primary publishing; staying in lane; sustainable pace; public announcement if forced to stop). Pending Camila's review.
