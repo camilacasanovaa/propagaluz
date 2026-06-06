@@ -63,5 +63,7 @@ The approved manifesto lives at `content/manifesto.es.md` and `content/manifesto
 
 This is the manifesto. No re-litigating without explicit reason.
 
-## 2026-06-06 · About page v0 drafted
-The origin story page lives at `content/about.es.md` and `content/about.en.md`. ~620 words each. Editorial register, four sections — **El nombre / Eladio (1906–1984) / Eduardo · Opa (1945–2021) / Hoy**. Names all the family figures explicitly: Eladio, Eduardo, Opa, Diana Van der Meer, Marisol Alemán de López, the four children of Eduardo (Diana Andrea, Eduardo Enrique, Daniel Alberto, Fabiana), Camila, Andrés Casanova Vegas. No politics named (Gómez period referenced as "a censor"; Chávez/Maduro period as "years in which sustaining a newspaper cost more and more"). Pending Camila's review.
+## 2026-06-06 · About page — v0 rejected, v1 drafted in first person
+v0 was too long (~620 words), too structural (four section headers), too biographical. Rejected.
+
+v1 lives at `content/about.es.md` / `content/about.en.md`. **First person, Camila's voice.** ~225 words each. Five short paragraphs, no section headers, signed *— Camila Casanova*. Names only Eladio, Eduardo, Opa, El Carabobeño, Propagaluz the newspaper. Everything else — dates of birth/death, intermediate biographies, the four siblings, Marisol, Diana Van der Meer, Andrés — pulled. Lives in the legacy research file; surfaces on a future governance page or press kit if needed. The pivot is the moment of inheritance: *"Cuando murió, en 2021, supe que me tocaba a mí."* Decision rationale: the manifesto is the foundation speaking institutionally; the About page is the founder speaking personally. Two voices, distinct surfaces. Pending Camila's review.
