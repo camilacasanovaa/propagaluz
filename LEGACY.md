@@ -2,33 +2,60 @@
 
 The historical spine of the foundation. Internal — shapes the compass but is not lifted directly into public copy.
 
+The full research with sources lives in `research/legacy/legacy-research.md`. This file is the operational summary.
+
 ## Two names
-- **Eladio Alemán Sucre** — Camila's great-grandfather. Founder of *El Bolígrafo*, the newspaper that later became *Propagaluz*. Later, founder of *El Carabobeño*.
-- **Eduardo Alemán Pérez** ("Opa") — Camila's grandfather. Central figure in *El Carabobeño*'s rise to national significance. Used the paper to insist on truth in a country where corruption sought to dim it.
+
+### Eladio Alemán Sucre (1906–1984)
+Camila's great-grandfather. Born February 28, 1906 in Ocumare del Tuy. Apprentice at a state printing press in Miranda; moved to Valencia in 1925 at age 19; acquired a bookstore there; founded the biweekly **El Bolígrafo**, which he then evolved into the weekly **Propagaluz** — the foundation's namesake. Founded **El Carabobeño** on September 1, 1933, the daily that would become the family's published vocation for the next ninety years. Jailed and then exiled to Havana in 1934–1936 under Juan Vicente Gómez's dictatorship after a censor misread a story about a locust plague as a political signal. Returned after Gómez's death; resumed direction of the paper. First president of the Carabobo Journalists Association. Private secretary to writer José Rafael Pocaterra during Pocaterra's term as president of Carabobo state (1941). Died June 9, 1984. The paper still gives the *Premio de Periodismo "Eladio Alemán Sucre"* as its main annual award.
+
+### Eduardo Alemán Pérez · "Opa" (1945–2021)
+Camila's grandfather. Eladio's son. Studied at Universidad Católica Andrés Bello (Caracas), then at Georgetown and the University of Kansas; worked at the *Buffalo Evening News* through 1969 before returning to Venezuela. Sub-director of *El Carabobeño* from 1972; director from 1984 (his father's death). Married Diana Van der Meer, of Dutch heritage — the source of the family's term *Opa* (Dutch for grandfather). Four children. President of the Bloque de Prensa Venezolano from March 1992. Director of the Inter American Press Association (IAPA) from 1994 — a continent-wide press-freedom body. Spent the last two decades of his life defending *El Carabobeño* against the Chávez and Maduro governments' campaigns of harassment and economic strangulation. When the Maduro government denied newsprint to independent media in 2015–2016, he mounted "a fierce battle" to keep the paper in print. The battle was lost; the paper continues digitally. Died November 8, 2021 in Aventura, near Miami, at 76, with his wife at his side.
 
 ## The thread
-The family vocation: **use the available medium to insist on truth, in service of the country.** In Eladio's and Eduardo's hands, the medium was ink. In Camila's hands, the medium is a foundation that protects the schooling and the voice of the next generation.
 
-The name carries both. *Propaga* = spread, propagate. *Luz* = light. **prOPAgaluz** holds Opa inside the word, the way the work holds him inside the foundation.
+The family vocation in one line: **use the available medium to insist on truth, in service of the country.**
+
+In Eladio's hands the medium was a Valencia bookstore, then *El Bolígrafo*, then *Propagaluz*, then *El Carabobeño*. In Eduardo's hands it was the same paper for forty years, plus a seat on every press-freedom body in the hemisphere. In Camila's hands the medium is a foundation that protects the schooling and the voice of Venezuelan children.
+
+The principle, inherited from Eladio and articulated by Eduardo:
+> ***Los periódicos son para servir. El Carabobeño no es una herencia personal de la familia. Pertenece a la comunidad de Valencia.***
+> Newspapers are meant to serve. *El Carabobeño* is not the family's personal inheritance. It belongs to the community of Valencia.
+
+Generalized: **the work belongs to the people it serves.** Propagaluz is not Camila's foundation; it is the children's.
+
+## The name
+
+- *Propaga* = spread, propagate.
+- *Luz* = light.
+- *Propagaluz* was the weekly newspaper Eladio founded before *El Carabobeño*. The foundation carries its name across nearly a century.
+- **prOPAgaluz** holds *Opa* — Eduardo — inside the word. The hidden grandfather is the name's quiet center.
 
 ## How the legacy surfaces in public copy
-- **About page** — the origin story, told sober and factual. Not triumphalist. The family is the foundation's why, not its boast.
-- **Name etymology** — propagaluz means "spread light." The "OPA" detail is shared where it earns its place.
-- **Mission framing** — education and freedom of speech as continuations of a family vocation, not as opposition to anything.
+
+- **About page** — origin story, sober and factual. Three sentences each on Eladio, on Eduardo, and on the principle they shared. Not triumphalist; the family is the foundation's why, not its boast.
+- **Name etymology** — *Propagaluz* means *spread light*. The original paper. The hidden *Opa*. The double inheritance.
+- **Mission framing** — education and the right to be heard as continuations of a family vocation, not as opposition to anything.
+- **The principle** — *the work belongs to the children it serves*. This can be public. It needs no political framing to carry.
 
 ## How the legacy does NOT surface in public copy
-- Political commentary on current Venezuelan affairs.
-- Anything that names governments, parties, or leaders.
-- Anything that could endanger family still tied to Venezuela.
-- Ancestral pride for its own sake.
 
-## Research status
-A full deep-research audit is underway: `research/legacy/`.
-Scope:
-- Eladio Alemán Sucre's life and journalistic work.
-- *El Bolígrafo* and its evolution into *Propagaluz*.
-- The founding and editorial trajectory of *El Carabobeño*.
-- Eduardo Alemán Pérez's role at *El Carabobeño* and his public stances.
-- The press-freedom and corruption context of Venezuela across their working lives.
+- The names of dictators, presidents, parties, or governments — past or present.
+- The exile-and-jail story, or the 2016 newsprint denial, as victimhood. Either is a story of resilience, not of grievance. Public form: *the work has survived dictatorships before, and intends to.*
+- Ancestral pride for its own sake. The legacy is the standard, not the boast.
+- Specific political stances Eduardo took. He took them; the foundation does not have to.
 
-The output will be appended to `research/legacy/` and summarized into a section of this file when it lands.
+## What still needs verification (from the family side)
+
+- Eladio's exact death location (Caracas per Fundación Polar, Valencia per other sources).
+- Founding dates of *El Bolígrafo* and *Propagaluz* (likely early 1930s).
+- Camila's exact lineage from Eduardo (which of his four children — Diana Andrea, Eduardo Enrique, Daniel Alberto, Fabiana — is her parent).
+- Whether **Marisol Alemán de López**, who designed the paper's 1997 Naguanagua headquarters, is Eladio's daughter (Eduardo's sister).
+- Any surviving issues of *El Bolígrafo* or *Propagaluz* in the family archive.
+- Photographs of Eladio and Eduardo we may use, if Camila chooses, on the About page.
+
+## Working manifesto seed (one sentence)
+
+> Propagaluz spreads light the way our family has for a hundred years: by trusting that a child with a schooling, a book, and a voice changes more than any single page ever can.
+
+(This is a seed for the v0 manifesto draft. To be refined.)
