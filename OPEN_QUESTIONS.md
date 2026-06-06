@@ -18,13 +18,13 @@ Resolved questions live in `DECISIONS.md`.
 
 ## Brand and visual system
 9. **The current logo file.** Camila needs to save the source PNG/SVG at `~/Documents/PROJECTS/propagaluz/assets/logo/propagaluz-v1.png` (or SVG). If a Figma/Illustrator file exists, save the source at `assets/logo/source/`. Full critique in `assets/logo/CRITIQUE.md`.
-10. **Typeface identification.** What heavy condensed sans is the wordmark in? Determines whether we license it or commission a custom redraw.
+10. **Lovelo license check.** Wordmark is set in Lovelo Black by Renick Bell. Free for personal use; **commercial/foundation use needs the license terms verified** before site goes live. If the license is restrictive, two options: (a) reach out to Renick Bell for permission/licensing, (b) commission a redrawn proprietary version that propagaluz owns outright.
 11. **Logo system extensions** (per `assets/logo/CRITIQUE.md`): horizontal lockup, standalone icon (probably the beam alone), dark-mode behavior, saturated secondary yellow for fragile contexts.
 12. **Spanish vs English on the site.** Recommendation: **Spanish primary on propagaluz.org**, English mirror with a language toggle. Both written natively, never machine-translated. Camila to confirm.
 13. **Visual direction round (broader than logo).** Once the manifesto draft is approved, run three parallel directions exploring different aesthetic stances on the same brief. Camila chooses; the chosen direction is written into `DESIGN.md`. Tools: Lazyweb refs once token is available; otherwise `~/.claude/skills/open-design/design-systems/` and `ui-ux-pro-max`.
 
 ## Manifesto and content
-14. **Manifesto v0 draft.** Entry criteria: legacy research landed (done), Round 2 closed (done), partner direction settled (done). **Ready to write.** Output goes to `content/manifesto.md`. Hold the no-politics-named + no-negatives rules. Land in Spanish first, then English natively.
+14. **Manifesto v0 — pending Camila's review.** Drafted in both languages at `content/manifesto.es.md` and `content/manifesto.en.md`. Holds the family legacy obliquely, leads with education, lands voice as outcome, no politics named, no negatives asserted. Ready for revision or approval.
 15. **About page draft.** After manifesto, write the origin story. Three sober paragraphs: Eladio, Eduardo, Camila. Photographs from family archive if available.
 16. **Site architecture.** Pages: Home, Manifesto, About (the legacy), Where the money goes (partners), Donate, Contact, Press. Eventually a journal/blog for foundation updates. Decide after manifesto lands.
 

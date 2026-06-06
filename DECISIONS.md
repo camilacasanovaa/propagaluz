@@ -49,3 +49,12 @@ The current logo (PROPAGALUZ stacked in three lines, beam of light passing throu
 
 ## 2026-06-06 · Family safety is not a constraint
 Family in Venezuela does not face elevated risk from propagaluz's visibility. The foundation can be public, named, and visible without compromising relatives. Reason: Camila's read, confirmed June 2026. Revisitable if circumstances change.
+
+## 2026-06-06 · Wordmark typeface — Lovelo
+The logo wordmark uses **Lovelo** (heavy/black weight), designed by Renick Bell. Free distribution origin (Behance), widely used in indie/editorial design. The system typography (body, secondary display) will be decided in the visual direction round, with Lovelo carried forward as the display anchor. Reason: it's already the mark; cohesion beats novelty. Settled, pending a license-terms check for foundation/commercial use (see OPEN_QUESTIONS).
+
+## 2026-06-06 · Spanish-primary, English-mirror
+propagaluz.org publishes in **Spanish first**, with English as a fully native mirror (not a machine translation). Site language toggle lives in the header. Reason: the foundation's beneficiaries, family, and primary donor base are Spanish-speaking; the family vocation was Spanish-language. English serves the US diaspora and international donors as a first-class second locale. File convention: `manifesto.es.md` / `manifesto.en.md`, mirrored for each piece of public copy. Settled.
+
+## 2026-06-06 · Manifesto v0 drafted
+A v0 manifesto is on disk in both languages: `content/manifesto.es.md` and `content/manifesto.en.md`. ~290 words each. Built on the verified family legacy, holds the no-politics-named + no-negatives rules, leads with education and lands voice as outcome. Pending Camila's review and approval.
