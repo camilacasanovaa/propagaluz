@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
-import { Source_Serif_4, Inter, Archivo_Black, Fraunces } from "next/font/google";
+import { Fraunces, Inter, Antonio } from "next/font/google";
 import "./globals.css";
 
-const serif = Source_Serif_4({
+const serif = Fraunces({
   variable: "--font-serif",
   subsets: ["latin"],
+  style: ["normal", "italic"],
+  axes: ["opsz", "SOFT"],
   display: "swap",
 });
 
@@ -14,18 +16,10 @@ const sans = Inter({
   display: "swap",
 });
 
-const display = Archivo_Black({
+const display = Antonio({
   variable: "--font-display",
   subsets: ["latin"],
-  weight: "400",
-  display: "swap",
-});
-
-const accent = Fraunces({
-  variable: "--font-accent",
-  subsets: ["latin"],
-  style: ["italic"],
-  axes: ["opsz", "SOFT"],
+  weight: ["700"],
   display: "swap",
 });
 
@@ -36,7 +30,7 @@ export const metadata: Metadata = {
     template: "%s · Propagaluz",
   },
   description:
-    "Acompañamos la educación de los niños venezolanos. Desde Madrid, hacia Venezuela.",
+    "Propagaluz acompaña la educación de los niños venezolanos.",
   openGraph: {
     siteName: "Propagaluz",
     type: "website",
@@ -52,7 +46,7 @@ export default function RootLayout({
   return (
     <html
       lang="es"
-      className={`${serif.variable} ${sans.variable} ${display.variable} ${accent.variable} h-full antialiased`}
+      className={`${serif.variable} ${sans.variable} ${display.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         <a

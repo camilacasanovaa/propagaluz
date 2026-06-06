@@ -1,4 +1,4 @@
-import { DonationWaitlist } from "../DonationWaitlist";
+import Image from "next/image";
 
 type Props = { locale: "es" | "en" };
 
@@ -7,56 +7,78 @@ export function Hero({ locale }: Props) {
 
   const copy = isEs
     ? {
-        headlineA: "CADA NIÑO,",
-        headlineB: "una luz", // shown in Fraunces italic
+        headlineA: "Cada niño,",
+        headlineB: "una luz.",
         subhead:
-          "Propagaluz acompaña la educación de los niños venezolanos. Desde Madrid, hacia Venezuela. Sin medias tintas.",
+          "Propagaluz acompaña la educación de los niños venezolanos.",
+        cta: "Donar",
       }
     : {
-        headlineA: "EVERY CHILD,",
-        headlineB: "a light",
+        headlineA: "Every child,",
+        headlineB: "a light.",
         subhead:
-          "Propagaluz supports the education of Venezuelan children. From Madrid, toward Venezuela. Without half-measures.",
+          "Propagaluz supports the education of Venezuelan children.",
+        cta: "Donate",
       };
 
   return (
-    <section id="top" className="relative overflow-hidden">
-      <div className="mx-auto max-w-(--container-wide) px-5 sm:px-8 pt-12 pb-20 sm:pt-20 sm:pb-28">
-        {/* Trust pills */}
-        <div className="flex flex-wrap gap-2 mb-12 font-sans text-xs tracking-widest">
-          <span className="rounded-(--radius-pill) border border-ink/20 px-3.5 py-1.5 text-ink-soft uppercase">
-            Est. 2026
-          </span>
-          <span className="rounded-(--radius-pill) border border-ink/20 px-3.5 py-1.5 text-ink-soft uppercase">
-            Madrid
-          </span>
-          <span className="rounded-(--radius-pill) border border-ink/20 px-3.5 py-1.5 text-ink-soft uppercase">
-            Caracas
-          </span>
-        </div>
+    <section id="top" className="relative min-h-[100svh] flex items-stretch">
+      {/* Left column · type */}
+      <div className="relative z-10 flex-1 lg:flex-[5] flex flex-col justify-center px-6 sm:px-12 lg:px-20 py-24 sm:py-28 bg-paper">
+        <div className="max-w-xl rise">
+          <h1 className="font-display text-[clamp(3.5rem,8vw,7.5rem)] leading-[0.92] tracking-tight text-ink">
+            {copy.headlineA}
+            <br />
+            <span className="font-serif-display-italic font-normal lowercase tracking-tight">
+              {copy.headlineB}
+            </span>
+          </h1>
 
-        <div className="grid lg:grid-cols-12 gap-10 lg:gap-12 items-end">
-          {/* Headline · left */}
-          <div className="lg:col-span-7 rise">
-            <h1 className="font-display text-[clamp(3.25rem,9vw,8rem)] leading-[0.92] tracking-tight text-ink">
-              {copy.headlineA}
-              <br />
-              <span className="font-accent italic font-normal text-azul">
-                {copy.headlineB}
-              </span>
-              <span className="text-luz">.</span>
-            </h1>
+          <p className="mt-8 font-serif text-lg sm:text-xl leading-relaxed text-ink-soft max-w-md">
+            {copy.subhead}
+          </p>
 
-            <p className="mt-8 max-w-(--container-narrow) font-serif text-lg sm:text-xl text-ink-soft leading-relaxed">
-              {copy.subhead}
-            </p>
-          </div>
-
-          {/* Donation card · right */}
-          <div className="lg:col-span-5 rise" style={{ animationDelay: "120ms" }}>
-            <DonationWaitlist locale={locale} variant="hero" />
+          <div className="mt-10 flex items-center gap-4">
+            <a
+              href={isEs ? "#donar" : "#donate"}
+              className="inline-flex items-center px-6 py-3 rounded-(--radius-pill) bg-ink text-paper font-sans text-sm tracking-widest uppercase hover:bg-ink-soft transition-colors"
+            >
+              {copy.cta}
+            </a>
+            <span className="font-serif italic text-sm text-ink-muted">
+              {isEs ? "para opa" : "para opa"}
+            </span>
           </div>
         </div>
+      </div>
+
+      {/* Right column · photo */}
+      <div className="hidden lg:block relative flex-[6]">
+        <Image
+          src="/images/hero-child-reading.jpg"
+          alt={
+            isEs
+              ? "Un niño leyendo un libro en una biblioteca."
+              : "A child reading a book in a library."
+          }
+          fill
+          priority
+          sizes="60vw"
+          className="object-cover hero-image"
+        />
+      </div>
+
+      {/* Mobile · photo banner above */}
+      <div className="absolute inset-x-0 top-0 h-72 lg:hidden -z-0">
+        <Image
+          src="/images/hero-child-reading.jpg"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover hero-image opacity-60"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-paper" />
       </div>
     </section>
   );

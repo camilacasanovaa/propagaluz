@@ -1,25 +1,24 @@
 @import "tailwindcss";
 
-/* ─── Propagaluz · v2 design tokens ─────────────────────────────────────── */
+/* ─── Propagaluz · v3 design tokens ─────────────────────────────────────── */
 
 @theme {
-  /* Palette — locked: paper + ink + luz + azul, plus subtle paper variants */
-  --color-paper: #f4f4f2;        /* grey-cream — page background */
-  --color-paper-pure: #fbfaf7;   /* one notch warmer & lighter, for elevated cards */
-  --color-paper-deep: #e9e8e3;   /* one notch deeper, for subtle section separation */
-  --color-ink: #1a1a1a;          /* warm black, primary type and ui */
+  /* Palette — four tones, near-monochrome, charity:water restraint */
+  --color-paper: #faf7f0;        /* warm white — primary background */
+  --color-paper-pure: #ffffff;   /* true white — cards, elevation */
+  --color-paper-deep: #f3eee2;   /* one notch warmer for subtle layering */
+  --color-ink: #1a1a1a;          /* warm black — text, primary ui */
   --color-ink-soft: #3a3a3a;
-  --color-ink-muted: #6b6b6b;
-  --color-luz: #fdd06f;          /* buttery yellow — signature, CTAs, the light */
-  --color-luz-deep: #f5b733;     /* slightly more saturated yellow for hover/contrast */
-  --color-azul: #012b49;         /* dark blue — credibility anchor */
-  --color-azul-soft: #0a4470;    /* slightly lighter blue for hover/contrast */
-  --color-carabobo: #9f2b1f;     /* held in reserve — family brick red */
+  --color-ink-muted: #757269;    /* warmer muted */
+  --color-luz: #fce49c;          /* lighter butter yellow — the only accent */
+  --color-luz-deep: #f5cf6a;     /* slightly more saturated for hover */
+  --color-rule: #e6e1d4;         /* hairline rules between sections */
+  --color-carabobo: #9f2b1f;     /* reserved — family color, not used in v3 */
+  --color-azul: #012b49;         /* reserved — held from v2, not used in v3 */
 
   /* Typography stacks */
-  --font-display: var(--font-display), "Archivo Black", system-ui, sans-serif;
-  --font-accent: var(--font-accent), "Fraunces", Georgia, serif;
-  --font-serif: var(--font-serif), "Source Serif 4", Georgia, serif;
+  --font-display: var(--font-display), "Antonio", "Bebas Neue", system-ui, sans-serif;
+  --font-serif: var(--font-serif), "Fraunces", Georgia, serif;
   --font-sans: var(--font-sans), "Inter", system-ui, sans-serif;
 
   /* Type scale */
@@ -31,24 +30,24 @@
   --text-2xl: 1.75rem;
   --text-3xl: 2.25rem;
   --text-4xl: 3rem;
-  --text-5xl: 4rem;
-  --text-6xl: 5.5rem;
-  --text-7xl: 7rem;
-  --text-8xl: 9rem;
+  --text-5xl: 4.5rem;
+  --text-6xl: 6rem;
+  --text-7xl: 8rem;
+  --text-8xl: 10rem;
 
   /* Radii */
-  --radius-card: 1.5rem;
+  --radius-card: 0.75rem;        /* quieter rounding */
   --radius-pill: 9999px;
 
   /* Shadows */
-  --shadow-soft: 0 4px 24px -8px rgba(26, 26, 26, 0.08);
-  --shadow-card: 0 12px 36px -14px rgba(26, 26, 26, 0.18);
-  --shadow-luz: 0 8px 32px -12px rgba(253, 208, 111, 0.45);
+  --shadow-soft: 0 4px 24px -10px rgba(26, 26, 26, 0.06);
+  --shadow-card: 0 16px 40px -20px rgba(26, 26, 26, 0.15);
 
   /* Layout widths */
   --container-narrow: 38rem;
   --container-prose: 44rem;
   --container-wide: 76rem;
+  --container-full: 92rem;
 }
 
 /* ─── Base ──────────────────────────────────────────────────────────────── */
@@ -62,7 +61,7 @@ html {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   scroll-behavior: smooth;
-  scroll-padding-top: 5rem;
+  scroll-padding-top: 4rem;
 }
 
 body {
@@ -70,8 +69,9 @@ body {
   color: var(--color-ink);
   font-family: var(--font-serif);
   font-size: var(--text-base);
-  line-height: 1.6;
   font-feature-settings: "kern", "liga", "calt";
+  font-variation-settings: "opsz" 14, "SOFT" 50;
+  line-height: 1.55;
 }
 
 ::selection {
@@ -87,14 +87,27 @@ a {
 
 .font-display {
   font-family: var(--font-display);
-  letter-spacing: -0.02em;
+  font-weight: 700;
+  letter-spacing: -0.01em;
   line-height: 0.95;
+  text-transform: uppercase;
 }
 
-.font-accent {
-  font-family: var(--font-accent);
+/* Fraunces variable axes — body uses small opsz, display uses huge opsz */
+.font-serif {
+  font-family: var(--font-serif);
+  font-variation-settings: "opsz" 14, "SOFT" 50;
+}
+.font-serif-display {
+  font-family: var(--font-serif);
+  font-variation-settings: "opsz" 144, "SOFT" 100;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+.font-serif-display-italic {
+  font-family: var(--font-serif);
   font-style: italic;
-  font-variation-settings: "opsz" 144, "SOFT" 50;
+  font-variation-settings: "opsz" 144, "SOFT" 100;
   letter-spacing: -0.015em;
 }
 
@@ -103,15 +116,29 @@ a {
   letter-spacing: -0.005em;
 }
 
-.font-serif {
-  font-family: var(--font-serif);
+/* Small eyebrow label used throughout sections */
+.eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-ink-muted);
+}
+
+/* Hairline rules between sections — replaces blocky color transitions */
+.section-rule {
+  border-top: 1px solid var(--color-rule);
+}
+
+/* Hero image treatment — warm B&W mixed with original */
+.hero-image {
+  filter: grayscale(0.4) contrast(1.05) brightness(0.96);
 }
 
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
+  *, *::before, *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
@@ -119,18 +146,8 @@ a {
   }
 }
 
-/* Subtle entrance for hero — runs once */
 @keyframes rise {
-  from {
-    opacity: 0;
-    transform: translateY(8px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
 }
-
-.rise {
-  animation: rise 700ms cubic-bezier(0.22, 1, 0.36, 1) both;
-}
+.rise { animation: rise 700ms cubic-bezier(0.22, 1, 0.36, 1) both; }

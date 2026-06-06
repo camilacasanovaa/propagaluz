@@ -7,12 +7,10 @@ export default function EsLayout({
   children: React.ReactNode;
 }) {
   return (
-    <>
+    <div className="relative">
       <Header locale="es" />
-      <main id="main" className="flex-1">
-        {children}
-      </main>
+      <main id="main">{children}</main>
       <Footer locale="es" />
-    </>
+    </div>
   );
 }

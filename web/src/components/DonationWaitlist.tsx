@@ -6,23 +6,23 @@ import { cn } from "@/lib/cn";
 type DonationWaitlistProps = {
   locale: "es" | "en";
   className?: string;
-  variant?: "hero" | "block";
 };
 
 /**
- * Pre-registration (Mode A) waitlist signup, styled like a donation card
- * (per Max Strong's playbook). Three amount pills are visual-only for now;
- * the actual submission captures the email. When the foundation registers,
- * this swaps to a live Stripe Checkout.
+ * Pre-registration (Mode A) waitlist signup with charity:water-style
+ * impact equivalents. Numbers come from Fe y Alegría's own published
+ * cost-per-student: $30/month sponsors one child's education.
+ *
+ * The "When we open" framing communicates that donations are not active
+ * yet — the foundation is being registered as a 501(c)(3) in the US.
  */
 export function DonationWaitlist({
   locale,
   className,
-  variant = "hero",
 }: DonationWaitlistProps) {
   const isEs = locale === "es";
   const [email, setEmail] = useState("");
-  const [selected, setSelected] = useState<string>("50");
+  const [selected, setSelected] = useState<string>("30");
   const [status, setStatus] = useState<"idle" | "submitting" | "ok" | "error">(
     "idle"
   );
@@ -30,37 +30,45 @@ export function DonationWaitlist({
 
   const copy = isEs
     ? {
-        eyebrow: "En proceso de registro",
-        title: "Reserva tu sitio",
-        body: "Aún estamos completando el registro de la fundación en España. Déjanos tu correo y te avisamos en cuanto podamos recibir tu donación.",
-        amountLabel: "Cuando podamos donar",
-        once: "Una vez",
-        monthly: "Mensual",
-        otherLabel: "Otra cantidad",
+        eyebrow: "En proceso de registro como 501(c)(3) en EE. UU.",
+        title: "Apúntate. Te avisamos cuando podamos recibir tu donación.",
+        amountLabel: "Elige una cantidad",
         placeholder: "tu@correo.com",
         cta: "Avísame",
         sending: "Enviando…",
         success: "Hecho. Te escribimos en cuanto abramos.",
         errorGeneric: "Algo no funcionó. Inténtalo de nuevo.",
         errorEmail: "Necesitamos un correo válido.",
+        impactNote: "Cifras basadas en el programa Beca un Estudiante de Fe y Alegría Venezuela.",
       }
     : {
-        eyebrow: "Registration underway",
-        title: "Save your seat",
-        body: "We are still completing the foundation's registration in Spain. Leave your email and we will write to you the moment we can receive your donation.",
-        amountLabel: "When we can accept",
-        once: "One time",
-        monthly: "Monthly",
-        otherLabel: "Other amount",
+        eyebrow: "Registering as a 501(c)(3) in the US",
+        title: "Sign up. We will write to you when we can receive your donation.",
+        amountLabel: "Pick an amount",
         placeholder: "you@email.com",
         cta: "Notify me",
         sending: "Sending…",
         success: "Done. We will write to you when we open.",
         errorGeneric: "Something went wrong. Please try again.",
         errorEmail: "We need a valid email address.",
+        impactNote: "Figures based on Fe y Alegría Venezuela's Sponsor a Student program.",
       };
 
-  const amounts = ["25", "50", "100"];
+  // Impact equivalents, both languages
+  // Source: Fe y Alegría VE — $30/month = one student's schooling
+  const tiers = isEs
+    ? [
+        { amount: "30", impact: "un mes de escuela para un niño." },
+        { amount: "90", impact: "un trimestre escolar completo." },
+        { amount: "360", impact: "un año entero de educación para un niño." },
+      ]
+    : [
+        { amount: "30", impact: "one month of school for one child." },
+        { amount: "90", impact: "a full school term." },
+        { amount: "360", impact: "a full year of education for one child." },
+      ];
+
+  const activeTier = tiers.find((t) => t.amount === selected) ?? tiers[0];
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -90,48 +98,56 @@ export function DonationWaitlist({
   return (
     <div
       className={cn(
-        "rounded-(--radius-card) bg-paper-pure border border-ink/[0.08]",
-        "shadow-(--shadow-card) p-6 sm:p-8 text-ink",
-        variant === "hero" && "max-w-md",
+        "rounded-(--radius-card) bg-paper-pure border border-rule p-7 sm:p-10 text-ink",
         className
       )}
     >
-      <p className="font-display text-xs tracking-widest uppercase text-azul">
+      <p className="font-sans text-xs tracking-widest uppercase text-ink-muted">
         {copy.eyebrow}
       </p>
-      <h3 className="mt-2 font-display text-2xl sm:text-3xl tracking-tight text-ink">
+      <h3 className="mt-3 font-serif-display text-2xl sm:text-3xl tracking-tight text-ink leading-tight">
         {copy.title}
       </h3>
-      <p className="mt-3 font-serif text-sm sm:text-base text-ink-soft leading-relaxed">
-        {copy.body}
-      </p>
 
-      {/* Amount pills — visual intent, captured on submit */}
-      <div className="mt-6">
-        <p className="font-sans text-xs uppercase tracking-widest text-ink-muted mb-2">
+      {/* Amount tiers + impact equivalent */}
+      <div className="mt-8">
+        <p className="font-sans text-xs tracking-widest uppercase text-ink-muted mb-3">
           {copy.amountLabel}
         </p>
-        <div className="flex gap-2">
-          {amounts.map((a) => (
+        <div className="grid grid-cols-3 gap-2">
+          {tiers.map((t) => (
             <button
               type="button"
-              key={a}
-              onClick={() => setSelected(a)}
+              key={t.amount}
+              onClick={() => setSelected(t.amount)}
+              aria-pressed={selected === t.amount}
               className={cn(
-                "flex-1 rounded-(--radius-pill) px-3 py-2.5 font-display text-sm tracking-wide transition-all",
-                selected === a
-                  ? "bg-ink text-paper shadow-(--shadow-soft)"
-                  : "bg-paper border border-ink/15 text-ink-soft hover:border-ink/30"
+                "rounded-(--radius-card) py-3 font-display text-base tracking-wider transition-all",
+                selected === t.amount
+                  ? "bg-ink text-paper"
+                  : "bg-paper border border-rule text-ink-soft hover:border-ink/30"
               )}
             >
-              {a}€
+              ${t.amount}
             </button>
           ))}
         </div>
+
+        {/* Charity:water-style equivalent line */}
+        <div className="mt-5 bg-luz/40 border border-luz-deep/30 rounded-(--radius-card) p-4">
+          <p className="font-serif text-base leading-snug text-ink">
+            <span className="font-display tracking-wider">${activeTier.amount}</span>{" "}
+            <span className="font-serif italic text-ink-soft">
+              {isEs ? "equivale a" : "is the equivalent of"}
+            </span>{" "}
+            {activeTier.impact}
+          </p>
+        </div>
       </div>
 
+      {/* Email capture */}
       {status === "ok" ? (
-        <p className="mt-6 font-sans text-sm text-ink rounded-(--radius-pill) bg-luz px-4 py-3 text-center">
+        <p className="mt-6 font-serif text-base text-ink bg-luz rounded-(--radius-card) px-5 py-4 text-center">
           {copy.success}
         </p>
       ) : (
@@ -149,9 +165,9 @@ export function DonationWaitlist({
             onChange={(e) => setEmail(e.target.value)}
             placeholder={copy.placeholder}
             className={cn(
-              "w-full rounded-(--radius-pill) bg-paper border border-ink/15",
-              "px-4 py-3 font-sans text-sm placeholder:text-ink-muted",
-              "focus:outline-2 focus:outline-offset-2 focus:outline-azul"
+              "w-full rounded-(--radius-pill) bg-paper border border-rule",
+              "px-5 py-3.5 font-sans text-sm placeholder:text-ink-muted",
+              "focus:outline-2 focus:outline-offset-2 focus:outline-ink"
             )}
             disabled={status === "submitting"}
           />
@@ -159,10 +175,11 @@ export function DonationWaitlist({
             type="submit"
             disabled={status === "submitting"}
             className={cn(
-              "w-full rounded-(--radius-pill) bg-azul text-paper font-display tracking-wide",
-              "px-5 py-3.5 text-sm hover:bg-ink transition-colors",
+              "w-full rounded-(--radius-pill) bg-ink text-paper",
+              "font-sans text-sm tracking-widest uppercase",
+              "px-5 py-3.5 hover:bg-ink-soft transition-colors",
               "disabled:opacity-60 disabled:cursor-not-allowed",
-              "focus:outline-2 focus:outline-offset-2 focus:outline-azul"
+              "focus:outline-2 focus:outline-offset-2 focus:outline-ink"
             )}
           >
             {status === "submitting" ? copy.sending : copy.cta}
@@ -173,6 +190,10 @@ export function DonationWaitlist({
       {error && (
         <p className="mt-3 font-sans text-sm text-carabobo">{error}</p>
       )}
+
+      <p className="mt-6 font-sans text-[0.65rem] tracking-wide uppercase text-ink-muted leading-relaxed">
+        {copy.impactNote}
+      </p>
     </div>
   );
 }
