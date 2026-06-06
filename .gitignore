@@ -1,0 +1,22 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.idea/
+.vscode/
+*.swp
+
+# Node / web
+node_modules/
+.next/
+out/
+dist/
+.env
+.env.local
+.env*.local
+
+# Secrets — never commit
+**/secrets.*
+**/*.key
+**/.netrc
