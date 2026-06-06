@@ -28,6 +28,13 @@ Resolved questions live in `DECISIONS.md`.
 15. **About page v0 — pending Camila's review.** Drafted in both languages at `content/about.es.md` / `content/about.en.md`. Holds full family DNA in editorial register.
 16. **Family photographs.** Camila to source from family archive: photographs of Eladio, Eduardo (alone and with Diana), Marisol if available, El Carabobeño mastheads or pages, any surviving images of *El Bolígrafo* or *Propagaluz* the newspapers. File at `assets/photography/family/`. Will be slotted into the About page during the build phase.
 17. **Camila's brother.** She mentioned he has helped from the start. Decide whether to acknowledge him on the About page or elsewhere (or not at all in public copy).
+
+## Operational — sending the outreach emails
+18. **Domain registration.** Buy `propagaluz.org` (or `.es` / `.com` if `.org` is taken). ~12€/year. Triggers everything downstream: email addresses, website hosting, business identity. The single highest-leverage operational move pending. Both outreach emails depend on this for institutional credibility.
+19. **Email infrastructure.** Once the domain exists: create `camila@propagaluz.org` and `andres@propagaluz.org`. Use Google Workspace (~6€/user/month) or the free mailbox most registrars include. **Do not send the outreach emails from a personal address if avoidable.**
+20. **CECODAP contact email.** Not obvious from their site. Try the *Contacto* form, their LinkedIn, or DM their Instagram for the right partnership-inquiry address. See `content/outreach/README.md` for the path.
+21. **Andrés reviews the drafts.** Both outreach emails name Andrés as legal officer in copy. He should read both before they go out and approve the framing + his contact details.
+22. **Send Entreculturas first; wait one week; then send CECODAP.** Sequence reasoning in `content/outreach/README.md`.
 15. **About page draft.** After manifesto, write the origin story. Three sober paragraphs: Eladio, Eduardo, Camila. Photographs from family archive if available.
 16. **Site architecture.** Pages: Home, Manifesto, About (the legacy), Where the money goes (partners), Donate, Contact, Press. Eventually a journal/blog for foundation updates. Decide after manifesto lands.
 
