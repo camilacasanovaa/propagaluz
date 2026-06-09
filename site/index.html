@@ -114,21 +114,39 @@ a { color: inherit; text-decoration: none; }
   color: #fff;
   line-height: 1;
 }
-/* Mask-based logo: the PNG's alpha channel is the shape, background-color
-   defines the fill. Letters render opaque, triangle stays faint because the
-   source PNG already encodes per-region alpha. */
+/* Layered logo: beam and letters live on separate mask layers so the beam
+   alone can change color on hover. Letters stay white always. */
 .logo__mark {
+  position: relative;
   display: inline-block;
   width: 3.55rem;
   height: 2.6rem;
-  -webkit-mask: url('propagaluz-logo-white.png') no-repeat center / contain;
-          mask: url('propagaluz-logo-white.png') no-repeat center / contain;
+}
+.logo__beam-layer,
+.logo__letters-layer {
+  position: absolute;
+  inset: 0;
+  -webkit-mask-position: center;
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+          mask-position: center;
+          mask-size: contain;
+          mask-repeat: no-repeat;
+}
+.logo__beam-layer {
+  -webkit-mask-image: url('propagaluz-beam-white.png');
+          mask-image: url('propagaluz-beam-white.png');
   background-color: #fff;
   transition: background-color 220ms ease;
 }
-.logo:hover .logo__mark,
-.logo:focus-visible .logo__mark {
-  background-color: var(--luz-deep);
+.logo__letters-layer {
+  -webkit-mask-image: url('propagaluz-letters-white.png');
+          mask-image: url('propagaluz-letters-white.png');
+  background-color: #fff;
+}
+.logo:hover .logo__beam-layer,
+.logo:focus-visible .logo__beam-layer {
+  background-color: var(--luz);
 }
 .give-light {
   display: inline-flex; align-items: center; gap: 0.5rem;
@@ -650,10 +668,12 @@ footer {
 <header class="site-header">
   <div class="site-header__inner">
     <a class="logo" href="#top" aria-label="Propagaluz">
-      <!-- Camila's logo, rendered as a CSS-mask shape so the fill color is
-           controlled by background-color. White by default; on hover the
-           entire logo fades to butter yellow. -->
-      <span class="logo__mark" role="img" aria-label="Propagaluz"></span>
+      <!-- Two-layer logo: beam on bottom, letters on top.
+           Only the beam recolors to butter yellow on hover. -->
+      <span class="logo__mark" role="img" aria-label="Propagaluz">
+        <span class="logo__beam-layer" aria-hidden="true"></span>
+        <span class="logo__letters-layer" aria-hidden="true"></span>
+      </span>
     </a>
     <a class="give-light" href="#donate">
       Give Light
