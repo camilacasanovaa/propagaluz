@@ -9,20 +9,17 @@ export const metadata: Metadata = {
   title: "Propagaluz · Every child, a light.",
   description:
     "Propagaluz supports the education of Venezuelan children.",
-  alternates: {
-    canonical: "/en",
-    languages: { "es-ES": "/", "en-US": "/en" },
-  },
+  alternates: { canonical: "/" },
 };
 
-export default function HomePageEn() {
+export default function HomePage() {
   return (
     <>
-      <Hero locale="en" />
-      <Stakes locale="en" />
-      <Intention locale="en" />
-      <Partners locale="en" />
-      <OurStory locale="en" />
+      <Hero />
+      <Stakes />
+      <Intention />
+      <Partners />
+      <OurStory />
     </>
   );
 }

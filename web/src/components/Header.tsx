@@ -1,18 +1,15 @@
 import Link from "next/link";
 import { cn } from "@/lib/cn";
 
-type HeaderProps = { locale: "es" | "en" };
-
-export function Header({ locale }: HeaderProps) {
-  const isEs = locale === "es";
-  const home = isEs ? "/" : "/en";
-  const donateAnchor = "#donate";
-  const donateLabel = isEs ? "Da luz" : "Give Light";
-
+export function Header() {
   return (
     <header className="absolute top-0 inset-x-0 z-40 backdrop-blur-md bg-white/[0.04]">
       <div className="mx-auto max-w-(--container-wide) px-6 sm:px-10 h-16 sm:h-20 flex items-center justify-between gap-6 text-white">
-        <Link href={home} aria-label="Propagaluz" className="inline-flex items-center gap-2.5">
+        <Link
+          href="/"
+          aria-label="Propagaluz"
+          className="inline-flex items-center gap-2.5"
+        >
           <svg
             viewBox="0 0 26 18"
             width="26"
@@ -39,7 +36,7 @@ export function Header({ locale }: HeaderProps) {
         </Link>
 
         <a
-          href={donateAnchor}
+          href="#donate"
           className={cn(
             "inline-flex items-center gap-2 px-4 py-2 rounded-(--radius-pill)",
             "bg-luz text-white font-head text-xs tracking-widest uppercase font-bold",
@@ -55,7 +52,7 @@ export function Header({ locale }: HeaderProps) {
           >
             <polygon points="0,3 14,0 14,11 0,8" fill="#fff" />
           </svg>
-          {donateLabel}
+          Give Light
         </a>
       </div>
     </header>

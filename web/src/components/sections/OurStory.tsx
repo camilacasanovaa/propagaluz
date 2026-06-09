@@ -1,31 +1,8 @@
-type Props = { locale: "es" | "en" };
-
-export function OurStory({ locale }: Props) {
-  const isEs = locale === "es";
-
-  const copy = isEs
-    ? {
-        label: "Nuestra historia",
-        title: "Misma convicción, distinta herramienta.",
-        para1:
-          "El medio entonces era tinta y papel. El medio ahora es una fundación que protege la escolarización y la voz de la siguiente generación. La convicción no ha cambiado.",
-        para2Pre: "Lo que hacemos por los niños de Venezuela importa más que lo que digamos de nosotros. Por eso esta sección se queda corta.",
-        signature: "— Para Opa",
-      }
-    : {
-        label: "Our story",
-        title: "Same conviction, different tool.",
-        para1:
-          "The medium then was ink and paper. The medium now is a foundation that protects the schooling and the voice of the next generation. The conviction has not changed.",
-        para2Pre:
-          "What we do for the children of Venezuela matters more than what we say about ourselves. So this section stays short.",
-        signature: "— Para Opa",
-      };
-
+export function OurStory() {
   return (
     <section className="py-24 sm:py-28 px-6 sm:px-10 bg-paper-deep">
       <div className="mx-auto max-w-(--container-prose)">
-        <p className="section-label">{copy.label}</p>
+        <p className="section-label">Our story</p>
         <h2
           className="font-head mt-4"
           style={{
@@ -35,11 +12,13 @@ export function OurStory({ locale }: Props) {
             letterSpacing: "-0.03em",
           }}
         >
-          {copy.title}
+          Same conviction, different tool.
         </h2>
 
         <p className="mt-10 text-[1.08rem] text-ink-soft leading-[1.7]">
-          {copy.para1}
+          The medium then was ink and paper. The medium now is a foundation
+          that protects the schooling and the voice of the next generation. The
+          conviction has not changed.
         </p>
 
         <blockquote
@@ -51,6 +30,7 @@ export function OurStory({ locale }: Props) {
             fontWeight: 400,
             letterSpacing: "-0.01em",
           }}
+          lang="es"
         >
           <p>
             &ldquo;Es para servir.
@@ -62,7 +42,8 @@ export function OurStory({ locale }: Props) {
         </blockquote>
 
         <p className="text-[1.08rem] text-ink-soft leading-[1.7]">
-          {copy.para2Pre}{" "}
+          What we do for the children of Venezuela matters more than what we
+          say about ourselves. So this section stays short.{" "}
           <span
             className="font-script"
             style={{
@@ -71,7 +52,7 @@ export function OurStory({ locale }: Props) {
               letterSpacing: "0.01em",
             }}
           >
-            {copy.signature}
+            &mdash; Para Opa
           </span>
         </p>
       </div>
