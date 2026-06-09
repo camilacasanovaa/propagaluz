@@ -481,11 +481,10 @@ section.block { padding: 7rem 2rem; }
   overflow: hidden;
 }
 .partner__logo {
-  min-height: 2.6rem;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.1rem;
   font-family: var(--font-head);
   font-weight: 900;
   font-size: 1.85rem;
@@ -494,10 +493,9 @@ section.block { padding: 7rem 2rem; }
 }
 .partner__logo--cecodap { letter-spacing: 0.04em; }
 .partner__mark {
-  height: 3rem;
+  height: 5.5rem;
   width: auto;
   flex-shrink: 0;
-  /* Original-color logos on the black partner card */
 }
 .partner__body {
   margin-top: 1.6rem;
@@ -629,9 +627,6 @@ footer {
       <span class="logo__word">propagaluz</span>
     </a>
     <a class="give-light" href="#donate">
-      <svg class="give-light__icon" viewBox="0 0 14 11" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <polygon points="0,3 14,0 14,11 0,8" fill="#fff" />
-      </svg>
       Give Light
     </a>
   </div>
@@ -783,8 +778,8 @@ footer {
     <div class="partners-grid">
       <article class="partner">
         <div class="partner__logo">
-          <span>Fe y Alegría</span>
           <img class="partner__mark" src="partner-logos/fya.png" alt="" aria-hidden="true" />
+          <span>Fe y Alegría</span>
         </div>
         <div class="partner__body">
           <p>
@@ -798,8 +793,8 @@ footer {
       </article>
       <article class="partner">
         <div class="partner__logo partner__logo--cecodap">
+          <img class="partner__mark" src="partner-logos/cecodap-icon-clean.png" alt="" aria-hidden="true" />
           <span>CECODAP</span>
-          <img class="partner__mark" src="partner-logos/cecodap-icon.png" alt="" aria-hidden="true" />
         </div>
         <div class="partner__body">
           <p>
