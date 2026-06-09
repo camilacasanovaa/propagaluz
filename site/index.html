@@ -3,967 +3,132 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Propagaluz · Every child, a light.</title>
-<meta name="description" content="Propagaluz supports the education of Venezuelan children. A US 501(c)(3) in registration." />
+<title>Propagaluz · Be right back.</title>
+<meta name="description" content="Propagaluz is briefly under construction. Back soon." />
+<meta name="robots" content="noindex" />
 
-<!-- Open Graph -->
-<meta property="og:site_name" content="Propagaluz" />
-<meta property="og:title" content="Propagaluz · Every child, a light." />
-<meta property="og:description" content="Propagaluz supports the education of Venezuelan children." />
-<meta property="og:type" content="website" />
-<meta property="og:locale" content="en_US" />
-<meta property="og:locale:alternate" content="es_ES" />
-
-<!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link
-  href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Reenie+Beanie&display=swap"
+  href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;700&family=Reenie+Beanie&display=swap"
   rel="stylesheet"
 />
 <link
-  href="https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,400&display=swap"
+  href="https://api.fontshare.com/v2/css?f[]=satoshi@900&display=swap"
   rel="stylesheet"
 />
 
 <style>
-/* ─── tokens ─────────────────────────────────────────────────────────── */
-:root {
-  --paper: #faf7f0;
-  --paper-deep: #f3eee2;
-  --paper-pure: #ffffff;
-  --ink: #1a1a1a;
-  --ink-soft: #3a3a3a;
-  --ink-muted: #7a7568;
-  --rule: #e6e1d4;
-  --luz: #fceaa8;
-  --luz-deep: #f5cf6a;
-  --azul: #012b49;
-  --quote: #94a8c0;   /* pale blue for the Eladio quote */
-
-  --font-body: 'Geist', system-ui, sans-serif;
-  --font-head: 'Satoshi', system-ui, sans-serif;
-  --font-script: 'Reenie Beanie', cursive;
-
-  --w-narrow: 42rem;
-  --w-prose: 48rem;
-  --w-wide: 84rem;
-}
-
-* { box-sizing: border-box; margin: 0; padding: 0; }
-
-html { scroll-behavior: smooth; }
-body {
-  background: var(--paper);
-  color: var(--ink);
-  font-family: var(--font-body);
-  font-size: 17px;
-  line-height: 1.55;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-::selection { background: var(--luz); color: var(--ink); }
-img { display: block; max-width: 100%; }
-a { color: inherit; text-decoration: none; }
-
-/* ─── helpers ────────────────────────────────────────────────────────── */
-.script {
-  font-family: var(--font-script);
-  font-weight: 700;
-  font-style: normal;
-  color: var(--luz);
-  letter-spacing: 0;
-}
-.section-label {
-  font-family: var(--font-head);
-  font-weight: 500;
-  font-size: 0.72rem;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--ink-muted);
-}
-
-/* ─── header ─────────────────────────────────────────────────────────── */
-.site-header {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 100;
-  backdrop-filter: blur(14px) saturate(120%);
-  -webkit-backdrop-filter: blur(14px) saturate(120%);
-  background: rgba(255, 255, 255, 0.04);
-  transition: background 200ms;
-}
-.site-header__inner {
-  max-width: var(--w-wide);
-  margin: 0 auto;
-  padding: 1.15rem 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
-  color: #fff;
-}
-.logo { display: inline-flex; align-items: center; gap: 0.65rem; color: #fff; }
-.logo__beam { width: 26px; height: 18px; opacity: 0.7; }
-.logo__word {
-  font-family: var(--font-head);
-  font-weight: 900;
-  font-size: 1.15rem;
-  letter-spacing: -0.04em;
-  text-transform: lowercase;
-  color: #fff;
-  line-height: 1;
-}
-.give-light {
-  display: inline-flex; align-items: center; gap: 0.5rem;
-  background: var(--luz);
-  color: #fff;
-  font-family: var(--font-head);
-  font-weight: 700;
-  font-size: 0.78rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  padding: 0.7rem 1.1rem;
-  border-radius: 9999px;
-  border: none;
-  cursor: pointer;
-  transition: filter 150ms;
-  text-decoration: none;
-}
-.give-light:hover { filter: brightness(0.95); }
-.give-light__icon { width: 14px; height: 11px; }
-
-/* ─── hero ───────────────────────────────────────────────────────────── */
-.hero {
-  position: relative;
-  min-height: 100vh;
-  background: var(--ink);
-  color: #fff;
-  overflow: hidden;
-}
-.hero__photo { position: absolute; inset: 0; z-index: 0; }
-.hero__photo img {
-  width: 100%; height: 100%;
-  object-fit: cover;
-  filter: brightness(0.85) contrast(1.05);
-}
-.hero__photo::after {
-  content: '';
-  position: absolute; inset: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(0,0,0,0.35) 0%,
-    rgba(0,0,0,0.05) 30%,
-    rgba(0,0,0,0.0) 50%,
-    rgba(0,0,0,0.55) 100%
-  );
-}
-.hero__content {
-  position: relative;
-  z-index: 1;
-  max-width: var(--w-wide);
-  margin: 0 auto;
-  padding: 9rem 2rem 3rem;
-  min-height: 100vh;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem 4rem;
-  align-items: end;
-}
-.hero__left {
-  align-self: end;
-  max-width: 36rem;
-}
-.hero__headline {
-  font-family: var(--font-head);
-  font-weight: 900;
-  font-size: clamp(3rem, 7.5vw, 6.4rem);
-  line-height: 1;
-  letter-spacing: -0.035em;
-}
-.hero__headline .script {
-  display: inline-block;
-  font-size: 1.15em;
-  letter-spacing: 0;
-  margin-left: -0.05em;
-  transform: translateY(0.05em);
-}
-.hero__sub {
-  margin-top: 2rem;
-  font-size: 1.15rem;
-  max-width: 30rem;
-  color: rgba(255, 255, 255, 0.9);
-  font-weight: 400;
-  font-family: var(--font-body);
-  line-height: 1.55;
-  letter-spacing: 0;
-}
-
-.hero__right {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 1rem;
-  align-self: end;
-}
-
-/* Donation card · docked in hero */
-.donate-card {
-  background: rgba(20, 20, 20, 0.78);
-  backdrop-filter: blur(20px) saturate(120%);
-  -webkit-backdrop-filter: blur(20px) saturate(120%);
-  color: #fff;
-  border-radius: 1rem;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 1.6rem 1.6rem 1.4rem;
-  width: 100%;
-  max-width: 28rem;
-}
-.donate-card__title {
-  font-family: var(--font-head);
-  font-weight: 900;
-  font-size: 1.55rem;
-  letter-spacing: -0.025em;
-  line-height: 1.1;
-}
-.donate-card__title .script { font-size: 1.35em; letter-spacing: 0; }
-.donate-card__lede {
-  margin-top: 0.5rem;
-  font-size: 0.84rem;
-  color: rgba(255, 255, 255, 0.72);
-  line-height: 1.5;
-  max-width: 22rem;
-}
-
-/* Monthly / One time tabs */
-.donate-tabs {
-  margin-top: 1rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 9999px;
-  padding: 0.25rem;
-  gap: 0.25rem;
-}
-.donate-tab {
-  background: transparent;
-  border: none;
-  color: rgba(255, 255, 255, 0.65);
-  font-family: var(--font-head);
-  font-weight: 700;
-  font-size: 0.7rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  padding: 0.6rem;
-  border-radius: 9999px;
-  cursor: pointer;
-  transition: all 150ms;
-}
-.donate-tab.active {
-  background: var(--luz);
-  color: var(--ink);
-}
-
-.amounts {
-  margin-top: 0.85rem;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0.4rem;
-}
-.amount {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 0.55rem;
-  padding: 0.65rem 0.3rem;
-  color: rgba(255, 255, 255, 0.85);
-  font-family: var(--font-head);
-  font-weight: 700;
-  font-size: 0.88rem;
-  cursor: pointer;
-  transition: all 150ms;
-}
-.amount.selected {
-  background: var(--luz);
-  color: var(--ink);
-  border-color: var(--luz);
-}
-
-.custom-amount {
-  margin-top: 0.4rem;
-  display: flex;
-  align-items: center;
-  gap: 0.45rem;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 0.55rem;
-  padding: 0.5rem 0.75rem;
-}
-.custom-amount__prefix {
-  font-family: var(--font-head);
-  font-weight: 700;
-  color: rgba(255, 255, 255, 0.55);
-  font-size: 0.88rem;
-}
-.custom-amount input {
-  flex: 1;
-  background: transparent;
-  border: none;
-  outline: none;
-  color: #fff;
-  font-family: var(--font-head);
-  font-weight: 700;
-  font-size: 0.9rem;
-  letter-spacing: 0.01em;
-}
-.custom-amount input::placeholder { color: rgba(255, 255, 255, 0.4); }
-
-.impact {
-  margin-top: 0.8rem;
-  display: flex;
-  align-items: center;
-  gap: 0.55rem;
-  font-size: 0.84rem;
-  color: rgba(255, 255, 255, 0.85);
-  line-height: 1.4;
-}
-.impact__icon { width: 14px; height: 11px; flex-shrink: 0; }
-.impact b { color: var(--luz); font-weight: 700; }
-
-.donate-button {
-  margin-top: 1rem;
-  width: 100%;
-  background: var(--luz);
-  color: #fff;
-  border: none;
-  border-radius: 9999px;
-  padding: 0.85rem;
-  font-family: var(--font-head);
-  font-weight: 700;
-  font-size: 0.82rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: filter 150ms;
-}
-.donate-button:hover { filter: brightness(0.95); }
-
-.donate-fine {
-  margin-top: 0.7rem;
-  font-size: 0.7rem;
-  color: rgba(255, 255, 255, 0.55);
-  font-style: italic;
-  line-height: 1.5;
-}
-
-/* Trust strip · flat, right-aligned, under donation widget */
-.trust-strip {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  align-items: center;
-  gap: 0.4rem 1.1rem;
-  font-family: var(--font-head);
-  font-weight: 500;
-  font-size: 0.66rem;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.78);
-  width: 100%;
-  max-width: 28rem;
-  padding: 0 0.25rem;
-}
-.trust-strip__dot { color: rgba(255, 255, 255, 0.4); }
-
-/* ─── section base ───────────────────────────────────────────────────── */
-section.block { padding: 7rem 2rem; }
-.block__inner { max-width: var(--w-wide); margin: 0 auto; }
-.block__inner--narrow { max-width: var(--w-prose); }
-
-.section-title {
-  font-family: var(--font-head);
-  font-weight: 900;
-  letter-spacing: -0.03em;
-  line-height: 1.0;
-  font-size: clamp(2.5rem, 5.5vw, 4.5rem);
-  margin-top: 1rem;
-  margin-bottom: 0;
-}
-.section-title .script {
-  display: inline-block;
-  font-size: 1.15em;
-  transform: translateY(0.08em);
-  letter-spacing: 0;
-}
-.section-lede {
-  margin-top: 1.5rem;
-  font-size: 1.1rem;
-  color: var(--ink-soft);
-  max-width: 38rem;
-  line-height: 1.55;
-}
-
-/* ─── why education ──────────────────────────────────────────────────── */
-.stat-grid {
-  margin-top: 4rem;
-  display: grid;
-  grid-template-columns: 1.4fr 1fr 1fr 1fr;
-  gap: 1rem;
-}
-.stat {
-  padding: 2rem 1.75rem;
-  border-radius: 1rem;
-  background: var(--paper-deep);
-  display: flex;
-  flex-direction: column;
-  min-height: 19rem;
-}
-.stat--accent { background: var(--luz); }
-.stat__num-label {
-  font-family: var(--font-head);
-  font-weight: 500;
-  font-size: 0.66rem;
-  letter-spacing: 0.2em;
-  color: var(--ink-muted);
-  text-transform: uppercase;
-}
-.stat__num {
-  font-family: var(--font-head);
-  font-weight: 900;
-  font-size: 2.5rem;
-  line-height: 1;
-  letter-spacing: -0.03em;
-  margin-top: 0.45rem;
-}
-.stat__num--big { font-size: 4rem; line-height: 1; }
-.stat__body {
-  margin-top: auto;
-  font-size: 0.93rem;
-  color: var(--ink-soft);
-  line-height: 1.5;
-}
-.stat__source {
-  margin-top: 0.9rem;
-  font-family: var(--font-head);
-  font-weight: 500;
-  font-size: 0.6rem;
-  letter-spacing: 0.18em;
-  color: var(--ink-muted);
-  text-transform: uppercase;
-}
-
-/* ─── our intention ──────────────────────────────────────────────────── */
-.intention-quote {
-  margin-top: 2rem;
-  font-family: var(--font-body);
-  font-size: clamp(1.4rem, 2.4vw, 2rem);
-  line-height: 1.45;
-  color: var(--ink);
-  max-width: 50rem;
-  font-weight: 400;
-}
-
-/* ─── where it lands / partners ──────────────────────────────────────── */
-.partners-grid {
-  margin-top: 3.5rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.25rem;
-}
-.partner {
-  position: relative;
-  background: var(--ink);
-  color: var(--paper);
-  border-radius: 1rem;
-  padding: 2.5rem;
-  display: flex;
-  flex-direction: column;
-  min-height: 24rem;
-  overflow: hidden;
-}
-.partner__logo {
-  height: 2.6rem;
-  display: flex;
-  align-items: center;
-  font-family: var(--font-head);
-  font-weight: 900;
-  font-size: 1.85rem;
-  letter-spacing: -0.02em;
-  color: #fff;
-}
-.partner__logo--cecodap { letter-spacing: 0.04em; }
-.partner__body {
-  margin-top: 1.6rem;
-  font-size: 0.96rem;
-  color: rgba(255, 255, 255, 0.78);
-  line-height: 1.65;
-}
-.partner__body p + p { margin-top: 1rem; }
-.partner__since {
-  margin-top: auto;
-  padding-top: 1.5rem;
-  font-family: var(--font-head);
-  font-weight: 500;
-  font-size: 0.64rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.45);
-}
-
-/* ─── our story ──────────────────────────────────────────────────────── */
-.story-prose p {
-  margin-top: 1.4rem;
-  font-size: 1.08rem;
-  color: var(--ink-soft);
-  line-height: 1.7;
-}
-.story-prose .opa {
-  font-family: var(--font-script);
-  font-weight: 700;
-  font-size: 1.3em;
-  color: var(--luz-deep);
-  letter-spacing: 0.01em;
-}
-
-.eladio-quote {
-  margin: 3.25rem 0;
-  font-size: 1.55rem;
-  line-height: 1.45;
-  color: var(--quote);
-  font-family: var(--font-body);
-  font-weight: 400;
-  letter-spacing: -0.01em;
-}
-.eladio-quote p { margin: 0; }
-
-/* ─── footer ─────────────────────────────────────────────────────────── */
-footer {
-  background: var(--paper);
-  border-top: 1px solid var(--rule);
-  padding: 4.5rem 2rem 2rem;
-}
-.footer-inner {
-  max-width: var(--w-wide);
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-  gap: 3rem;
-}
-.footer-logo {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.55rem;
-}
-.footer-logo .logo__beam { opacity: 0.85; width: 22px; height: 16px; }
-.footer-logo .logo__word { color: var(--ink); font-size: 1rem; }
-.footer-tag {
-  margin-top: 1.5rem;
-  font-family: var(--font-script);
-  font-weight: 700;
-  font-size: 1.65rem;
-  color: var(--luz-deep);
-  letter-spacing: 0;
-}
-.footer-note { font-size: 0.85rem; color: var(--ink-muted); margin-top: 1.5rem; max-width: 22rem; }
-.footer-block h4 {
-  font-family: var(--font-head);
-  font-weight: 500;
-  font-size: 0.7rem;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--ink-muted);
-  margin-bottom: 1rem;
-}
-.footer-block a {
-  display: block;
-  margin: 0.3rem 0;
-  font-size: 0.95rem;
-  color: var(--ink-soft);
-}
-.footer-block a:hover { color: var(--ink); }
-.footer-bottom {
-  max-width: var(--w-wide);
-  margin: 4rem auto 0;
-  padding-top: 1.5rem;
-  border-top: 1px solid var(--rule);
-  display: flex;
-  justify-content: space-between;
-  font-family: var(--font-head);
-  font-weight: 500;
-  font-size: 0.65rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--ink-muted);
-}
-
-/* ─── responsive ─────────────────────────────────────────────────────── */
-@media (max-width: 1000px) {
-  .stat-grid, .partners-grid, .footer-inner { grid-template-columns: 1fr 1fr; }
-  .hero__content { grid-template-columns: 1fr; padding: 7rem 1.25rem 2rem; }
-  .hero__right { align-items: stretch; }
-  .donate-card, .trust-strip { max-width: none; }
-  .trust-strip { justify-content: flex-start; }
-}
-@media (max-width: 640px) {
-  .stat-grid, .partners-grid, .footer-inner { grid-template-columns: 1fr; }
-  section.block { padding: 5rem 1.25rem; }
-}
+  :root {
+    --paper: #faf7f0;
+    --ink: #1a1a1a;
+    --ink-soft: #3a3a3a;
+    --ink-muted: #7a7568;
+    --luz: #fceaa8;
+    --luz-deep: #f5cf6a;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Geist', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+  }
+  .wrap {
+    max-width: 32rem;
+    text-align: left;
+  }
+  .logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    margin-bottom: 3rem;
+  }
+  .logo svg { opacity: 0.85; }
+  .logo span {
+    font-family: 'Satoshi', system-ui, sans-serif;
+    font-weight: 900;
+    font-size: 1rem;
+    letter-spacing: -0.04em;
+    text-transform: lowercase;
+    color: var(--ink);
+    line-height: 1;
+  }
+  h1 {
+    font-family: 'Satoshi', system-ui, sans-serif;
+    font-weight: 900;
+    font-size: clamp(2.25rem, 5vw, 3.5rem);
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+  }
+  h1 .script {
+    font-family: 'Reenie Beanie', cursive;
+    font-weight: 400;
+    color: var(--luz-deep);
+    letter-spacing: 0;
+    font-size: 1.15em;
+    display: inline-block;
+    transform: translateY(0.05em);
+  }
+  p {
+    margin-top: 1.5rem;
+    font-size: 1.05rem;
+    color: var(--ink-soft);
+    line-height: 1.6;
+    max-width: 28rem;
+  }
+  .tag {
+    margin-top: 2.5rem;
+    font-family: 'Reenie Beanie', cursive;
+    font-size: 1.65rem;
+    color: var(--luz-deep);
+  }
+  .mail {
+    margin-top: 2.5rem;
+    font-family: 'Satoshi', system-ui, sans-serif;
+    font-weight: 500;
+    font-size: 0.7rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+  }
+  .mail a {
+    color: var(--ink);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.25em;
+  }
+  ::selection { background: var(--luz); color: var(--ink); }
 </style>
 </head>
 <body>
-
-<!-- ═══ HEADER ═══════════════════════════════════════════════════════════ -->
-<header class="site-header">
-  <div class="site-header__inner">
-    <a class="logo" href="#top" aria-label="Propagaluz">
-      <svg class="logo__beam" viewBox="0 0 26 18" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <polygon points="0,4 26,0 26,18 0,14" fill="#fff" />
+  <div class="wrap">
+    <div class="logo">
+      <svg viewBox="0 0 22 16" width="22" height="16" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <polygon points="0,4 22,0 22,16 0,12" fill="#1a1a1a" />
       </svg>
-      <span class="logo__word">propagaluz</span>
-    </a>
-    <a class="give-light" href="#donate">
-      <svg class="give-light__icon" viewBox="0 0 14 11" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <polygon points="0,3 14,0 14,11 0,8" fill="#fff" />
-      </svg>
-      Give Light
-    </a>
-  </div>
-</header>
-
-<!-- ═══ HERO ═════════════════════════════════════════════════════════════ -->
-<section id="top" class="hero">
-  <div class="hero__photo">
-    <img src="hero-candidates/camila-pick-2.jpg" alt="Three Venezuelan children laughing, black-and-white photograph." id="hero-photo" />
-  </div>
-  <div class="hero__content">
-    <div class="hero__left">
-      <h1 class="hero__headline" lang="es">
-        Cada niño,<br /><span class="script">una luz</span>.
-      </h1>
-      <p class="hero__sub" lang="es">
-        Propagaluz acompaña la educación de los niños venezolanos.
-      </p>
+      <span>propagaluz</span>
     </div>
 
-    <div class="hero__right">
-      <!-- Donation card · docked, with monthly/once tabs + amount pills + custom -->
-      <div class="donate-card" id="donate">
-        <h3 class="donate-card__title">
-          Reserve your <span class="script">seat</span>
-        </h3>
-        <p class="donate-card__lede">
-          Registration as a 501(c)(3) is in process. Choose your gift now; we email you the day we open.
-        </p>
+    <h1>
+      Be right <span class="script">back</span>.
+    </h1>
 
-        <div class="donate-tabs" role="tablist">
-          <button class="donate-tab active" data-tab="monthly">Monthly</button>
-          <button class="donate-tab" data-tab="once">One time</button>
-        </div>
-
-        <div class="amounts">
-          <button class="amount">$10</button>
-          <button class="amount">$25</button>
-          <button class="amount selected">$50</button>
-          <button class="amount">$100</button>
-        </div>
-
-        <div class="custom-amount">
-          <span class="custom-amount__prefix">$</span>
-          <input type="number" placeholder="Other amount" min="1" aria-label="Other amount" />
-        </div>
-
-        <div class="impact">
-          <svg class="impact__icon" viewBox="0 0 14 11" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <polygon points="0,3 14,0 14,11 0,8" fill="#fceaa8" />
-          </svg>
-          <span>
-            <b class="impact-amount">$50</b>
-            <span class="impact-message">&asymp; a month and a half of school for one child.</span>
-          </span>
-        </div>
-
-        <button class="donate-button" id="reserve-btn">Reserve &rarr;</button>
-        <p class="donate-fine">
-          Tax-deductible once 501(c)(3) registration completes. No charge today.
-        </p>
-      </div>
-
-      <div class="trust-strip">
-        <span>Est. 2026</span>
-        <span class="trust-strip__dot">·</span>
-        <span>Miami</span>
-        <span class="trust-strip__dot">·</span>
-        <span>Madrid</span>
-        <span class="trust-strip__dot">·</span>
-        <span>Caracas</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ WHY EDUCATION ═══════════════════════════════════════════════════ -->
-<section class="block">
-  <div class="block__inner">
-    <p class="section-label">Why education?</p>
-    <h2 class="section-title">
-      Because a generation cannot wait <span class="script">forever</span>.
-    </h2>
-    <p class="section-lede">
-      Behind every figure is a child losing a year, a teacher who has left the classroom, a desk that sits empty. Every year that passes raises the cost of catching up.
+    <p>
+      We&rsquo;re shaping a few things. Propagaluz returns shortly.
     </p>
 
-    <div class="stat-grid">
-      <div class="stat stat--accent">
-        <span class="stat__num-label">Out of school</span>
-        <div class="stat__num stat__num--big">3M</div>
-        <p class="stat__body">
-          children and young people in Venezuela are out of school &mdash; 34% of everyone aged 3 to 24.
-        </p>
-        <p class="stat__source">UNICEF · 2024&ndash;2025</p>
-      </div>
-      <div class="stat">
-        <span class="stat__num-label">Teachers gone</span>
-        <div class="stat__num">200K+</div>
-        <p class="stat__body">
-          teachers have left the country since 2017. Those who stay often work two days a week.
-        </p>
-        <p class="stat__source">Humanitarian sources</p>
-      </div>
-      <div class="stat">
-        <span class="stat__num-label">Irregular class</span>
-        <div class="stat__num">40%</div>
-        <p class="stat__body">
-          of students aged 3 to 17 attended class irregularly in 2023.
-        </p>
-        <p class="stat__source">UNICEF</p>
-      </div>
-      <div class="stat">
-        <span class="stat__num-label">Enrollment drop</span>
-        <div class="stat__num">37%</div>
-        <p class="stat__body">
-          decline in school enrollment over the most recent measured period.
-        </p>
-        <p class="stat__source">UNICEF · New Humanitarian</p>
-      </div>
-    </div>
-  </div>
-</section>
+    <p class="tag" lang="es">propaga la luz.</p>
 
-<!-- ═══ OUR INTENTION ═══════════════════════════════════════════════════ -->
-<section class="block" style="background:var(--paper-deep);">
-  <div class="block__inner">
-    <p class="section-label">Our intention</p>
-    <h2 class="section-title">
-      A word in its proper place sets something <span class="script">alight</span>.
-    </h2>
-    <p class="intention-quote">
-      We exist for the children of Venezuela whose childhood is waiting. For the curiosity that is bigger than the access. For the generation growing up in pause, with the intelligence intact and the opportunity half-given.
-    </p>
-  </div>
-</section>
-
-<!-- ═══ WHERE IT LANDS ══════════════════════════════════════════════════ -->
-<section class="block">
-  <div class="block__inner">
-    <p class="section-label">Where it lands</p>
-    <h2 class="section-title">
-      Two foundations.<br />One purpose.
-    </h2>
-    <p class="section-lede">
-      Two organizations carrying different pieces of the same answer. One opens classrooms where the state has receded. The other defends the voice of childhood in public life. We channel what comes in to both.
-    </p>
-
-    <div class="partners-grid">
-      <article class="partner">
-        <div class="partner__logo">Fe y Alegría</div>
-        <div class="partner__body">
-          <p>
-            A movement of popular education that began as a single school in a poor Caracas neighborhood and has grown into a presence across more than twenty countries. In Venezuela it remains the largest non-state network of schools serving children at the margins.
-          </p>
-          <p>
-            They run more than two hundred schools across the country's most vulnerable communities: paying teachers, feeding children, providing books and curriculum where the state has receded. Their work spans preschool through technical training, and reaches hundreds of thousands of children who would otherwise have no consistent education at all.
-          </p>
-        </div>
-        <p class="partner__since">Since 1955 · 200+ schools</p>
-      </article>
-      <article class="partner">
-        <div class="partner__logo partner__logo--cecodap">CECODAP</div>
-        <div class="partner__body">
-          <p>
-            A children's-rights organization born in Caracas, founded by educators and advocates determined to make childhood visible in Venezuelan public life. The organization grew out of the conviction that children are not objects of protection &mdash; they are people with voices, rights, and the ability to shape the world around them.
-          </p>
-          <p>
-            CECODAP trains teachers, accompanies families through difficult moments, publishes books for and by children, and runs programs that bring young people into civic life. In a country where the conditions of childhood have become increasingly fragile, their work holds steady &mdash; defending the right of every Venezuelan child to be heard.
-          </p>
-        </div>
-        <p class="partner__since">Since 1984 · Caracas</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ OUR STORY ═══════════════════════════════════════════════════════ -->
-<section class="block" style="background:var(--paper-deep);">
-  <div class="block__inner block__inner--narrow">
-    <p class="section-label">Our story</p>
-    <h2 class="section-title">
-      Same conviction, different tool.
-    </h2>
-
-    <div class="story-prose">
-      <p>
-        The medium then was ink and paper. The medium now is a foundation that protects the schooling and the voice of the next generation. The conviction has not changed.
-      </p>
-
-      <blockquote class="eladio-quote" lang="es">
-        <p>"Es para servir.<br />No es una herencia personal.<br />Pertenece a la comunidad."</p>
-      </blockquote>
-
-      <p>
-        What we do for the children of Venezuela matters more than what we say about ourselves. So this section stays short. <span class="opa">&mdash; Para Opa</span>
-      </p>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ FOOTER ══════════════════════════════════════════════════════════ -->
-<footer>
-  <div class="footer-inner">
-    <div>
-      <div class="footer-logo">
-        <svg class="logo__beam" viewBox="0 0 22 16" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <polygon points="0,4 22,0 22,16 0,12" fill="#1a1a1a" />
-        </svg>
-        <span class="logo__word">propagaluz</span>
-      </div>
-      <p class="footer-tag" lang="es">propaga la luz.</p>
-      <p class="footer-note">
-        Foundation in process of registration as a 501(c)(3) in the United States.
-      </p>
-    </div>
-    <div class="footer-block">
-      <h4>Write to us</h4>
+    <p class="mail">
       <a href="mailto:camila@propagaluz.com">camila@propagaluz.com</a>
-    </div>
-    <div class="footer-block">
-      <h4>Legal</h4>
-      <a href="#">Legal notice</a>
-      <a href="#">Privacy policy</a>
-    </div>
+    </p>
   </div>
-  <div class="footer-bottom">
-    <span>&copy; 2026 Propagaluz</span>
-    <span>Made with intention</span>
-  </div>
-</footer>
-
-<script>
-/* ─── Donation impact, dynamic ───────────────────────────────────────── */
-/* Anchor: Fe y Alegría's published "Beca un Estudiante" = $30 / month / 1 child */
-function getImpactMessage(amount, tab) {
-  const n = parseFloat(amount);
-  if (!n || n < 1) return null;
-
-  if (tab === 'monthly') {
-    if (n < 15) {
-      const days = Math.max(1, Math.round(n / 30 * 30));
-      return `keeps one child in school for ${days} days each month.`;
-    }
-    if (n < 30) return `keeps one child in school for nearly the full month.`;
-    if (n < 60) return `keeps one child in school every month.`;
-    if (n < 90) return `keeps one child in school every month, with room to spare.`;
-    const kids = Math.floor(n / 30);
-    return `keeps ${kids} children in school every month.`;
-  }
-
-  if (n < 15) return `${Math.round(n)} days of school for one child.`;
-  if (n < 30) return `nearly a month of school for one child.`;
-  if (n < 60) return `a month of school for one child.`;
-  if (n < 90) return `a month and a half of school for one child.`;
-  if (n < 120) return `a school term (three months) for one child.`;
-  if (n < 200) return `${Math.round(n / 30)} months of school for one child.`;
-  if (n < 350) return `more than half a school year for one child.`;
-  if (n < 500) return `a full school year for one child.`;
-  if (n < 720) return `a full school year for one child, with extra for books.`;
-  const kids = Math.floor(n / 360);
-  if (kids === 1) return `a full school year for one child, plus support.`;
-  return `${kids} children, a full school year of school each.`;
-}
-
-function readAmount() {
-  const customInput = document.querySelector('.custom-amount input');
-  const selectedPill = document.querySelector('.amount.selected');
-  if (customInput && customInput.value) return parseFloat(customInput.value);
-  if (selectedPill) return parseFloat(selectedPill.textContent.replace('$', ''));
-  return null;
-}
-
-function readTab() {
-  return document.querySelector('.donate-tab.active')?.dataset.tab || 'monthly';
-}
-
-function updateImpact() {
-  const tab = readTab();
-  const amount = readAmount();
-  const message = getImpactMessage(amount, tab);
-  const amountEl = document.querySelector('.impact-amount');
-  const messageEl = document.querySelector('.impact-message');
-  const monthlySuffix = tab === 'monthly' && amount ? ' /mo' : '';
-  if (amountEl) amountEl.textContent = amount ? `$${amount}${monthlySuffix}` : '—';
-  if (messageEl) messageEl.textContent = message ? `≈ ${message}` : '';
-}
-
-/* Donate tab toggle */
-document.querySelectorAll('.donate-tab').forEach(tab => {
-  tab.addEventListener('click', () => {
-    document.querySelectorAll('.donate-tab').forEach(t => t.classList.remove('active'));
-    tab.classList.add('active');
-    updateImpact();
-  });
-});
-
-/* Amount pill selection — clears custom amount */
-document.querySelectorAll('.amount').forEach(btn => {
-  btn.addEventListener('click', () => {
-    document.querySelectorAll('.amount').forEach(b => b.classList.remove('selected'));
-    btn.classList.add('selected');
-    const input = document.querySelector('.custom-amount input');
-    if (input) input.value = '';
-    updateImpact();
-  });
-});
-
-/* Custom input clears pill selection */
-const customInput = document.querySelector('.custom-amount input');
-if (customInput) {
-  customInput.addEventListener('input', () => {
-    if (customInput.value) {
-      document.querySelectorAll('.amount').forEach(b => b.classList.remove('selected'));
-    }
-    updateImpact();
-  });
-}
-
-/* Reserve button → open an email to Camila pre-filled with the intent. */
-document.getElementById('reserve-btn').addEventListener('click', () => {
-  const amount = readAmount();
-  const tab = readTab();
-  const cadence = tab === 'monthly' ? 'monthly' : 'one time';
-  const subj = amount
-    ? `Reserve my seat — $${amount} ${cadence}`
-    : 'Reserve my seat';
-  const body =
-    `Hi Camila,\n\n` +
-    (amount
-      ? `I want to reserve my seat for $${amount} ${cadence} when Propagaluz opens.\n\n`
-      : `I want to reserve my seat for when Propagaluz opens.\n\n`) +
-    `Name:\nWhere I'm writing from:\n\nThank you for what you're building.\n`;
-  window.location.href =
-    `mailto:camila@propagaluz.com?subject=${encodeURIComponent(subj)}&body=${encodeURIComponent(body)}`;
-});
-
-/* Initial paint */
-updateImpact();
-</script>
-
 </body>
 </html>
