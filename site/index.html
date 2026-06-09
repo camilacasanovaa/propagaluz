@@ -481,9 +481,11 @@ section.block { padding: 7rem 2rem; }
   overflow: hidden;
 }
 .partner__logo {
-  height: 2.6rem;
+  min-height: 2.6rem;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
   font-family: var(--font-head);
   font-weight: 900;
   font-size: 1.85rem;
@@ -491,6 +493,14 @@ section.block { padding: 7rem 2rem; }
   color: #fff;
 }
 .partner__logo--cecodap { letter-spacing: 0.04em; }
+.partner__mark {
+  height: 3rem;
+  width: auto;
+  flex-shrink: 0;
+  /* Flip the colored source logo to pure white on the dark partner card */
+  filter: brightness(0) invert(1);
+  opacity: 0.95;
+}
 .partner__body {
   margin-top: 1.6rem;
   font-size: 0.96rem;
@@ -769,12 +779,15 @@ footer {
       Two organizations.<br />The same children.
     </h2>
     <p class="section-lede">
-      Two organizations, decades of work each, both standing with Venezuelan children. One keeps classrooms open and teachers in them. The other defends every child&rsquo;s right to be heard. Together they reach further than either alone.
+      Two organizations that have stood with Venezuelan children for decades.
     </p>
 
     <div class="partners-grid">
       <article class="partner">
-        <div class="partner__logo">Fe y Alegría</div>
+        <div class="partner__logo">
+          <span>Fe y Alegría</span>
+          <img class="partner__mark" src="partner-logos/fya.png" alt="" aria-hidden="true" />
+        </div>
         <div class="partner__body">
           <p>
             A movement of popular education that began as a single school in a poor Caracas neighborhood and has grown into a presence across more than twenty countries. In Venezuela it remains the largest non-state network of schools serving children at the margins.
@@ -786,7 +799,10 @@ footer {
         <p class="partner__since">Since 1955 · 200+ schools</p>
       </article>
       <article class="partner">
-        <div class="partner__logo partner__logo--cecodap">CECODAP</div>
+        <div class="partner__logo partner__logo--cecodap">
+          <span>CECODAP</span>
+          <img class="partner__mark" src="partner-logos/cecodap-icon.png" alt="" aria-hidden="true" />
+        </div>
         <div class="partner__body">
           <p>
             A children's-rights organization born in Caracas, founded by educators and advocates determined to make childhood visible in Venezuelan public life. The organization grew out of the conviction that children are not objects of protection &mdash; they are people with voices, rights, and the ability to shape the world around them.
@@ -811,7 +827,7 @@ footer {
 
     <div class="story-prose">
       <p>
-        The medium then was ink and paper. The medium now is a foundation that protects the schooling and the voice of the next generation. The conviction has not changed: this work exists to serve, not to be inherited &mdash; it belongs to the community.
+        The medium then was ink and paper. The medium now is a foundation that protects the schooling and the voice of the next generation. The conviction has not changed: this work belongs to the community.
       </p>
 
       <p>
