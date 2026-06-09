@@ -477,6 +477,11 @@ section.block { padding: 7rem 2rem; }
   grid-template-columns: 1fr 1fr;
   gap: 1.25rem;
 }
+/* Single-partner variant: one card, centered, constrained width */
+.partners-grid--single {
+  grid-template-columns: minmax(0, 38rem);
+  justify-content: center;
+}
 .partner {
   position: relative;
   background: var(--ink);
@@ -777,13 +782,13 @@ footer {
   <div class="block__inner">
     <p class="section-label">Where it lands</p>
     <h2 class="section-title">
-      Two organizations.<br />The same children.
+      Where every gift lands.
     </h2>
     <p class="section-lede">
-      Two organizations that have stood with Venezuelan children for decades.
+      Fe y Alegría has stood with Venezuelan children for nearly seventy years &mdash; the country&rsquo;s largest independent network of schools.
     </p>
 
-    <div class="partners-grid">
+    <div class="partners-grid partners-grid--single">
       <article class="partner">
         <div class="partner__logo">
           <img class="partner__mark" src="partner-logos/fya.png" alt="" aria-hidden="true" />
@@ -791,28 +796,13 @@ footer {
         </div>
         <div class="partner__body">
           <p>
-            A movement of popular education that began as a single school in a poor Caracas neighborhood and has grown into a presence across more than twenty countries. In Venezuela it remains the largest non-state network of schools serving children at the margins.
+            A movement of popular education that began as a single school in a poor Caracas neighborhood and has grown into a presence across more than twenty countries. In Venezuela it remains the largest independent network of schools serving children at the margins.
           </p>
           <p>
-            They run more than two hundred schools across the country's most vulnerable communities: paying teachers, feeding children, providing books and curriculum where the state has receded. Their work spans preschool through technical training, and reaches hundreds of thousands of children who would otherwise have no consistent education at all.
+            They run more than two hundred schools across the country&rsquo;s most vulnerable communities: paying teachers, feeding children, providing books and curriculum where the need is greatest. Their work spans preschool through technical training, and reaches hundreds of thousands of children who would otherwise have no consistent education at all.
           </p>
         </div>
         <p class="partner__since">Since 1955 · 200+ schools</p>
-      </article>
-      <article class="partner">
-        <div class="partner__logo partner__logo--cecodap">
-          <img class="partner__mark" src="partner-logos/cecodap-icon-clean.png" alt="" aria-hidden="true" />
-          <span>CECODAP</span>
-        </div>
-        <div class="partner__body">
-          <p>
-            A children's-rights organization born in Caracas, founded by educators and advocates determined to make childhood visible in Venezuelan public life. The organization grew out of the conviction that children are not objects of protection &mdash; they are people with voices, rights, and the ability to shape the world around them.
-          </p>
-          <p>
-            CECODAP trains teachers, accompanies families through difficult moments, publishes books for and by children, and runs programs that bring young people into civic life. In a country where the conditions of childhood have become increasingly fragile, their work holds steady &mdash; defending the right of every Venezuelan child to be heard.
-          </p>
-        </div>
-        <p class="partner__since">Since 1984 · Caracas</p>
       </article>
     </div>
   </div>
