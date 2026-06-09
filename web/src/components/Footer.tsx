@@ -17,55 +17,77 @@ export function Footer({ locale }: FooterProps) {
 
   const note = isEs
     ? "Fundación en proceso de registro como 501(c)(3) en Estados Unidos."
-    : "Foundation in registration as a 501(c)(3) in the United States.";
+    : "Foundation in process of registration as a 501(c)(3) in the United States.";
+
+  const writeTo = isEs ? "Escríbenos" : "Write to us";
+  const langLink = isEs ? { href: "/en", label: "English" } : { href: "/", label: "Español" };
+  const tagline = isEs ? "propaga la luz." : "spread the light.";
+  const made = isEs ? "Hecho con intención" : "Made with intention";
 
   return (
-    <footer id="contacto" className="section-rule bg-paper py-16">
-      <div className="mx-auto max-w-(--container-wide) px-6 sm:px-10">
-        <div className="grid gap-10 sm:grid-cols-12 items-start">
-          <div className="sm:col-span-5">
-            <p className="font-serif italic text-2xl text-ink">propagaluz.</p>
-            <p className="mt-3 font-serif text-base text-ink-soft max-w-sm">
-              {note}
-            </p>
-          </div>
-
-          <div className="sm:col-span-4 font-serif">
-            <p className="eyebrow mb-3">{isEs ? "Escríbenos" : "Write to us"}</p>
-            <a
-              href="mailto:camila@propagaluz.com"
-              className="text-lg text-ink hover:text-ink-soft underline decoration-luz decoration-[3px] underline-offset-[5px] transition-colors break-all"
+    <footer className="border-t border-rule bg-paper pt-16 pb-8 px-6 sm:px-10">
+      <div className="mx-auto max-w-(--container-wide) grid gap-12 sm:grid-cols-12">
+        <div className="sm:col-span-6">
+          <Link href={isEs ? "/" : "/en"} aria-label="Propagaluz" className="inline-flex items-center gap-2.5">
+            <svg viewBox="0 0 22 16" width="22" height="16" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+              <polygon points="0,4 22,0 22,16 0,12" fill="#1a1a1a" />
+            </svg>
+            <span
+              className="font-head text-ink"
+              style={{
+                fontSize: "1rem",
+                fontWeight: 900,
+                letterSpacing: "-0.04em",
+                textTransform: "lowercase",
+                lineHeight: 1,
+              }}
             >
-              camila@propagaluz.com
-            </a>
-          </div>
-
-          <div className="sm:col-span-3 font-sans text-sm space-y-2">
-            <p className="eyebrow mb-3">Legal</p>
-            {legal.map((l) => (
-              <div key={l.href}>
-                <Link href={l.href} className="text-ink-soft hover:text-ink transition-colors">
-                  {l.label}
-                </Link>
-              </div>
-            ))}
-            <div>
-              <Link
-                href={isEs ? "/en" : "/"}
-                className="text-ink-soft hover:text-ink transition-colors"
-              >
-                {isEs ? "English" : "Español"}
-              </Link>
-            </div>
-          </div>
+              propagaluz
+            </span>
+          </Link>
+          <p
+            className="mt-6 font-script"
+            style={{
+              fontSize: "1.65rem",
+              color: "var(--color-luz-deep)",
+              lineHeight: 1.2,
+            }}
+          >
+            {tagline}
+          </p>
+          <p className="mt-6 text-sm text-ink-muted max-w-md">{note}</p>
         </div>
 
-        <div className="mt-14 pt-6 border-t border-rule flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-ink-muted font-sans">
-          <span>© {new Date().getFullYear()} Propagaluz</span>
-          <span className="tracking-widest uppercase">
-            {isEs ? "Hecho con intención" : "Made with intention"}
-          </span>
+        <div className="sm:col-span-3">
+          <h4 className="section-label mb-3">{writeTo}</h4>
+          <a
+            href="mailto:camila@propagaluz.com"
+            className="block text-base text-ink hover:text-ink-soft transition-colors"
+          >
+            camila@propagaluz.com
+          </a>
+          <Link href={langLink.href} className="mt-3 block text-sm text-ink-soft hover:text-ink">
+            {langLink.label}
+          </Link>
         </div>
+
+        <div className="sm:col-span-3">
+          <h4 className="section-label mb-3">Legal</h4>
+          {legal.map((l) => (
+            <Link
+              key={l.href}
+              href={l.href}
+              className="block text-sm text-ink-soft hover:text-ink"
+            >
+              {l.label}
+            </Link>
+          ))}
+        </div>
+      </div>
+
+      <div className="mx-auto max-w-(--container-wide) mt-12 pt-5 border-t border-rule flex justify-between text-xs text-ink-muted tracking-widest uppercase font-head font-medium">
+        <span>© {new Date().getFullYear()} Propagaluz</span>
+        <span>{made}</span>
       </div>
     </footer>
   );

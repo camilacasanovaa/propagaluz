@@ -1,25 +1,17 @@
 import type { Metadata } from "next";
-import { Fraunces, Inter, Antonio } from "next/font/google";
+import { Geist, Reenie_Beanie } from "next/font/google";
 import "./globals.css";
 
-const serif = Fraunces({
-  variable: "--font-serif",
-  subsets: ["latin"],
-  style: ["normal", "italic"],
-  axes: ["opsz", "SOFT"],
-  display: "swap",
-});
-
-const sans = Inter({
-  variable: "--font-sans",
+const body = Geist({
+  variable: "--font-body",
   subsets: ["latin"],
   display: "swap",
 });
 
-const display = Antonio({
-  variable: "--font-display",
+const script = Reenie_Beanie({
+  variable: "--font-script",
   subsets: ["latin"],
-  weight: ["700"],
+  weight: "400",
   display: "swap",
 });
 
@@ -46,7 +38,7 @@ export default function RootLayout({
   return (
     <html
       lang="es"
-      className={`${serif.variable} ${sans.variable} ${display.variable} h-full antialiased`}
+      className={`${body.variable} ${script.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         <a

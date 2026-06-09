@@ -1,51 +1,79 @@
 type Props = { locale: "es" | "en" };
 
-/**
- * Our story — without naming the family.
- *
- * Per Camila's direction (2026-06-06): the family / inheritance framing is
- * pulled from public copy. The story is told as a thread of vocation
- * without naming grandfathers or newspapers. The hidden "para opa" line in
- * the hero is the only acknowledgment, legible to those who already know.
- */
 export function OurStory({ locale }: Props) {
   const isEs = locale === "es";
 
   const copy = isEs
     ? {
-        eyebrow: "Nuestra historia",
-        title: "Una vocación que ya tiene casi un siglo.",
-        body: [
-          "Propagaluz no nació en 2026. Nació hace casi cien años, cuando una familia venezolana empezó a usar la palabra impresa para insistir en lo mismo que esta fundación insiste hoy: que las cosas pueden cambiar cuando se las nombra bien y se las acompaña con tiempo.",
-          "El medio era otro. El oficio era otro. Pero la convicción era la misma. Una palabra puesta en su sitio enciende algo. Ese algo puede viajar de mano en mano hasta cambiar lo que parecía inmóvil.",
-          "Esta fundación es la versión actual de esa convicción, hecha para una nueva generación. Nos importa más lo que hacemos por los niños venezolanos que lo que decimos sobre nosotros. Por eso esta sección es corta.",
-        ],
+        label: "Nuestra historia",
+        title: "Misma convicción, distinta herramienta.",
+        para1:
+          "El medio entonces era tinta y papel. El medio ahora es una fundación que protege la escolarización y la voz de la siguiente generación. La convicción no ha cambiado.",
+        para2Pre: "Lo que hacemos por los niños de Venezuela importa más que lo que digamos de nosotros. Por eso esta sección se queda corta.",
+        signature: "— Para Opa",
       }
     : {
-        eyebrow: "Our story",
-        title: "A vocation almost a century old.",
-        body: [
-          "Propagaluz was not born in 2026. It was born almost a hundred years ago, when a Venezuelan family began to use the printed word to insist on the same thing this foundation insists on today: that things can change when they are named well and accompanied through time.",
-          "The medium was different. The trade was different. But the conviction was the same. A word in its proper place sets something alight. The something can travel hand to hand until it changes what seemed unmovable.",
-          "This foundation is the current version of that conviction, made for a new generation. What we do for Venezuelan children matters more than what we say about ourselves. That is why this section is short.",
-        ],
+        label: "Our story",
+        title: "Same conviction, different tool.",
+        para1:
+          "The medium then was ink and paper. The medium now is a foundation that protects the schooling and the voice of the next generation. The conviction has not changed.",
+        para2Pre:
+          "What we do for the children of Venezuela matters more than what we say about ourselves. So this section stays short.",
+        signature: "— Para Opa",
       };
 
   return (
-    <section
-      id={isEs ? "historia" : "story"}
-      className="section-rule bg-paper py-24 sm:py-32"
-    >
-      <div className="mx-auto max-w-(--container-prose) px-6 sm:px-10">
-        <p className="eyebrow mb-5">{copy.eyebrow}</p>
-        <h2 className="font-serif-display text-3xl sm:text-5xl tracking-tight text-ink">
+    <section className="py-24 sm:py-28 px-6 sm:px-10 bg-paper-deep">
+      <div className="mx-auto max-w-(--container-prose)">
+        <p className="section-label">{copy.label}</p>
+        <h2
+          className="font-head mt-4"
+          style={{
+            fontSize: "clamp(2.25rem, 4.5vw, 3.5rem)",
+            fontWeight: 900,
+            lineHeight: 1.05,
+            letterSpacing: "-0.03em",
+          }}
+        >
           {copy.title}
         </h2>
-        <div className="mt-10 space-y-6 font-serif text-lg leading-relaxed text-ink-soft">
-          {copy.body.map((p, i) => (
-            <p key={i}>{p}</p>
-          ))}
-        </div>
+
+        <p className="mt-10 text-[1.08rem] text-ink-soft leading-[1.7]">
+          {copy.para1}
+        </p>
+
+        <blockquote
+          className="my-12"
+          style={{
+            fontSize: "1.55rem",
+            lineHeight: 1.45,
+            color: "var(--color-quote)",
+            fontWeight: 400,
+            letterSpacing: "-0.01em",
+          }}
+        >
+          <p>
+            &ldquo;Es para servir.
+            <br />
+            No es una herencia personal.
+            <br />
+            Pertenece a la comunidad.&rdquo;
+          </p>
+        </blockquote>
+
+        <p className="text-[1.08rem] text-ink-soft leading-[1.7]">
+          {copy.para2Pre}{" "}
+          <span
+            className="font-script"
+            style={{
+              fontSize: "1.3em",
+              color: "var(--color-luz-deep)",
+              letterSpacing: "0.01em",
+            }}
+          >
+            {copy.signature}
+          </span>
+        </p>
       </div>
     </section>
   );

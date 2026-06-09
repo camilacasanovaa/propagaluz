@@ -1,11 +1,9 @@
 import type { Metadata } from "next";
 import { Hero } from "@/components/sections/Hero";
 import { Stakes } from "@/components/sections/Stakes";
-import { WhatWeDo } from "@/components/sections/WhatWeDo";
+import { Intention } from "@/components/sections/Intention";
 import { Partners } from "@/components/sections/Partners";
 import { OurStory } from "@/components/sections/OurStory";
-import { Promise } from "@/components/sections/Promise";
-import { Donate } from "@/components/sections/Donate";
 
 export const metadata: Metadata = {
   title: "Propagaluz · Cada niño, una luz.",
@@ -22,11 +20,9 @@ export default function HomePage() {
     <>
       <Hero locale="es" />
       <Stakes locale="es" />
-      <WhatWeDo locale="es" />
+      <Intention locale="es" />
       <Partners locale="es" />
       <OurStory locale="es" />
-      <Promise locale="es" />
-      <Donate locale="es" />
     </>
   );
 }

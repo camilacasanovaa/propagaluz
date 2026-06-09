@@ -5,46 +5,58 @@ type HeaderProps = { locale: "es" | "en" };
 
 export function Header({ locale }: HeaderProps) {
   const isEs = locale === "es";
-
   const home = isEs ? "/" : "/en";
-  const altHref = isEs ? "/en" : "/";
-  const altLabel = isEs ? "EN" : "ES";
-  const donateHref = isEs ? "#donar" : "#donate";
-  const donateLabel = isEs ? "Donar" : "Donate";
+  const donateAnchor = "#donate";
+  const donateLabel = isEs ? "Da luz" : "Give Light";
 
   return (
-    <header className="absolute top-0 inset-x-0 z-40">
-      <div className="mx-auto max-w-(--container-full) px-6 sm:px-10 h-16 sm:h-20 flex items-center justify-between gap-6">
-        {/* Quiet wordmark, lowercase serif — readable but not loud */}
-        <Link
-          href={home}
-          aria-label="Propagaluz"
-          className="font-serif italic text-base sm:text-lg tracking-tight text-ink hover:text-ink-soft transition-colors"
-        >
-          propagaluz.
+    <header className="absolute top-0 inset-x-0 z-40 backdrop-blur-md bg-white/[0.04]">
+      <div className="mx-auto max-w-(--container-wide) px-6 sm:px-10 h-16 sm:h-20 flex items-center justify-between gap-6 text-white">
+        <Link href={home} aria-label="Propagaluz" className="inline-flex items-center gap-2.5">
+          <svg
+            viewBox="0 0 26 18"
+            width="26"
+            height="18"
+            xmlns="http://www.w3.org/2000/svg"
+            style={{ opacity: 0.7 }}
+            aria-hidden
+          >
+            <polygon points="0,4 26,0 26,18 0,14" fill="#fff" />
+          </svg>
+          <span
+            className="font-head"
+            style={{
+              fontSize: "1.15rem",
+              fontWeight: 900,
+              letterSpacing: "-0.04em",
+              textTransform: "lowercase",
+              color: "#fff",
+              lineHeight: 1,
+            }}
+          >
+            propagaluz
+          </span>
         </Link>
 
-        <div className="flex items-center gap-3">
-          <Link
-            href={altHref}
-            aria-label={isEs ? "Switch to English" : "Cambiar a español"}
-            className="font-sans text-xs tracking-widest text-ink-muted hover:text-ink transition-colors"
+        <a
+          href={donateAnchor}
+          className={cn(
+            "inline-flex items-center gap-2 px-4 py-2 rounded-(--radius-pill)",
+            "bg-luz text-white font-head text-xs tracking-widest uppercase font-bold",
+            "hover:brightness-95 transition-all"
+          )}
+        >
+          <svg
+            viewBox="0 0 14 11"
+            width="14"
+            height="11"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden
           >
-            {altLabel}
-          </Link>
-
-          <a
-            href={donateHref}
-            className={cn(
-              "inline-flex items-center px-4 py-2 rounded-(--radius-pill)",
-              "bg-ink text-paper font-sans text-xs tracking-widest uppercase",
-              "hover:bg-ink-soft transition-colors",
-              "focus:outline-2 focus:outline-offset-2 focus:outline-ink"
-            )}
-          >
-            {donateLabel}
-          </a>
-        </div>
+            <polygon points="0,3 14,0 14,11 0,8" fill="#fff" />
+          </svg>
+          {donateLabel}
+        </a>
       </div>
     </header>
   );
