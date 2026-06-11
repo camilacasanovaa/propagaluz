@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Propagaluz · Brand Kit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Reenie+Beanie&family=Anton&display=swap"
+  rel="stylesheet"
+/>
+<link
+  href="https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,400&display=swap"
+  rel="stylesheet"
+/>
+<style>
+:root {
+  --paper: #faf7f0;
+  --paper-deep: #f3eee2;
+  --ink: #1a1a1a;
+  --ink-soft: #3a3a3a;
+  --ink-muted: #7a7568;
+  --luz: #fceaa8;
+  --luz-deep: #f5cf6a;
+  --quote: #94a8c0;
+  --rule: #e6e1d4;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Geist', system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap { max-width: 64rem; margin: 0 auto; padding: 4rem 3rem 6rem; }
+
+/* Headings + section labels */
+.title {
+  font-family: 'Satoshi', system-ui, sans-serif;
+  font-weight: 900;
+  letter-spacing: -0.025em;
+  line-height: 1;
+}
+.h1 { font-size: 3.5rem; }
+.h2 { font-size: 2.25rem; margin-top: 4rem; }
+.label {
+  font-family: 'Satoshi', system-ui, sans-serif;
+  font-weight: 500;
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  margin-bottom: 0.75rem;
+}
+.lede { margin-top: 1rem; font-size: 1.1rem; max-width: 38rem; color: var(--ink-soft); }
+.intro {
+  margin-top: 3rem;
+  padding: 2.5rem;
+  background: var(--paper-deep);
+  border-radius: 1.25rem;
+}
+.intro p { font-size: 1.05rem; line-height: 1.65; max-width: 42rem; }
+.intro p + p { margin-top: 1rem; }
+
+/* Logo gallery */
+.logo-grid {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+.logo-card {
+  border-radius: 1.25rem;
+  padding: 3rem 2rem;
+  display: grid;
+  place-items: center;
+  min-height: 16rem;
+  border: 1px solid var(--rule);
+}
+.logo-card--paper { background: var(--paper); }
+.logo-card--paper-deep { background: var(--paper-deep); }
+.logo-card--ink { background: var(--ink); }
+.logo-card--luz { background: var(--luz); }
+.logo-card img { max-height: 9rem; width: auto; }
+.logo-card .meta {
+  margin-top: 1.25rem;
+  font-family: 'Satoshi', sans-serif;
+  font-weight: 500;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  text-align: center;
+}
+.logo-card--ink .meta { color: rgba(255,255,255,0.55); }
+.dl-row {
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+.dl-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.55rem 1rem;
+  border: 1px solid var(--rule);
+  border-radius: 9999px;
+  font-family: 'Satoshi', sans-serif;
+  font-weight: 500;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  color: var(--ink);
+  text-decoration: none;
+  background: #fff;
+  transition: background 150ms;
+}
+.dl-pill:hover { background: var(--paper-deep); }
+
+/* Color swatches */
+.color-grid {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+}
+.swatch { border-radius: 1rem; overflow: hidden; border: 1px solid var(--rule); }
+.swatch__color { aspect-ratio: 1; }
+.swatch__meta { padding: 0.85rem 1rem 1rem; background: #fff; }
+.swatch__name {
+  font-family: 'Satoshi', sans-serif;
+  font-weight: 700;
+  font-size: 0.88rem;
+}
+.swatch__hex {
+  font-family: 'Geist', monospace;
+  font-size: 0.78rem;
+  color: var(--ink-muted);
+  letter-spacing: 0.05em;
+  margin-top: 0.2rem;
+}
+.swatch__role {
+  margin-top: 0.4rem;
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+}
+
+/* Typography specimens */
+.type-stack { margin-top: 2rem; display: grid; gap: 2rem; }
+.type-row {
+  display: grid;
+  grid-template-columns: 8rem 1fr;
+  gap: 2rem;
+  align-items: baseline;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--rule);
+}
+.type-row:last-child { border-bottom: none; padding-bottom: 0; }
+.type-name {
+  font-family: 'Satoshi', sans-serif;
+  font-weight: 700;
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+.type-name small {
+  display: block;
+  margin-top: 0.35rem;
+  font-family: 'Geist', monospace;
+  font-weight: 400;
+  font-size: 0.65rem;
+  letter-spacing: 0.04em;
+  color: var(--ink-muted);
+  text-transform: none;
+}
+.specimen-body { font-family: 'Geist', sans-serif; font-size: 1.5rem; font-weight: 400; line-height: 1.4; }
+.specimen-display { font-family: 'Satoshi', sans-serif; font-weight: 900; font-size: 2.5rem; letter-spacing: -0.025em; line-height: 1; }
+.specimen-script { font-family: 'Reenie Beanie', cursive; font-weight: 400; font-size: 3rem; color: var(--luz-deep); line-height: 1; }
+.specimen-anton { font-family: 'Anton', sans-serif; font-size: 2.25rem; line-height: 0.92; letter-spacing: -0.01em; }
+
+/* Voice block */
+.voice-grid {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+.voice-card {
+  padding: 2rem;
+  border-radius: 1.25rem;
+  background: #fff;
+  border: 1px solid var(--rule);
+}
+.voice-card--do { border-color: var(--luz-deep); }
+.voice-card--dont { border-color: #d4a3a3; background: #faf0f0; }
+.voice-card h3 {
+  font-family: 'Satoshi', sans-serif;
+  font-weight: 900;
+  font-size: 0.78rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+.voice-card ul { padding-left: 1.2rem; }
+.voice-card li { margin-bottom: 0.55rem; font-size: 0.96rem; line-height: 1.55; }
+
+/* Footer */
+.kit-footer {
+  margin-top: 5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--rule);
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Satoshi', sans-serif;
+  font-weight: 500;
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+
+@media (max-width: 800px) {
+  .wrap { padding: 2.5rem 1.25rem 4rem; }
+  .h1 { font-size: 2.5rem; }
+  .h2 { font-size: 1.75rem; margin-top: 3rem; }
+  .logo-grid { grid-template-columns: 1fr; }
+  .color-grid { grid-template-columns: 1fr 1fr; }
+  .voice-grid { grid-template-columns: 1fr; }
+  .type-row { grid-template-columns: 1fr; gap: 0.75rem; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <p class="label">Brand Kit · v1</p>
+    <h1 class="title h1">Propagaluz.</h1>
+    <p class="lede">Everything you need to render the propagaluz brand correctly. Logos, colors, type, voice. Pulled directly from the live site.</p>
+
+    <div class="intro">
+      <p><strong>What is Propagaluz?</strong> Propagaluz is a foundation that supports the education of Venezuelan children. It exists to carry resources from outside Venezuela to Fe&nbsp;y&nbsp;Alegría &mdash; the country&rsquo;s largest independent network of schools &mdash; and help them stay open. Every dollar that comes in travels to a single place, and stays there.</p>
+      <p><strong>Tagline.</strong> <em lang="es">propaga la luz.</em> &mdash; spread the light. Use this Spanish tagline as the brand&rsquo;s signature line. Keep it lowercase, with the period.</p>
+      <p><strong>Contact.</strong> <a href="mailto:camila@propagaluz.com">camila@propagaluz.com</a> &middot; propagaluz.com</p>
+    </div>
+  </header>
+
+  <!-- ════════ LOGO ════════ -->
+  <section>
+    <h2 class="title h2">Logo</h2>
+    <p class="lede">Four official variations. Always preserve aspect ratio. Never recolor, restyle, or place anything inside the wordmark.</p>
+
+    <div class="logo-grid">
+      <div class="logo-card logo-card--paper">
+        <img src="logo/propagaluz-logo-color.png" alt="Propagaluz original color logo" />
+        <div>
+          <p class="meta">Primary &middot; full color, transparent</p>
+        </div>
+      </div>
+      <div class="logo-card logo-card--ink">
+        <img src="logo/propagaluz-logo-white.png" alt="Propagaluz white logo on dark" />
+        <div>
+          <p class="meta">White &middot; for dark backgrounds</p>
+        </div>
+      </div>
+      <div class="logo-card logo-card--paper-deep">
+        <img src="logo/propagaluz-logo-black.png" alt="Propagaluz black-only mono logo" />
+        <div>
+          <p class="meta">Mono black &middot; for print / single-color</p>
+        </div>
+      </div>
+      <div class="logo-card logo-card--luz">
+        <img src="logo/propagaluz-logo-black.png" alt="Propagaluz mono on butter yellow" />
+        <div>
+          <p class="meta">Mono on butter &middot; high-energy use</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="dl-row">
+      <a class="dl-pill" href="logo/propagaluz-logo-color.png" download>Download · color</a>
+      <a class="dl-pill" href="logo/propagaluz-logo-white.png" download>Download · white</a>
+      <a class="dl-pill" href="logo/propagaluz-logo-black.png" download>Download · black</a>
+      <a class="dl-pill" href="logo/propagaluz-logo-original.png" download>Download · original (high-res, 6250&times;6250)</a>
+    </div>
+  </section>
+
+  <!-- ════════ COLORS ════════ -->
+  <section>
+    <h2 class="title h2">Colors</h2>
+    <p class="lede">A five-color palette. <em>Paper</em> and <em>ink</em> are the structural pair; <em>luz</em> is the only accent. Use luz sparingly and on purpose.</p>
+
+    <div class="color-grid">
+      <div class="swatch">
+        <div class="swatch__color" style="background:#faf7f0"></div>
+        <div class="swatch__meta">
+          <p class="swatch__name">Paper</p>
+          <p class="swatch__hex">#FAF7F0</p>
+          <p class="swatch__role">Default page background</p>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch__color" style="background:#f3eee2"></div>
+        <div class="swatch__meta">
+          <p class="swatch__name">Paper deep</p>
+          <p class="swatch__hex">#F3EEE2</p>
+          <p class="swatch__role">Alternating section panels</p>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch__color" style="background:#1a1a1a"></div>
+        <div class="swatch__meta">
+          <p class="swatch__name">Ink</p>
+          <p class="swatch__hex">#1A1A1A</p>
+          <p class="swatch__role">All body type, headlines, dark sections</p>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch__color" style="background:#fceaa8"></div>
+        <div class="swatch__meta">
+          <p class="swatch__name">Luz</p>
+          <p class="swatch__hex">#FCEAA8</p>
+          <p class="swatch__role">Single accent &mdash; script words, donate button</p>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch__color" style="background:#f5cf6a"></div>
+        <div class="swatch__meta">
+          <p class="swatch__name">Luz deep</p>
+          <p class="swatch__hex">#F5CF6A</p>
+          <p class="swatch__role">Beam, tagline script, footer accent</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════ TYPOGRAPHY ════════ -->
+  <section>
+    <h2 class="title h2">Typography</h2>
+    <p class="lede">Four typefaces, each with one job. Don&rsquo;t introduce new ones.</p>
+
+    <div class="type-stack">
+      <div class="type-row">
+        <div class="type-name">Display
+          <small>Satoshi 900<br/>Fontshare (free)</small>
+        </div>
+        <div class="specimen-display">Because a generation cannot wait.</div>
+      </div>
+      <div class="type-row">
+        <div class="type-name">Logo
+          <small>Anton Regular<br/>Google Fonts (free)</small>
+        </div>
+        <div class="specimen-anton">PRO<br/>PAGA<br/>LUZ</div>
+      </div>
+      <div class="type-row">
+        <div class="type-name">Body
+          <small>Geist 400&ndash;700<br/>Google Fonts (free)</small>
+        </div>
+        <div class="specimen-body">We exist for the children of Venezuela whose childhood is waiting.</div>
+      </div>
+      <div class="type-row">
+        <div class="type-name">Script accent
+          <small>Reenie Beanie<br/>Google Fonts (free)</small>
+        </div>
+        <div class="specimen-script">propaga la luz.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════ VOICE ════════ -->
+  <section>
+    <h2 class="title h2">Voice</h2>
+    <p class="lede">Propagaluz speaks quietly, declaratively, and never politically. Restraint is the brand.</p>
+
+    <div class="voice-grid">
+      <div class="voice-card voice-card--do">
+        <h3>Do</h3>
+        <ul>
+          <li>Write in short, declarative sentences. Period-driven, not comma-driven.</li>
+          <li>Use Spanish only as accent (the headline, the tagline, Eladio&rsquo;s line). Body copy is English.</li>
+          <li>Talk about the work, the children, and the partner.</li>
+          <li>Keep all numbers cited (UNICEF, Fe y Alegría, etc.).</li>
+          <li>Speak in positives (&ldquo;they stay open&rdquo; vs. &ldquo;they don&rsquo;t close&rdquo;).</li>
+        </ul>
+      </div>
+      <div class="voice-card voice-card--dont">
+        <h3>Don&rsquo;t</h3>
+        <ul>
+          <li>Mention politics, the Venezuelan government, or any specific officials.</li>
+          <li>Use savior language (&ldquo;saving children,&rdquo; &ldquo;rescuing,&rdquo; &ldquo;changing lives&rdquo;).</li>
+          <li>Use family names of the founder or her grandfather in public copy.</li>
+          <li>Write in negatives (&ldquo;no,&rdquo; &ldquo;never,&rdquo; &ldquo;not&rdquo;) when a positive form exists.</li>
+          <li>Add new colors, fonts, or visual treatments without asking.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════ PHOTOGRAPHY ════════ -->
+  <section>
+    <h2 class="title h2">Photography</h2>
+    <p class="lede">When propagaluz uses photography, it follows three rules.</p>
+    <div class="voice-grid">
+      <div class="voice-card">
+        <h3>Style</h3>
+        <ul>
+          <li>Black &amp; white, warm grain, soft contrast.</li>
+          <li>Subject is always children &mdash; ideally Venezuelan, ideally in the moment of laughter, learning, or quiet.</li>
+          <li>Avoid posed studio portraits. Lean into editorial / documentary feel.</li>
+        </ul>
+      </div>
+      <div class="voice-card">
+        <h3>Usage rule</h3>
+        <ul>
+          <li>Stock photography from Unsplash or Pexels is permitted (commercial licenses cover us).</li>
+          <li>Never use Fe y Alegría&rsquo;s own program photography without written permission.</li>
+          <li>Never use a photograph of an identifiable child whose face is centered, unless we own that image.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="kit-footer">
+    <span>&copy; 2026 Propagaluz</span>
+    <span>Made with intention</span>
+  </div>
+</div>
+</body>
+</html>
