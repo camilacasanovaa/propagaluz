@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Propagaluz · Manifiesto e historia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Reenie+Beanie&family=Anton&family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&display=swap"
+  rel="stylesheet"
+/>
+<link
+  href="https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,400&display=swap"
+  rel="stylesheet"
+/>
+<style>
+:root {
+  --paper: #faf7f0;
+  --paper-deep: #f3eee2;
+  --ink: #1a1a1a;
+  --ink-soft: #3a3a3a;
+  --ink-muted: #7a7568;
+  --luz: #fceaa8;
+  --luz-deep: #f5cf6a;
+  --rule: #e6e1d4;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Geist', system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap { max-width: 44rem; margin: 0 auto; padding: 4rem 3rem 6rem; }
+
+/* Cover */
+.cover {
+  text-align: center;
+  padding-bottom: 4rem;
+  border-bottom: 1px solid var(--rule);
+  margin-bottom: 4rem;
+}
+.cover__logo {
+  width: 8rem;
+  height: auto;
+  margin: 0 auto 2.5rem;
+  display: block;
+}
+.cover__title {
+  font-family: 'Fraunces', 'Times New Roman', serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 3rem;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  font-variation-settings: 'opsz' 144;
+}
+.cover__sub {
+  margin-top: 1.5rem;
+  font-family: 'Satoshi', system-ui, sans-serif;
+  font-weight: 500;
+  font-size: 0.72rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+.cover__author {
+  margin-top: 3rem;
+  font-family: 'Reenie Beanie', cursive;
+  font-size: 2rem;
+  line-height: 1;
+  color: var(--luz-deep);
+}
+.cover__author-line {
+  margin-top: 0.5rem;
+  font-family: 'Geist', sans-serif;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+}
+
+/* Section headings */
+.section { margin-top: 4rem; }
+.section--top { margin-top: 0; }
+.section__label {
+  font-family: 'Satoshi', system-ui, sans-serif;
+  font-weight: 500;
+  font-size: 0.7rem;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  margin-bottom: 1rem;
+}
+.section__title {
+  font-family: 'Fraunces', 'Times New Roman', serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 2rem;
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+  font-variation-settings: 'opsz' 144;
+  margin-bottom: 1.5rem;
+}
+.section__sub {
+  font-family: 'Fraunces', 'Times New Roman', serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 1.35rem;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  font-variation-settings: 'opsz' 144;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--ink);
+}
+
+/* Body prose */
+p { margin-bottom: 1rem; color: var(--ink-soft); font-size: 1.02rem; }
+p strong { color: var(--ink); font-weight: 500; }
+.lead {
+  font-size: 1.2rem;
+  line-height: 1.55;
+  color: var(--ink);
+  margin-bottom: 1.5rem;
+  font-weight: 400;
+}
+
+/* Pull quotes */
+blockquote {
+  border-left: 2px solid var(--luz-deep);
+  padding-left: 1.25rem;
+  margin: 1.75rem 0;
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 1.15rem;
+  line-height: 1.5;
+  color: var(--ink);
+}
+blockquote cite {
+  display: block;
+  margin-top: 0.6rem;
+  font-style: normal;
+  font-family: 'Satoshi', sans-serif;
+  font-weight: 500;
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+
+/* Closing block */
+.signature {
+  margin-top: 5rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--rule);
+}
+.signature__name {
+  font-family: 'Reenie Beanie', cursive;
+  font-size: 2.25rem;
+  color: var(--luz-deep);
+  line-height: 1;
+}
+.signature__role {
+  margin-top: 0.4rem;
+  font-family: 'Satoshi', sans-serif;
+  font-weight: 500;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+.signature__contact {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+}
+.signature__date {
+  margin-top: 2rem;
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--ink-muted);
+}
+
+/* Accents */
+.opa-accent {
+  color: var(--ink);
+  font-weight: 600;
+  background: var(--luz);
+  padding: 0 0.15em;
+  border-radius: 0.15em;
+}
+
+/* ─── PRINT / PDF ─────────────────────────────────────────────────────── */
+@media print {
+  * {
+    -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+  }
+  @page {
+    size: A4;
+    margin: 2cm 2cm 2.2cm 2cm;
+  }
+  body { font-size: 11pt; line-height: 1.55; }
+  .wrap { padding: 0; max-width: 100%; }
+
+  /* Cover sits on its own page */
+  .cover { page-break-after: always; break-after: page; padding-bottom: 0; border-bottom: none; margin-bottom: 0; }
+  .cover__title { font-size: 30pt; }
+
+  /* Keep titles with the following content */
+  .section__title, .section__sub { page-break-after: avoid; break-after: avoid; }
+  .section__label { page-break-after: avoid; break-after: avoid; }
+
+  /* Avoid orphan single lines */
+  p, blockquote { orphans: 3; widows: 3; }
+
+  /* Don't split quotes across pages */
+  blockquote { page-break-inside: avoid; break-inside: avoid; }
+
+  /* Signature stays together */
+  .signature { page-break-inside: avoid; break-inside: avoid; }
+
+  /* Print-friendly type scaling */
+  .section__title { font-size: 18pt; }
+  .section__sub { font-size: 13pt; }
+  .lead { font-size: 12pt; }
+  blockquote { font-size: 11pt; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- ════════ COVER ════════ -->
+  <header class="cover">
+    <img class="cover__logo" src="logo/propagaluz-logo-color.png" alt="Propagaluz" />
+    <h1 class="cover__title">Manifiesto<br/>e historia.</h1>
+    <p class="cover__sub">Propagaluz · Junio 2026</p>
+    <p class="cover__author">Camila Casanova</p>
+    <p class="cover__author-line">Fundadora</p>
+  </header>
+
+  <!-- ════════ MANIFIESTO ════════ -->
+  <section class="section section--top">
+    <p class="section__label">I · Manifiesto</p>
+    <h2 class="section__title">Una palabra puesta en su sitio enciende algo.</h2>
+
+    <p class="lead">Ese algo puede viajar de mano en mano hasta cambiar lo que parecía inmóvil. Propagaluz es la apuesta por esa palabra, por ese algo, por esas manos.</p>
+
+    <p>Es una fundación de intención.</p>
+
+    <p>Existimos por los niños de Venezuela cuya infancia está esperando. Por la curiosidad que es más grande que el acceso. Por el que quiere leer y todavía busca dónde. Por el que ya leyó todo lo que tenía. Por la pregunta que un niño tiene guardada y todavía no sabe dónde hacer. Por la generación que está creciendo en pausa, con la inteligencia entera intacta y la oportunidad a medias.</p>
+
+    <p>Creemos que cada niño venezolano merece llegar entero a su edad adulta: con palabras propias, ideas propias, futuro propio.</p>
+
+    <p>Creemos que la educación es una forma de luz, y que esa luz, una vez encendida, se sostiene a sí misma. Una página se abre. Una idea se entiende. Una pregunta encuentra una respuesta. Cada gesto multiplica el siguiente.</p>
+
+    <p>Creemos que un niño que aprende a leer es un niño que va a hacer preguntas. Y un niño que hace preguntas es un niño que está construyendo, sin saberlo todavía, el lugar al que un día va a llegar.</p>
+
+    <p>Hacemos esto en compañía, por elección y porque tiene sentido. Cada euro, cada dólar y cada bolívar que pase por nuestras manos tendrá un destino: el niño venezolano que lo está esperando.</p>
+
+    <p><strong>Esta fundación pertenece a los niños que sirve.</strong></p>
+
+    <p>Lo demás se gana día a día.</p>
+  </section>
+
+  <!-- ════════ LA HISTORIA ════════ -->
+  <section class="section">
+    <p class="section__label">II · La historia</p>
+    <h2 class="section__title">El nombre vino antes que la fundación.</h2>
+
+    <p class="lead">Propagaluz no es un nombre inventado. Existió antes — como periódico, en Valencia, en los años treinta.</p>
+
+    <h3 class="section__sub">Eladio Alemán Sucre · bisabuelo · 1906–1984</h3>
+
+    <p>Nació en Ocumare del Tuy, en el estado Miranda. Fue aprendiz en la imprenta del estado, donde se hacía <em>El Mirandino</em>. A los diecinueve años, en 1925, se mudó a Valencia.</p>
+
+    <p>Ahí compró una librería. Y desde esa librería fundó su primer periódico: <em>El Bolígrafo</em>, una publicación quincenal. Luego lo convirtió en <em>Propagaluz</em>, semanal.</p>
+
+    <p>El 1 de septiembre de 1933 fundó <em>El Carabobeño</em>, un diario.</p>
+
+    <p>Lo hizo bajo la dictadura de Juan Vicente Gómez. En 1934 fue arrestado por publicar una nota sobre una plaga de langostas que los censores interpretaron como mensaje político en clave. Pasó veinticinco días preso. Luego fue exiliado a La Habana, donde sobrevivió distribuyendo la revista <em>Todamérica</em> y conspirando — sin éxito — contra el régimen.</p>
+
+    <p>En diciembre de 1935, Gómez murió. Eladio regresó a Valencia en 1936 y retomó la dirección de <em>El Carabobeño</em>.</p>
+
+    <p>Fue presidente de la Asociación de Periodistas de Carabobo. Fue secretario privado del escritor José Rafael Pocaterra durante su período como presidente del estado en 1941. Murió en 1984. <em>El Carabobeño</em> aún entrega anualmente el Premio de Periodismo &laquo;Eladio Alemán Sucre&raquo; como su distinción mayor.</p>
+
+    <h3 class="section__sub">Eduardo Alemán Pérez · Opa · 1945–2021</h3>
+
+    <p>Mi abuelo, hijo de Eladio.</p>
+
+    <p>Estudió en la Universidad Católica Andrés Bello, después en Georgetown, en la Universidad de Kansas, y se entrenó en el <em>Buffalo Evening News</em> de Nueva York.</p>
+
+    <p>En 1972 entró a <em>El Carabobeño</em> como subdirector y gerente. En 1984, tras la muerte de su padre, asumió la dirección. La sostuvo durante treinta y siete años.</p>
+
+    <p>En 1992 fue presidente del Bloque de Prensa Venezolano. Desde 1994 fue director de la Sociedad Interamericana de Prensa. Defendió la libertad de prensa venezolana durante las últimas dos décadas de su vida.</p>
+
+    <p>Su mujer, Diana Van der Meer, es de raíz holandesa. <em>Opa</em>, en neerlandés, significa abuelo. Así lo llamábamos en la familia. Y así vive, en el nombre de la fundación: prop<span class="opa-accent">opa</span>luz.</p>
+
+    <p>Los últimos años de su vida los pasó defendiendo a <em>El Carabobeño</em> de una nueva forma de censura. No la cárcel del 34. Otra cosa: el papel como arma. El estado controlaba la importación de papel periódico, y dejaba sin suministro a los medios independientes. En marzo de 2015, <em>El Carabobeño</em> recibió 72 bobinas cuando necesitaba 300. Entre 2013 y 2016, catorce publicaciones venezolanas dejaron de circular.</p>
+
+    <p>El 17 de marzo de 2016, <em>El Carabobeño</em> imprimió su última edición diaria, después de ochenta y dos años. Cuatrocientos sesenta y siete trabajadores quedaron sin empleo.</p>
+
+    <p>Opa siguió luchando — primero con la edición semanal, luego con la edición digital. El periódico no murió. Sigue en línea hoy, en su año noventa y dos.</p>
+
+    <p>Opa murió el 8 de noviembre de 2021, en Aventura, cerca de Miami, junto a mi abuela.</p>
+
+    <h3 class="section__sub">El principio que dejaron</h3>
+
+    <p>Eladio y Eduardo decían lo mismo, a una generación de distancia, en palabras casi idénticas:</p>
+
+    <blockquote>
+      Los periódicos son para servir.
+      <cite>— Eduardo Alemán Pérez</cite>
+    </blockquote>
+
+    <blockquote>
+      El Carabobeño no es una herencia personal de la familia. Pertenece a la comunidad de Valencia.
+      <cite>— Eladio Alemán Sucre, sostenido por Eduardo</cite>
+    </blockquote>
+
+    <p>Ese es el principio que Propagaluz hereda. No el periódico. No el nombre. <strong>El principio.</strong></p>
+  </section>
+
+  <!-- ════════ EL NOMBRE ════════ -->
+  <section class="section">
+    <p class="section__label">III · El nombre</p>
+    <h2 class="section__title">Propagar, en el sentido más antiguo de la palabra.</h2>
+
+    <p>Propagaluz fue, primero, un periódico que mi bisabuelo fundó. Salía cada semana. Tenía un nombre tomado de la palabra <em>propagar</em> — extender, multiplicar — y de la palabra <em>luz</em> — el conocimiento, la verdad, lo que ilumina.</p>
+
+    <p>La palabra ya cargaba la idea: <strong>un medio existe para propagar la luz.</strong></p>
+
+    <p>Propagaluz, ahora, es una fundación. No imprime palabras: financia escuelas. No reparte ejemplares: protege a niños venezolanos que están perdiendo años de educación. La forma cambió. La intención no.</p>
+
+    <p>Y dentro del nombre vive el otro: prop<span class="opa-accent">opa</span>luz. <em>Opa.</em></p>
+
+    <p>Los que lo conocen, lo reconocen. Los que no, leen una palabra entera.</p>
+  </section>
+
+  <!-- ════════ POR QUÉ ════════ -->
+  <section class="section">
+    <p class="section__label">IV · Por qué esta fundación</p>
+    <h2 class="section__title">La forma cambió. La intención no.</h2>
+
+    <p>Cuando Opa murió, supe dos cosas:</p>
+
+    <p>Que la línea no podía cortarse en mi generación.</p>
+
+    <p>Y que el periódico, como forma, ya no era el lugar donde la luz se propagaba.</p>
+
+    <p>Hoy los niños venezolanos están perdiendo educación a una velocidad que ningún titular puede sostener. Tres millones fuera de la escuela. Doscientos mil maestros que se fueron del país. Aulas vacías.</p>
+
+    <p>Eladio y Opa hicieron lo que pudieron con la herramienta que tenían: papel, tinta, y un periódico. Yo voy a hacer lo mismo con la herramienta que tengo: una fundación, internet, y un puente entre lo que se reúne fuera y lo que se necesita dentro.</p>
+
+    <p><strong>No es una herencia. Es la continuación de un trabajo.</strong></p>
+  </section>
+
+  <!-- ════════ SIGNATURE ════════ -->
+  <div class="signature">
+    <p class="signature__name">Camila Casanova</p>
+    <p class="signature__role">Fundadora · Propagaluz</p>
+    <p class="signature__contact">camila@propagaluz.com &middot; propagaluz.com</p>
+    <p class="signature__date">Junio de 2026</p>
+  </div>
+
+</div>
+</body>
+</html>
