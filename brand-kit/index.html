@@ -231,6 +231,60 @@ body {
   .voice-grid { grid-template-columns: 1fr; }
   .type-row { grid-template-columns: 1fr; gap: 0.75rem; }
 }
+
+/* ─── PRINT / PDF ─────────────────────────────────────────────────────── */
+/* Goal: when Camila saves this as PDF, no card/section gets split in half. */
+@media print {
+  /* Preserve colors and background fills when printing */
+  * {
+    -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+  }
+  @page {
+    size: A4;
+    margin: 1.5cm 1.25cm;
+  }
+  body { font-size: 11pt; }
+  .wrap { padding: 0; max-width: 100%; }
+
+  /* Don't split key boxes across page breaks */
+  .intro,
+  .logo-card,
+  .swatch,
+  .voice-card,
+  .type-row,
+  .color-grid,
+  .voice-grid,
+  .logo-grid {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  /* Keep section titles with the content that follows */
+  .h2 { page-break-after: avoid; break-after: avoid; }
+  /* Each major H2 starts on a new page so sections feel self-contained */
+  section { page-break-before: always; break-before: page; }
+  section:first-of-type { page-break-before: auto; break-before: auto; }
+
+  /* Hide the download pills — they're not actionable on a printed page */
+  .dl-row { display: none; }
+
+  /* Tighten heading sizes for paper */
+  .h1 { font-size: 30pt; }
+  .h2 { font-size: 18pt; margin-top: 0; }
+
+  /* Specimens shouldn't dwarf the page */
+  .specimen-display { font-size: 22pt; }
+  .specimen-anton { font-size: 20pt; }
+  .specimen-body { font-size: 14pt; }
+  .specimen-script { font-size: 24pt; }
+
+  /* Make logo cards a bit more compact on paper */
+  .logo-card { min-height: 8rem; padding: 1.5rem; }
+  .logo-card img { max-height: 5rem; }
+
+  /* Avoid orphan footer */
+  .kit-footer { margin-top: 1.5rem; }
+}
 </style>
 </head>
 <body>
