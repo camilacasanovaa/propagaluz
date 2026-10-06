@@ -380,6 +380,7 @@ a { color: inherit; text-decoration: none; }
   transition: filter 150ms;
 }
 .donate-button:hover { filter: brightness(0.95); }
+.donate-button:disabled { opacity: 0.45; cursor: not-allowed; filter: none; }
 
 .donate-fine {
   margin-top: 0.7rem;
@@ -705,10 +706,10 @@ footer {
       <!-- Donation card · docked, with monthly/once tabs + amount pills + custom -->
       <div class="donate-card" id="donate">
         <h3 class="donate-card__title">
-          Reserve your <span class="script">seat</span>
+          Donations <span class="script">closed</span>
         </h3>
         <p class="donate-card__lede">
-          Donations open soon. Choose your gift now; we&rsquo;ll write to you the day we begin.
+          Donations are closed for now. We&rsquo;ll announce it here the day they open.
         </p>
 
         <div class="donate-tabs" role="tablist">
@@ -735,9 +736,9 @@ footer {
           </span>
         </div>
 
-        <button class="donate-button" id="reserve-btn">Reserve &rarr;</button>
+        <button class="donate-button" id="reserve-btn" disabled aria-disabled="true">Donations closed</button>
         <p class="donate-fine">
-          No charge today. We&rsquo;ll write to you when donations open.
+          Want to help in the meantime? Write to camila@propagaluz.com
         </p>
       </div>
 
