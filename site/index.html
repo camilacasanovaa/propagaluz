@@ -3,132 +3,1241 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Propagaluz · Be right back.</title>
-<meta name="description" content="Propagaluz is briefly under construction. Back soon." />
-<meta name="robots" content="noindex" />
 
+
+<title>Propagaluz · Every child, a light.</title>
+<meta name="description" content="Propagaluz supports the education of Venezuelan children." />
+
+<!-- Open Graph -->
+<meta property="og:site_name" content="Propagaluz" />
+<meta property="og:title" content="Propagaluz · Every child, a light." />
+<meta property="og:description" content="Propagaluz supports the education of Venezuelan children." />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:locale:alternate" content="es_ES" />
+
+<!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link
-  href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;700&family=Reenie+Beanie&display=swap"
+  href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Reenie+Beanie&family=Anton&display=swap"
   rel="stylesheet"
 />
 <link
-  href="https://api.fontshare.com/v2/css?f[]=satoshi@900&display=swap"
+  href="https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,400&display=swap"
   rel="stylesheet"
 />
 
 <style>
-  :root {
-    --paper: #faf7f0;
-    --ink: #1a1a1a;
-    --ink-soft: #3a3a3a;
-    --ink-muted: #7a7568;
-    --luz: #fceaa8;
-    --luz-deep: #f5cf6a;
-  }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  html, body { height: 100%; }
-  body {
-    background: var(--paper);
-    color: var(--ink);
-    font-family: 'Geist', system-ui, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem;
-  }
-  .wrap {
-    max-width: 32rem;
-    text-align: left;
-  }
-  .logo {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.55rem;
-    margin-bottom: 3rem;
-  }
-  .logo svg { opacity: 0.85; }
-  .logo span {
-    font-family: 'Satoshi', system-ui, sans-serif;
-    font-weight: 900;
-    font-size: 1rem;
-    letter-spacing: -0.04em;
-    text-transform: lowercase;
-    color: var(--ink);
-    line-height: 1;
-  }
-  h1 {
-    font-family: 'Satoshi', system-ui, sans-serif;
-    font-weight: 900;
-    font-size: clamp(2.25rem, 5vw, 3.5rem);
-    line-height: 1.05;
-    letter-spacing: -0.03em;
-  }
-  h1 .script {
-    font-family: 'Reenie Beanie', cursive;
-    font-weight: 400;
-    color: var(--luz-deep);
-    letter-spacing: 0;
-    font-size: 1.15em;
-    display: inline-block;
-    transform: translateY(0.05em);
-  }
-  p {
-    margin-top: 1.5rem;
-    font-size: 1.05rem;
-    color: var(--ink-soft);
-    line-height: 1.6;
-    max-width: 28rem;
-  }
-  .tag {
-    margin-top: 2.5rem;
-    font-family: 'Reenie Beanie', cursive;
-    font-size: 1.65rem;
-    color: var(--luz-deep);
-  }
-  .mail {
-    margin-top: 2.5rem;
-    font-family: 'Satoshi', system-ui, sans-serif;
-    font-weight: 500;
-    font-size: 0.7rem;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--ink-muted);
-  }
-  .mail a {
-    color: var(--ink);
-    text-decoration: underline;
-    text-decoration-thickness: 1px;
-    text-underline-offset: 0.25em;
-  }
-  ::selection { background: var(--luz); color: var(--ink); }
+/* ─── tokens ─────────────────────────────────────────────────────────── */
+:root {
+  --paper: #faf7f0;
+  --paper-deep: #f3eee2;
+  --paper-pure: #ffffff;
+  --ink: #1a1a1a;
+  --ink-soft: #3a3a3a;
+  --ink-muted: #7a7568;
+  --rule: #e6e1d4;
+  --luz: #fceaa8;
+  --luz-deep: #f5cf6a;
+  --azul: #012b49;
+  --quote: #94a8c0;   /* pale blue for the Eladio quote */
+
+  --font-body: 'Geist', system-ui, sans-serif;
+  --font-head: 'Satoshi', system-ui, sans-serif;
+  --font-script: 'Reenie Beanie', cursive;
+
+  --w-narrow: 42rem;
+  --w-prose: 48rem;
+  --w-wide: 84rem;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+::selection { background: var(--luz); color: var(--ink); }
+img { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+
+/* ─── helpers ────────────────────────────────────────────────────────── */
+.script {
+  font-family: var(--font-script);
+  font-weight: 700;
+  font-style: normal;
+  color: var(--luz);
+  letter-spacing: 0;
+}
+.section-label {
+  font-family: var(--font-head);
+  font-weight: 500;
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+
+/* ─── header ─────────────────────────────────────────────────────────── */
+.site-header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  backdrop-filter: blur(14px) saturate(120%);
+  -webkit-backdrop-filter: blur(14px) saturate(120%);
+  background: rgba(255, 255, 255, 0.04);
+  transition: background 200ms;
+}
+.site-header__inner {
+  max-width: var(--w-wide);
+  margin: 0 auto;
+  padding: 1.15rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  color: #fff;
+}
+.logo { display: inline-flex; align-items: center; gap: 0.65rem; color: #fff; }
+.logo__beam { width: 26px; height: 18px; opacity: 0.7; }
+.logo__word {
+  font-family: var(--font-head);
+  font-weight: 900;
+  font-size: 1.15rem;
+  letter-spacing: -0.04em;
+  text-transform: lowercase;
+  color: #fff;
+  line-height: 1;
+}
+/* Layered logo: beam and letters live on separate mask layers so the beam
+   alone can change color on hover. Letters stay white always. */
+.logo__mark {
+  position: relative;
+  display: inline-block;
+  width: 3.55rem;
+  height: 2.6rem;
+}
+.logo__beam-layer,
+.logo__letters-layer {
+  position: absolute;
+  inset: 0;
+  -webkit-mask-position: center;
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+          mask-position: center;
+          mask-size: contain;
+          mask-repeat: no-repeat;
+}
+.logo__beam-layer {
+  -webkit-mask-image: url('propagaluz-beam-white.png');
+          mask-image: url('propagaluz-beam-white.png');
+  background-color: #fff;
+  transition: background-color 220ms ease;
+}
+.logo__letters-layer {
+  -webkit-mask-image: url('propagaluz-letters-white.png');
+          mask-image: url('propagaluz-letters-white.png');
+  background-color: #fff;
+}
+.logo:hover .logo__beam-layer,
+.logo:focus-visible .logo__beam-layer {
+  background-color: var(--luz);
+}
+.give-light {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: var(--luz);
+  color: #fff;
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0.7rem 1.1rem;
+  border-radius: 9999px;
+  border: none;
+  cursor: pointer;
+  transition: filter 150ms;
+  text-decoration: none;
+}
+.give-light:hover { filter: brightness(0.95); }
+.give-light__icon { width: 14px; height: 11px; }
+
+/* ─── hero ───────────────────────────────────────────────────────────── */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  background: var(--ink);
+  color: #fff;
+  overflow: hidden;
+}
+.hero__photo { position: absolute; inset: 0; z-index: 0; }
+.hero__photo img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  filter: brightness(0.85) contrast(1.05);
+}
+.hero__photo::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0,0,0,0.35) 0%,
+    rgba(0,0,0,0.05) 30%,
+    rgba(0,0,0,0.0) 50%,
+    rgba(0,0,0,0.55) 100%
+  );
+}
+.hero__content {
+  position: relative;
+  z-index: 1;
+  max-width: var(--w-wide);
+  margin: 0 auto;
+  padding: 9rem 2rem 3rem;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem 4rem;
+  align-items: end;
+}
+.hero__left {
+  align-self: end;
+  max-width: 36rem;
+}
+.hero__headline {
+  font-family: var(--font-head);
+  font-weight: 900;
+  font-size: clamp(3rem, 7.5vw, 6.4rem);
+  line-height: 1;
+  letter-spacing: -0.035em;
+}
+.hero__headline .script {
+  display: inline-block;
+  font-size: 1.15em;
+  letter-spacing: 0;
+  margin-left: -0.05em;
+  transform: translateY(0.05em);
+}
+.hero__sub {
+  margin-top: 2rem;
+  font-size: 1.15rem;
+  max-width: 30rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 400;
+  font-family: var(--font-body);
+  line-height: 1.55;
+  letter-spacing: 0;
+}
+
+.hero__right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1rem;
+  align-self: end;
+}
+
+/* Donation card · docked in hero */
+.donate-card {
+  background: rgba(20, 20, 20, 0.78);
+  backdrop-filter: blur(20px) saturate(120%);
+  -webkit-backdrop-filter: blur(20px) saturate(120%);
+  color: #fff;
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 1.6rem 1.6rem 1.4rem;
+  width: 100%;
+  max-width: 28rem;
+}
+.donate-card__title {
+  font-family: var(--font-head);
+  font-weight: 900;
+  font-size: 1.55rem;
+  letter-spacing: -0.025em;
+  line-height: 1.1;
+}
+.donate-card__title .script { font-size: 1.35em; letter-spacing: 0; }
+.donate-card__lede {
+  margin-top: 0.5rem;
+  font-size: 0.84rem;
+  color: rgba(255, 255, 255, 0.72);
+  line-height: 1.5;
+  max-width: 22rem;
+}
+
+/* Monthly / One time tabs */
+.donate-tabs {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 9999px;
+  padding: 0.25rem;
+  gap: 0.25rem;
+}
+.donate-tab {
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.65);
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding: 0.6rem;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 150ms;
+}
+.donate-tab.active {
+  background: var(--luz);
+  color: var(--ink);
+}
+
+.amounts {
+  margin-top: 0.85rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.4rem;
+}
+.amount {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 0.55rem;
+  padding: 0.65rem 0.3rem;
+  color: rgba(255, 255, 255, 0.85);
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 0.88rem;
+  cursor: pointer;
+  transition: all 150ms;
+}
+.amount.selected {
+  background: var(--luz);
+  color: var(--ink);
+  border-color: var(--luz);
+}
+
+.custom-amount {
+  margin-top: 0.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 0.55rem;
+  padding: 0.5rem 0.75rem;
+}
+.custom-amount__prefix {
+  font-family: var(--font-head);
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.88rem;
+}
+.custom-amount input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.01em;
+}
+.custom-amount input::placeholder { color: rgba(255, 255, 255, 0.4); }
+
+.impact {
+  margin-top: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: 0.84rem;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.4;
+}
+.impact__icon { width: 14px; height: 11px; flex-shrink: 0; }
+.impact b { color: var(--luz); font-weight: 700; }
+
+.donate-button {
+  margin-top: 1rem;
+  width: 100%;
+  background: var(--luz);
+  color: #fff;
+  border: none;
+  border-radius: 9999px;
+  padding: 0.85rem;
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 0.82rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: filter 150ms;
+}
+.donate-button:hover { filter: brightness(0.95); }
+.donate-button:disabled { opacity: 0.45; cursor: not-allowed; filter: none; }
+
+.donate-fine {
+  margin-top: 0.7rem;
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.55);
+  font-style: italic;
+  line-height: 1.5;
+}
+
+/* Trust strip · flat, right-aligned, under donation widget */
+.trust-strip {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.4rem 1.1rem;
+  font-family: var(--font-head);
+  font-weight: 500;
+  font-size: 0.66rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.78);
+  width: 100%;
+  max-width: 28rem;
+  padding: 0 0.25rem;
+}
+.trust-strip__dot { color: rgba(255, 255, 255, 0.4); }
+
+/* ─── section base ───────────────────────────────────────────────────── */
+section.block { padding: 7rem 2rem; }
+.block__inner { max-width: var(--w-wide); margin: 0 auto; }
+.block__inner--narrow { max-width: var(--w-prose); }
+
+.section-title {
+  font-family: var(--font-head);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  line-height: 1.0;
+  font-size: clamp(2.5rem, 5.5vw, 4.5rem);
+  margin-top: 1rem;
+  margin-bottom: 0;
+}
+.section-title .script {
+  display: inline-block;
+  font-size: 1.15em;
+  transform: translateY(0.08em);
+  letter-spacing: 0;
+}
+.section-lede {
+  margin-top: 1.5rem;
+  font-size: 1.1rem;
+  color: var(--ink-soft);
+  max-width: 38rem;
+  line-height: 1.55;
+}
+
+/* ─── why education ──────────────────────────────────────────────────── */
+.stat-grid {
+  margin-top: 4rem;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  gap: 1rem;
+}
+.stat {
+  padding: 2rem 1.75rem;
+  border-radius: 1rem;
+  background: var(--paper-deep);
+  display: flex;
+  flex-direction: column;
+  min-height: 19rem;
+}
+.stat--accent { background: var(--luz); }
+.stat__num-label {
+  font-family: var(--font-head);
+  font-weight: 500;
+  font-size: 0.66rem;
+  letter-spacing: 0.2em;
+  color: var(--ink-muted);
+  text-transform: uppercase;
+}
+.stat__num {
+  font-family: var(--font-head);
+  font-weight: 900;
+  font-size: 2.5rem;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  margin-top: 0.45rem;
+}
+.stat__num--big { font-size: 4rem; line-height: 1; }
+.stat__body {
+  margin-top: auto;
+  font-size: 0.93rem;
+  color: var(--ink-soft);
+  line-height: 1.5;
+}
+.stat__source {
+  margin-top: 0.9rem;
+  font-family: var(--font-head);
+  font-weight: 500;
+  font-size: 0.6rem;
+  letter-spacing: 0.18em;
+  color: var(--ink-muted);
+  text-transform: uppercase;
+}
+
+/* ─── our intention ──────────────────────────────────────────────────── */
+.intention-quote {
+  margin-top: 1.5rem;
+  font-family: var(--font-body);
+  font-size: 1.1rem;     /* aligned with .section-lede across the site */
+  line-height: 1.55;
+  color: var(--ink);
+  max-width: 38rem;
+  font-weight: 400;
+}
+
+/* Dark section variant — inverts colors for dramatic emphasis */
+.block--dark { background: var(--ink); color: #fff; }
+.block--dark .section-label { color: rgba(255, 255, 255, 0.55); }
+.block--dark .section-title { color: #fff; }
+.block--dark .intention-quote { color: #fff; }
+.block--dark .section-lede { color: rgba(255, 255, 255, 0.78); }
+/* .script (the "funky" word) keeps butter yellow — inherits from .script class */
+
+/* ─── where it lands / partners ──────────────────────────────────────── */
+.partners-grid {
+  margin-top: 3.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+/* Single-partner variant: one card, centered, constrained width */
+.partners-grid--single {
+  grid-template-columns: minmax(0, 38rem);
+  justify-content: center;
+}
+.partner {
+  position: relative;
+  background: var(--ink);
+  color: var(--paper);
+  border-radius: 1rem;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  min-height: 24rem;
+  overflow: hidden;
+}
+.partner__logo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.1rem;
+  font-family: var(--font-head);
+  font-weight: 900;
+  font-size: 1.85rem;
+  letter-spacing: -0.02em;
+  color: #fff;
+}
+.partner__logo--cecodap { letter-spacing: 0.04em; }
+.partner__mark {
+  height: 5.5rem;
+  width: auto;
+  flex-shrink: 0;
+}
+.partner__body {
+  margin-top: 1.6rem;
+  font-size: 0.96rem;
+  color: rgba(255, 255, 255, 0.78);
+  line-height: 1.65;
+}
+.partner__body p + p { margin-top: 1rem; }
+.partner__since {
+  margin-top: auto;
+  padding-top: 1.5rem;
+  font-family: var(--font-head);
+  font-weight: 500;
+  font-size: 0.64rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.independence-note {
+  margin: 1.5rem auto 0;
+  max-width: 38rem;
+  text-align: center;
+  font-size: 0.82rem;
+  color: var(--ink-muted);
+  line-height: 1.55;
+}
+
+/* ─── earthquake relief ──────────────────────────────────────────────── */
+.relief-grid {
+  margin-top: 1.75rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+.relief {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 1rem;
+  padding: 2.25rem 2rem;
+  display: flex;
+  flex-direction: column;
+}
+.relief__place {
+  font-family: var(--font-head);
+  font-weight: 500;
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--luz);
+}
+.relief-total {
+  margin-top: 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1.1rem;
+}
+.relief-total .relief__num { margin-top: 0; font-size: clamp(2.8rem, 6vw, 4rem); line-height: 1; color: var(--luz); }
+.relief-total__label {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 24rem;
+  line-height: 1.5;
+}
+.relief__num {
+  margin-top: 0.8rem;
+  font-family: var(--font-head);
+  font-weight: 900;
+  font-size: 2.6rem;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  color: #fff;
+}
+.relief__body {
+  margin-top: 0.9rem;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.8);
+}
+@media (max-width: 640px) { .relief-grid { grid-template-columns: 1fr; } }
+
+/* ─── relief slideshow (auto-scrolling loop) ──────────────────────────── */
+.marquee {
+  margin-top: 1.75rem;
+  overflow: hidden;
+  margin-inline: -2rem;
+}
+.marquee__track {
+  display: flex;
+  width: max-content;
+  animation: marquee 48s linear infinite;
+}
+.marquee:hover .marquee__track { animation-play-state: paused; }
+.marquee__group {
+  display: flex;
+  gap: 1.25rem;
+  padding-right: 1.25rem;
+}
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.slide {
+  position: relative;
+  margin: 0;
+  flex: 0 0 auto;
+  width: clamp(14rem, 26vw, 22rem);
+  border-radius: 1rem;
+  overflow: hidden;
+  aspect-ratio: 3 / 4;
+  background: #000;
+}
+.slide img,
+.slide video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.72) sepia(0.05) brightness(0.86) contrast(1.13);
+}
+.slide__mark {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  width: 3.2rem;
+  height: 2.35rem;
+  opacity: 0.8;
+  pointer-events: none;
+  filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.55));
+}
+.slide__mark .logo__beam-layer,
+.slide__mark .logo__letters-layer { background-color: #fff; }
+@media (max-width: 640px) { .marquee { margin-inline: -1.25rem; } }
+@media (prefers-reduced-motion: reduce) {
+  .marquee { overflow-x: auto; }
+  .marquee__track { animation: none; }
+  .marquee__group[aria-hidden="true"] { display: none; }
+}
+
+/* ─── our story ──────────────────────────────────────────────────────── */
+.story-prose p {
+  margin-top: 1.4rem;
+  font-size: 1.08rem;
+  color: var(--ink-soft);
+  line-height: 1.7;
+}
+.story-prose .opa {
+  font-family: var(--font-script);
+  font-weight: 700;
+  font-size: 1.3em;
+  color: var(--luz-deep);
+  letter-spacing: 0.01em;
+}
+
+.eladio-quote {
+  margin: 3.25rem 0;
+  font-size: 1.55rem;
+  line-height: 1.45;
+  color: var(--quote);
+  font-family: var(--font-body);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+.eladio-quote p { margin: 0; }
+
+/* ─── footer ─────────────────────────────────────────────────────────── */
+footer {
+  background: var(--paper);
+  border-top: 1px solid var(--rule);
+  padding: 4.5rem 2rem 2rem;
+}
+.footer-inner {
+  max-width: var(--w-wide);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 3rem;
+}
+.footer-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+.footer-logo .logo__beam { opacity: 0.85; width: 22px; height: 16px; }
+.footer-logo .logo__word { color: var(--ink); font-size: 1rem; }
+.footer-logo__mark {
+  height: 2.6rem;
+  width: auto;
+  display: block;
+}
+.footer-tag {
+  margin-top: 1.5rem;
+  font-family: var(--font-script);
+  font-weight: 700;
+  font-size: 1.65rem;
+  color: var(--luz-deep);
+  letter-spacing: 0;
+}
+.footer-note { font-size: 0.85rem; color: var(--ink-muted); margin-top: 1.5rem; max-width: 22rem; }
+.footer-block h4 {
+  font-family: var(--font-head);
+  font-weight: 500;
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  margin-bottom: 1rem;
+}
+.footer-block a {
+  display: block;
+  margin: 0.3rem 0;
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+}
+.footer-block a:hover { color: var(--ink); }
+.footer-bottom {
+  max-width: var(--w-wide);
+  margin: 4rem auto 0;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--rule);
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-head);
+  font-weight: 500;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+
+/* ─── responsive ─────────────────────────────────────────────────────── */
+@media (max-width: 1000px) {
+  .stat-grid, .partners-grid, .footer-inner { grid-template-columns: 1fr 1fr; }
+  .hero__content { grid-template-columns: 1fr; padding: 7rem 1.25rem 2rem; }
+  .hero__right { align-items: stretch; }
+  .donate-card, .trust-strip { max-width: none; }
+  .trust-strip { justify-content: flex-start; }
+}
+@media (max-width: 640px) {
+  .stat-grid, .partners-grid, .footer-inner { grid-template-columns: 1fr; }
+  section.block { padding: 5rem 1.25rem; }
+}
 </style>
+
+
+
+<!-- ═══ HEADER ═══════════════════════════════════════════════════════════ -->
 </head>
 <body>
-  <div class="wrap">
-    <div class="logo">
-      <svg viewBox="0 0 22 16" width="22" height="16" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <polygon points="0,4 22,0 22,16 0,12" fill="#1a1a1a" />
-      </svg>
-      <span>propagaluz</span>
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="logo" href="#top" aria-label="Propagaluz">
+      <!-- Two-layer logo: beam on bottom, letters on top.
+           Only the beam recolors to butter yellow on hover. -->
+      <span class="logo__mark" role="img" aria-label="Propagaluz">
+        <span class="logo__beam-layer" aria-hidden="true"></span>
+        <span class="logo__letters-layer" aria-hidden="true"></span>
+      </span>
+    </a>
+    <a class="give-light" href="#donate">
+      Give Light
+    </a>
+  </div>
+</header>
+
+<!-- ═══ HERO ═════════════════════════════════════════════════════════════ -->
+<section id="top" class="hero">
+  <div class="hero__photo">
+    <img src="hero-candidates/camila-pick-2.jpg" alt="Three Venezuelan children laughing, black-and-white photograph." id="hero-photo" />
+  </div>
+  <div class="hero__content">
+    <div class="hero__left">
+      <h1 class="hero__headline" lang="es">
+        Cada niño,<br /><span class="script">una luz</span>.
+      </h1>
+      <p class="hero__sub" lang="es">
+        Propagaluz acompaña la educación de los niños venezolanos.
+      </p>
     </div>
 
-    <h1>
-      Be right <span class="script">back</span>.
-    </h1>
+    <div class="hero__right">
+      <!-- Donation card · docked, with monthly/once tabs + amount pills + custom -->
+      <div class="donate-card" id="donate">
+        <h3 class="donate-card__title">
+          Donations <span class="script">closed</span>
+        </h3>
+        <p class="donate-card__lede">
+          Donations are closed for now. We&rsquo;ll announce it here the day they open.
+        </p>
 
-    <p>
-      We&rsquo;re shaping a few things. Propagaluz returns shortly.
+        <div class="donate-tabs" role="tablist">
+          <button class="donate-tab active" data-tab="monthly">Monthly</button>
+          <button class="donate-tab" data-tab="once">One time</button>
+        </div>
+
+        <div class="amounts">
+          <button class="amount">$10</button>
+          <button class="amount">$25</button>
+          <button class="amount selected">$50</button>
+          <button class="amount">$100</button>
+        </div>
+
+        <div class="custom-amount">
+          <span class="custom-amount__prefix">$</span>
+          <input type="number" placeholder="Other amount" min="1" aria-label="Other amount" />
+        </div>
+
+
+        <div class="impact">
+          <span>
+            <b class="impact-amount">$50</b>
+            <span class="impact-message">&asymp; a month and a half of school for one child.</span>
+          </span>
+        </div>
+
+        <button class="donate-button" id="reserve-btn" disabled aria-disabled="true">Donations closed</button>
+        <p class="donate-fine">
+          Want to help in the meantime? Write to camila@propagaluz.com
+        </p>
+      </div>
+
+      <div class="trust-strip">
+        <span>Est. 2026</span>
+        <span class="trust-strip__dot">·</span>
+        <span>Miami</span>
+        <span class="trust-strip__dot">·</span>
+        <span>Madrid</span>
+        <span class="trust-strip__dot">·</span>
+        <span>Caracas</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ WHY EDUCATION ═══════════════════════════════════════════════════ -->
+<section class="block">
+  <div class="block__inner">
+    <p class="section-label">Why education?</p>
+    <h2 class="section-title">
+      Because a generation cannot wait <span class="script">forever</span>.
+    </h2>
+    <p class="section-lede">
+      Behind every figure is a child losing a year, a teacher who has left the classroom, a desk that sits empty. Every year that passes raises the cost of catching up.
     </p>
 
-    <p class="tag" lang="es">propaga la luz.</p>
+    <div class="stat-grid">
+      <div class="stat stat--accent">
+        <span class="stat__num-label">Out of school</span>
+        <div class="stat__num stat__num--big">4M</div>
+        <p class="stat__body">
+          Venezuelans aged 3 to 24 were not in school in 2023 &mdash; 34% of everyone that age.
+        </p>
+        <p class="stat__source">ENCOVI 2023 · UCAB</p>
+      </div>
+      <div class="stat">
+        <span class="stat__num-label">Teachers missing</span>
+        <div class="stat__num">2&ndash;3</div>
+        <p class="stat__body">
+          days a week is all many public schools open. The shortage of teachers is close to 40%.
+        </p>
+        <p class="stat__source">UCAB · 2024</p>
+      </div>
+      <div class="stat">
+        <span class="stat__num-label">Irregular class</span>
+        <div class="stat__num">40%</div>
+        <p class="stat__body">
+          of students aged 3 to 17 attended class irregularly in 2023.
+        </p>
+        <p class="stat__source">ENCOVI 2023 · UCAB</p>
+      </div>
+      <div class="stat">
+        <span class="stat__num-label">Fewer students</span>
+        <div class="stat__num">5.5M</div>
+        <p class="stat__body">
+          students enrolled for 2024&ndash;2025, down from about 8 million in earlier years.
+        </p>
+        <p class="stat__source">Government figures · 2024</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <p class="mail">
-      <a href="mailto:camila@propagaluz.com">camila@propagaluz.com</a>
+<!-- ═══ OUR INTENTION ═══════════════════════════════════════════════════ -->
+<section class="block block--dark">
+  <div class="block__inner">
+    <p class="section-label">Our intention</p>
+    <h2 class="section-title">
+      A word in its proper place sets something <span class="script">alight</span>.
+    </h2>
+    <p class="intention-quote">
+      We exist for the children of Venezuela whose childhood is waiting. For the curiosity that is bigger than the access. For the generation growing up in pause, with the intelligence intact and the opportunity half-given.
     </p>
   </div>
+</section>
+
+<!-- ═══ WHERE IT LANDS ══════════════════════════════════════════════════ -->
+<section class="block">
+  <div class="block__inner">
+    <p class="section-label">Where it lands</p>
+    <h2 class="section-title">
+      One foundation.<br />All of our light.
+    </h2>
+    <p class="section-lede">
+      Propagaluz exists to carry resources from outside Venezuela to an organization already doing the work. They sustain the classrooms, pay the teachers, put books in the hands of children who would not otherwise have them. Our proceeds go to them.
+    </p>
+
+    <div class="partners-grid partners-grid--single">
+      <article class="partner">
+        <div class="partner__logo">
+          <span>Fe y Alegría</span>
+        </div>
+        <div class="partner__body">
+          <p>
+            A movement of popular education that began in 1955 in a home in a working-class Caracas neighborhood, with 100 students. Today it works in 22 countries.
+          </p>
+          <p>
+            In Venezuela they run 350 education centers and 22 educational radio stations in the country&rsquo;s most vulnerable communities, reaching more than 100,000 students.
+          </p>
+        </div>
+        <p class="partner__since">Since 1955 · 350 education centers</p>
+      </article>
+    </div>
+    <p class="independence-note">
+      Propagaluz is an independent initiative. We are not partners of Fe y Alegría and are not endorsed by them. We name them only to tell you where our proceeds go.
+    </p>
+  </div>
+</section>
+
+<!-- ═══ EARTHQUAKE RELIEF ═══════════════════════════════════════════════ -->
+<section class="block block--dark">
+  <div class="block__inner">
+    <p class="section-label">June 2026 · Earthquake relief</p>
+    <h2 class="section-title">
+      When the ground <span class="script">shook</span>, we turned toward it.
+    </h2>
+    <p class="section-lede">
+      On June 24, 2026, two earthquakes of magnitude 7.2 and 7.5 struck northern Venezuela. At the time, we momentarily directed our proceeds to emergency relief.
+    </p>
+
+    <div class="relief-total">
+      <div class="relief__num">$5,000+</div>
+      <p class="relief-total__label">in supplies and medicine, delivered to Los Roques and Caracas</p>
+    </div>
+
+    <div class="relief-grid">
+      <article class="relief">
+        <p class="relief__place">Los Roques</p>
+        <p class="relief__body">
+          With supplies unable to reach the islands after the disaster, we sent medicines to Los Roques.
+        </p>
+      </article>
+      <article class="relief">
+        <p class="relief__place">Caracas</p>
+        <p class="relief__body">
+          We delivered tents, baby formula, diapers, clothing, food, water and medicine to <span lang="es">centros de acopio</span> in Caracas.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ RELIEF IN PICTURES ══════════════════════════════════════════════ -->
+<section class="block block--photos">
+  <div class="block__inner">
+    <p class="section-label">Earthquake relief · In pictures</p>
+    <div class="marquee" aria-label="Photos and videos from our earthquake relief deliveries">
+      <div class="marquee__track">
+        <div class="marquee__group">
+        <figure class="slide">
+          <img src="relief/relief-losroques.jpg" alt="Volunteers carrying boxes of medicine into the Petra María Marcano clinic in Los Roques." loading="lazy" />
+          <span class="slide__mark" aria-hidden="true"><span class="logo__beam-layer"></span><span class="logo__letters-layer"></span></span>
+        </figure>
+        <figure class="slide">
+          <video src="relief/relief-video-1.mp4" poster="relief/relief-video-1-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Video of a collection point with donated supplies under blue tents."></video>
+          <span class="slide__mark" aria-hidden="true"><span class="logo__beam-layer"></span><span class="logo__letters-layer"></span></span>
+        </figure>
+        <figure class="slide">
+          <img src="relief/relief-tents.jpg" alt="Volunteers handing out diapers at a tent camp for people displaced by the earthquake." loading="lazy" />
+          <span class="slide__mark" aria-hidden="true"><span class="logo__beam-layer"></span><span class="logo__letters-layer"></span></span>
+        </figure>
+        <figure class="slide">
+          <video src="relief/relief-video-2.mp4" poster="relief/relief-video-2-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Video walking through a camp of tents for displaced families."></video>
+          <span class="slide__mark" aria-hidden="true"><span class="logo__beam-layer"></span><span class="logo__letters-layer"></span></span>
+        </figure>
+        <figure class="slide">
+          <img src="relief/relief-car.jpg" alt="A car loaded with water, diapers and supplies for delivery." loading="lazy" />
+          <span class="slide__mark" aria-hidden="true"><span class="logo__beam-layer"></span><span class="logo__letters-layer"></span></span>
+        </figure>
+        <figure class="slide">
+          <video src="relief/relief-video-3.mp4" poster="relief/relief-video-3-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Video of tents set up in a park after the earthquake."></video>
+          <span class="slide__mark" aria-hidden="true"><span class="logo__beam-layer"></span><span class="logo__letters-layer"></span></span>
+        </figure>
+        <figure class="slide">
+          <img src="relief/relief-box.jpg" alt="An open box filled with donated medicines." loading="lazy" />
+          <span class="slide__mark" aria-hidden="true"><span class="logo__beam-layer"></span><span class="logo__letters-layer"></span></span>
+        </figure>
+        <figure class="slide">
+          <video src="relief/relief-video-4.mp4" poster="relief/relief-video-4-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Video of tents under the trees at a relief camp."></video>
+          <span class="slide__mark" aria-hidden="true"><span class="logo__beam-layer"></span><span class="logo__letters-layer"></span></span>
+        </figure>
+        </div>
+        <div class="marquee__group" aria-hidden="true">
+        <figure class="slide">
+          <img src="relief/relief-losroques.jpg" alt="" loading="lazy" />
+          <span class="slide__mark" aria-hidden="true"><span class="logo__beam-layer"></span><span class="logo__letters-layer"></span></span>
+        </figure>
+        <figure class="slide">
+          <video src="relief/relief-video-1.mp4" poster="relief/relief-video-1-poster.jpg" autoplay muted loop playsinline preload="metadata"></video>
+          <span class="slide__mark" aria-hidden="true"><span class="logo__beam-layer"></span><span class="logo__letters-layer"></span></span>
+        </figure>
+        <figure class="slide">
+          <img src="relief/relief-tents.jpg" alt="" loading="lazy" />
+          <span class="slide__mark" aria-hidden="true"><span class="logo__beam-layer"></span><span class="logo__letters-layer"></span></span>
+        </figure>
+        <figure class="slide">
+          <video src="relief/relief-video-2.mp4" poster="relief/relief-video-2-poster.jpg" autoplay muted loop playsinline preload="metadata"></video>
+          <span class="slide__mark" aria-hidden="true"><span class="logo__beam-layer"></span><span class="logo__letters-layer"></span></span>
+        </figure>
+        <figure class="slide">
+          <img src="relief/relief-car.jpg" alt="" loading="lazy" />
+          <span class="slide__mark" aria-hidden="true"><span class="logo__beam-layer"></span><span class="logo__letters-layer"></span></span>
+        </figure>
+        <figure class="slide">
+          <video src="relief/relief-video-3.mp4" poster="relief/relief-video-3-poster.jpg" autoplay muted loop playsinline preload="metadata"></video>
+          <span class="slide__mark" aria-hidden="true"><span class="logo__beam-layer"></span><span class="logo__letters-layer"></span></span>
+        </figure>
+        <figure class="slide">
+          <img src="relief/relief-box.jpg" alt="" loading="lazy" />
+          <span class="slide__mark" aria-hidden="true"><span class="logo__beam-layer"></span><span class="logo__letters-layer"></span></span>
+        </figure>
+        <figure class="slide">
+          <video src="relief/relief-video-4.mp4" poster="relief/relief-video-4-poster.jpg" autoplay muted loop playsinline preload="metadata"></video>
+          <span class="slide__mark" aria-hidden="true"><span class="logo__beam-layer"></span><span class="logo__letters-layer"></span></span>
+        </figure>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ OUR STORY ═══════════════════════════════════════════════════════ -->
+<section class="block" style="background:var(--paper-deep);">
+  <div class="block__inner block__inner--narrow">
+    <p class="section-label">Our story</p>
+    <h2 class="section-title">
+      Same conviction, different tool.
+    </h2>
+
+    <div class="story-prose">
+      <p>
+        The medium then was ink and paper. The medium now is a foundation that protects the schooling and the voice of the next generation. The conviction has not changed: this work belongs to the community.
+      </p>
+
+      <p>
+        What we do for the children of Venezuela matters more than what we say about ourselves. So this section stays short. <span class="opa">&mdash; Para Opa</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ══════════════════════════════════════════════════════════ -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">
+        <img src="propagaluz-logo-color.png" alt="Propagaluz" class="footer-logo__mark" />
+      </div>
+      <p class="footer-tag" lang="es">propaga la luz.</p>
+      <p class="footer-note">
+        Foundation in formation. United States.
+      </p>
+    </div>
+    <div class="footer-block">
+      <h4>Write to us</h4>
+      <a href="mailto:camila@propagaluz.com">camila@propagaluz.com</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 Propagaluz</span>
+    <span>Made with intention</span>
+  </div>
+</footer>
+
+<script>
+/* ─── Donation impact, dynamic ───────────────────────────────────────── */
+/* Anchor: Fe y Alegría's published "Beca un Estudiante" = $30 / month / 1 child */
+function getImpactMessage(amount, tab) {
+  const n = parseFloat(amount);
+  if (!n || n < 1) return null;
+
+  if (tab === 'monthly') {
+    if (n < 15) {
+      const days = Math.max(1, Math.round(n / 30 * 30));
+      return `keeps one child in school for ${days} days each month.`;
+    }
+    if (n < 30) return `keeps one child in school for nearly the full month.`;
+    if (n < 60) return `keeps one child in school every month.`;
+    if (n < 90) return `keeps one child in school every month, with room to spare.`;
+    const kids = Math.floor(n / 30);
+    return `keeps ${kids} children in school every month.`;
+  }
+
+  if (n < 15) return `${Math.round(n)} days of school for one child.`;
+  if (n < 30) return `nearly a month of school for one child.`;
+  if (n < 60) return `a month of school for one child.`;
+  if (n < 90) return `a month and a half of school for one child.`;
+  if (n < 120) return `a school term (three months) for one child.`;
+  if (n < 200) return `${Math.round(n / 30)} months of school for one child.`;
+  if (n < 350) return `more than half a school year for one child.`;
+  if (n < 500) return `a full school year for one child.`;
+  if (n < 720) return `a full school year for one child, with extra for books.`;
+  const kids = Math.floor(n / 360);
+  if (kids === 1) return `a full school year for one child, plus support.`;
+  return `${kids} children, a full school year of school each.`;
+}
+
+function readAmount() {
+  const customInput = document.querySelector('.custom-amount input');
+  const selectedPill = document.querySelector('.amount.selected');
+  if (customInput && customInput.value) return parseFloat(customInput.value);
+  if (selectedPill) return parseFloat(selectedPill.textContent.replace('$', ''));
+  return null;
+}
+
+function readTab() {
+  return document.querySelector('.donate-tab.active')?.dataset.tab || 'monthly';
+}
+
+function updateImpact() {
+  const tab = readTab();
+  const amount = readAmount();
+  const message = getImpactMessage(amount, tab);
+  const amountEl = document.querySelector('.impact-amount');
+  const messageEl = document.querySelector('.impact-message');
+  const monthlySuffix = tab === 'monthly' && amount ? ' /mo' : '';
+  if (amountEl) amountEl.textContent = amount ? `$${amount}${monthlySuffix}` : '—';
+  if (messageEl) messageEl.textContent = message ? `≈ ${message}` : '';
+}
+
+/* Donate tab toggle */
+document.querySelectorAll('.donate-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.donate-tab').forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    updateImpact();
+  });
+});
+
+/* Amount pill selection — clears custom amount */
+document.querySelectorAll('.amount').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.amount').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected');
+    const input = document.querySelector('.custom-amount input');
+    if (input) input.value = '';
+    updateImpact();
+  });
+});
+
+/* Custom input clears pill selection */
+const customInput = document.querySelector('.custom-amount input');
+if (customInput) {
+  customInput.addEventListener('input', () => {
+    if (customInput.value) {
+      document.querySelectorAll('.amount').forEach(b => b.classList.remove('selected'));
+    }
+    updateImpact();
+  });
+}
+
+/* Reserve button → open an email to Camila pre-filled with the intent. */
+document.getElementById('reserve-btn').addEventListener('click', () => {
+  const amount = readAmount();
+  const tab = readTab();
+  const cadence = tab === 'monthly' ? 'monthly' : 'one time';
+  const subj = amount
+    ? `Reserve my seat — $${amount} ${cadence}`
+    : 'Reserve my seat';
+  const body =
+    `Hi Camila,\n\n` +
+    (amount
+      ? `I want to reserve my seat for $${amount} ${cadence} when Propagaluz opens.\n\n`
+      : `I want to reserve my seat for when Propagaluz opens.\n\n`) +
+    `Name:\nWhere I'm writing from:\n\nThank you for what you're building.\n`;
+  window.location.href =
+    `mailto:camila@propagaluz.com?subject=${encodeURIComponent(subj)}&body=${encodeURIComponent(body)}`;
+});
+
+/* Initial paint */
+updateImpact();
+</script>
+
 </body>
 </html>
