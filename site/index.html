@@ -369,7 +369,7 @@ a { color: inherit; text-decoration: none; }
   margin-top: 1rem;
   width: 100%;
   background: var(--luz);
-  color: #fff;
+  color: var(--ink);
   border: none;
   border-radius: 9999px;
   padding: 0.85rem;
@@ -831,10 +831,10 @@ footer {
       <!-- Donation card · docked, with monthly/once tabs + amount pills + custom -->
       <div class="donate-card" id="donate">
         <h3 class="donate-card__title">
-          Donations <span class="script">closed</span>
+          Reserve your <span class="script">seat</span>
         </h3>
         <p class="donate-card__lede">
-          Donations are closed for now. We&rsquo;ll announce it here the day they open.
+          Choose your gift and help keep a child in school.
         </p>
 
         <div class="donate-tabs" role="tablist">
@@ -862,9 +862,9 @@ footer {
           </span>
         </div>
 
-        <button class="donate-button" id="reserve-btn" disabled aria-disabled="true">Donations closed</button>
+        <button class="donate-button" id="reserve-btn">Donate &rarr;</button>
         <p class="donate-fine">
-          Want to help in the meantime? Write to camila@propagaluz.com
+          You&rsquo;ll choose your final amount on the next page.
         </p>
       </div>
 
@@ -1212,22 +1212,9 @@ if (customInput) {
   });
 }
 
-/* Reserve button → open an email to Camila pre-filled with the intent. */
+/* Donate button → open the Propagaluz GoFundMe page in a new tab. */
 document.getElementById('reserve-btn').addEventListener('click', () => {
-  const amount = readAmount();
-  const tab = readTab();
-  const cadence = tab === 'monthly' ? 'monthly' : 'one time';
-  const subj = amount
-    ? `Reserve my seat — $${amount} ${cadence}`
-    : 'Reserve my seat';
-  const body =
-    `Hi Camila,\n\n` +
-    (amount
-      ? `I want to reserve my seat for $${amount} ${cadence} when Propagaluz opens.\n\n`
-      : `I want to reserve my seat for when Propagaluz opens.\n\n`) +
-    `Name:\nWhere I'm writing from:\n\nThank you for what you're building.\n`;
-  window.location.href =
-    `mailto:camila@propagaluz.com?subject=${encodeURIComponent(subj)}&body=${encodeURIComponent(body)}`;
+  window.open('https://gofund.me/548260598', '_blank', 'noopener');
 });
 
 /* Initial paint */
